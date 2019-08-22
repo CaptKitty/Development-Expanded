@@ -144,7 +144,7 @@ country_event = {
 	id = DVE_Events.2
 	title = DVE_Events.2.t
 	desc = DVE_Events.2.d
-	picture = WESTERNISATION_eventPicture
+	picture = EUROPEAN_REFUGEES_eventPicture
 	
 
 	trigger = {
@@ -159,7 +159,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1825
+		days = 3650
 		modifier = {
 			factor = 1.5
 			has_reform = decentralize_reform
