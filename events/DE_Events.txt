@@ -1,0 +1,141 @@
+namespace = DE_Events
+
+country_event = {
+	id = DE_Events.1
+	title = DE_Events.1.t
+	desc = DE_Events.1.d
+	picture = WESTERNISATION_eventPicture
+	hidden = yes
+	
+
+	trigger = {
+		owns = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 365
+	}
+	
+	immediate = {
+		every_province = {
+			limit = {
+				continent = europe 
+			}
+			if = {
+				limit = {
+					OR = {
+						has_province_modifier = river_estuary_modifier
+						province_has_center_of_trade_of_level = 1
+					}
+					is_territory = no
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 30 years, +15 dev total
+					87 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					has_port = yes
+					is_island = no
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 50 years, +8 dev total
+					147 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					is_prosperous = yes 
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 20 years, +20 dev total
+					57 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					devastation = 11
+				}
+				random_list = { #once every 4 years, -100 dev total
+					9 = { }
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+			}
+			if = {
+				limit = {
+					development = 20
+					devastation = 11
+				}
+				random_list = { #once every 4 years, -200 dev total
+					9 = { }
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+			}
+			if = {
+				limit = {
+					development = 30
+					devastation = 11
+				}
+				random_list = { #once every 4 years, -400 dev total
+					9 = { }
+					1 = { add_base_manpower = -2 }
+					1 = { add_base_tax = -2 }
+					1 = { add_base_production = -2 }
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_global_modifier_value = {
+							which = development_cost
+							value = -0.25
+						}
+					}
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 20 years, +20 dev total
+					57 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						has_global_modifier_value = {
+							which = development_cost
+							value = -0.50
+						}
+					}
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 20 years, +20 dev total (+40 dev total, once every 10 years)
+					57 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = DE_Events.1.a
+		
+	}
+}
