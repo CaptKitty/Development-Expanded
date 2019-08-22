@@ -1,5 +1,0 @@
-﻿l_english:
- 
- DVE_Events.2.t: "Refugee Crisis"
- DVE_Events.2.d: "The [refugee_crisis_flag.Culture.GetName] people of [refugee_crisis_flag.GetName] appear to be seeking refuge since our conquest of their lands. They are moving towards [refugee_crisis_receiver_flag.GetName], where their breathren await them."
- DVE_Events.2.a: "Less Troublemakers for us."
