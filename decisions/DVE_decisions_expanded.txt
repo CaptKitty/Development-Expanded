@@ -1,0 +1,79 @@
+country_decisions = {
+	DVE_develop_local_area = {
+		potential = {
+			always = yes
+		}
+		allow = {
+			years_of_income = 0.5
+		}
+		effect = {
+			add_years_of_income = -0.5
+			random_owned_area = {
+				limit = {
+					OR = {
+						AND = {
+							NOT = { has_province_modifier = DVE_local_development_1 }
+							NOT = { has_province_modifier = DVE_local_development_2 }
+							NOT = { has_province_modifier = DVE_local_development_3 }
+							NOT = { has_province_modifier = DVE_local_development_4 }
+							NOT = { has_province_modifier = DVE_local_development_5 }
+						}
+						has_province_modifier = DVE_local_development_1
+						has_province_modifier = DVE_local_development_2
+						has_province_modifier = DVE_local_development_3
+						has_province_modifier = DVE_local_development_4
+					}
+				}
+				if = {
+					limit = {
+						has_province_modifier = DVE_local_development_4
+					}
+					remove_province_modifier = DVE_local_development_4
+					add_province_modifier = {
+						name = DVE_local_development_5
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						has_province_modifier = DVE_local_development_3
+					}
+					remove_province_modifier = DVE_local_development_3
+					add_province_modifier = {
+						name = DVE_local_development_4
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						has_province_modifier = DVE_local_development_2
+					}
+					remove_province_modifier = DVE_local_development_2
+					add_province_modifier = {
+						name = DVE_local_development_3
+						duration = -1
+					}
+				}
+				else_if = {
+					limit = {
+						has_province_modifier = DVE_local_development_1
+					}
+					remove_province_modifier = DVE_local_development_1
+					add_province_modifier = {
+						name = DVE_local_development_2
+						duration = -1
+					}
+				}
+				else = {
+					add_province_modifier = {
+						name = DVE_local_development_1
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

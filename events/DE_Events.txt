@@ -100,11 +100,14 @@ country_event = {
 			if = {
 				limit = {
 					owner = {
-						has_global_modifier_value = {
-							which = development_cost
-							value = -0.25
+						NOT = {
+							has_global_modifier_value = {
+								which = development_cost 
+								value = -0.24
+							}
 						}
 					}
+					is_territory = no
 					NOT = { devastation = 1 }
 				}
 				random_list = { #once every 20 years, +20 dev total
@@ -117,15 +120,35 @@ country_event = {
 			if = {
 				limit = {
 					owner = {
-						has_global_modifier_value = {
-							which = development_cost
-							value = -0.50
+						NOT = {
+							has_global_modifier_value = {
+								which = development_cost 
+								value = -0.49
+							}
 						}
 					}
+					is_territory = no
 					NOT = { devastation = 1 }
 				}
 				random_list = { #once every 20 years, +20 dev total (+40 dev total, once every 10 years)
 					57 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_local_modifier_value = {
+							which = local_development_cost 
+							value = 0.10
+						}
+					}
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 3.5 years
+					8 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -180,13 +203,6 @@ country_event = {
 			factor = 1.5
 			full_idea_group = humanist_ideas
 		}
-		modifier = {
-			factor = 0.75
-			had_active_policy = {
-				policy = cultural_unity
-				days = 365
-			}
-		}
 	}
 	
 	immediate = {
@@ -228,3 +244,21 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = DVE_Events.3
+	title = DVE_Events.3.t
+	desc = DVE_Events.3.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = DVE_Events.3.a
+		
+		every_owned_province = {
+			add_base_manpower = -20
+			add_base_production = -20
+			add_base_tax = -20
+		}
+	}

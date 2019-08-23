@@ -1,0 +1,17 @@
+DVE_local_development_1 = {
+	local_development_cost = -0.10
+}
+DVE_local_development_2 = {
+	local_development_cost = -0.20
+}
+DVE_local_development_3 = {
+	local_development_cost = -0.30
+}
+DVE_local_development_4 = {
+	local_development_cost = -0.40
+	allowed_num_of_buildings = 1
+}
+DVE_local_development_5 = {
+	local_development_cost = -0.50
+	allowed_num_of_buildings = 1
+}
