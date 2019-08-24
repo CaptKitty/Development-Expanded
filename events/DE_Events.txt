@@ -19,7 +19,8 @@ country_event = {
 	immediate = {
 		every_province = {
 			limit = {
-				continent = europe 
+				always = yes
+				#continent = europe 
 			}
 			if = {
 				limit = {
@@ -30,8 +31,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years, +15 dev total
-					87 = { }
+				random_list = { #once every 40 years, +10 dev total
+					117 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -55,8 +56,8 @@ country_event = {
 					is_prosperous = yes 
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 20 years, +20 dev total
-					57 = { }
+				random_list = { #once every 30 years, +15 dev total
+					87 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -64,7 +65,8 @@ country_event = {
 			}
 			if = {
 				limit = {
-					devastation = 11
+					devastation = 1
+					NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -76,7 +78,8 @@ country_event = {
 			if = {
 				limit = {
 					development = 20
-					devastation = 11
+					devastation = 1
+					NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -200 dev total
 					9 = { }
@@ -88,7 +91,8 @@ country_event = {
 			if = {
 				limit = {
 					development = 30
-					devastation = 11
+					devastation = 1
+					NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -400 dev total
 					9 = { }
@@ -110,8 +114,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 20 years, +20 dev total
-					57 = { }
+				random_list = { #once every 30 years, +15 dev total
+					87 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
