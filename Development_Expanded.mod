@@ -1,5 +1,5 @@
 name="Development Expanded"
-path="mod/Development_Expanded"
+path="mod/Development_Expanded.zip"
 dependencies={
 	"Missions Expanded"
 	"Beyond Typus 11.5"
