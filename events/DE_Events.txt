@@ -77,11 +77,24 @@ country_event = {
 			}
 			if = {
 				limit = {
+					development = 10
+					devastation = 1
+					NOT = { has_province_modifier = slaves_raided }
+				}
+				random_list = { #once every 4 years, -300 dev total
+					9 = { }
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+			}
+			if = {
+				limit = {
 					development = 20
 					devastation = 1
 					NOT = { has_province_modifier = slaves_raided }
 				}
-				random_list = { #once every 4 years, -200 dev total
+				random_list = { #once every 4 years, -300 dev total
 					9 = { }
 					1 = { add_base_manpower = -1 }
 					1 = { add_base_tax = -1 }
@@ -94,12 +107,23 @@ country_event = {
 					devastation = 1
 					NOT = { has_province_modifier = slaves_raided }
 				}
-				random_list = { #once every 4 years, -400 dev total
+				random_list = { #once every 4 years, -500 dev total
 					9 = { }
 					1 = { add_base_manpower = -2 }
 					1 = { add_base_tax = -2 }
 					1 = { add_base_production = -2 }
 				}
+			}
+			if = {
+				limit = {
+					devastation = 50
+				}
+				random_list = { #once every year, -100 dev total
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+				add_devastation = -10
 			}
 			if = {
 				limit = {
