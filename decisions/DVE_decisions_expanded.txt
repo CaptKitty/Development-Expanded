@@ -22,6 +22,7 @@ country_decisions = {
 						has_province_modifier = DVE_local_development_2
 						has_province_modifier = DVE_local_development_3
 						has_province_modifier = DVE_local_development_4
+						NOT = { has_province_modifier = DVE_local_development_5 }
 					}
 				}
 				if = {

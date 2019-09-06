@@ -15,3 +15,10 @@ DVE_local_development_5 = {
 	local_development_cost = -0.50
 	allowed_num_of_buildings = 1
 }
+DVE_regional_growth_spike = {
+	local_development_cost = -0.25
+	local_build_cost = -0.15
+}
+DVE_scars_of_war = {
+	local_development_cost = 0.25
+}

@@ -20,7 +20,12 @@ country_event = {
 		every_province = {
 			limit = {
 				always = yes
-				#continent = europe 
+				NOT = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -56,8 +61,8 @@ country_event = {
 					is_prosperous = yes 
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years, +15 dev total
-					87 = { }
+				random_list = { #once every 20 years, +20 dev total
+					57 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -175,8 +180,45 @@ country_event = {
 					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 3.5 years
-					8 = { }
+				random_list = { #once every 4 years
+					9 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_local_modifier_value = {
+							which = local_development_cost 
+							value = 0.25
+						}
+					}
+					NOT = { development = 6 }
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 6 years
+					15 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_local_modifier_value = {
+							which = local_development_cost 
+							value = 0.20
+						}
+					}
+					development = 6
+					NOT = { development = 10 }
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 10 years
+					27 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -284,9 +326,96 @@ country_event = {
 	option = {
 		name = DVE_Events.3.a
 		
-		every_owned_province = {
+		every_province = {
 			add_base_manpower = -20
 			add_base_production = -20
 			add_base_tax = -20
 		}
 	}
+}
+
+country_event = {
+	id = DVE_Events.4
+	title = DVE_Events.4.t
+	desc = DVE_Events.4.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+
+	trigger = {
+		any_owned_province = {
+			NOT = { devastation = 1 }
+			is_prosperous = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 0.75
+			full_idea_group = economic_ideas
+		}
+	}
+
+	option = {
+		name = DVE_Events.4.a
+		
+		random_owned_area = {
+			limit = {
+				NOT = { devastation = 1 }
+				is_prosperous = yes
+			}
+			add_province_modifier = {
+				name = DVE_regional_growth_spike #-25% Local Dev Cost, -15% Local Build Cost
+				duration = 9125
+			}
+		}
+	}
+}
+
+country_event = {
+	id = DVE_Events.5
+	title = DVE_Events.5.t
+	desc = DVE_Events.5.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+
+	trigger = {
+		any_owned_province = {
+			devastation = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 7300
+		modifier = {
+			factor = 1.25
+			full_idea_group = economic_ideas
+		}
+	}
+
+	option = {
+		name = DVE_Events.5.a
+		
+		random_owned_area = {
+			limit = {
+				devastation = 1
+			}
+			random_list = {
+				10 = { add_base_tax = -1 }
+				10 = { add_base_production = -1 }
+				10 = { add_base_manpower = -1 }
+			}
+			add_province_modifier = {
+				name = DVE_scars_of_war #+25% Local Dev Cost
+				duration = 9125
+			}
+		}
+	}
+	
+	option = {
+		name = DVE_Events.5.b
+		
+		add_years_of_income = -0.5
+		add_adm_power = -25
+	}
+}
