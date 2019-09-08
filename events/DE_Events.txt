@@ -61,8 +61,8 @@ country_event = {
 					is_prosperous = yes 
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 20 years, +20 dev total
-					57 = { }
+				random_list = { #once every 40 years, +10 dev total
+					117 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -131,7 +131,7 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			if = {
 				limit = {
@@ -142,7 +142,7 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			if = {
 				limit = {
@@ -153,7 +153,7 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			if = {
 				limit = {
@@ -164,7 +164,7 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			if = {
 				limit = {
@@ -175,7 +175,7 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			
 			#### BB_CHANGES_END ####
@@ -230,8 +230,8 @@ country_event = {
 					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 6 years
-					15 = { }
+				random_list = { #once every 10 years
+					27 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -248,8 +248,8 @@ country_event = {
 					NOT = { development = 6 }
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 8 years
-					21 = { }
+				random_list = { #once every 15 years
+					42 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -267,8 +267,8 @@ country_event = {
 					NOT = { development = 10 }
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 12 years
-					33 = { }
+				random_list = { #once every 20 years
+					57 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
