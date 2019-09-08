@@ -343,6 +343,7 @@ country_event = {
 
 	trigger = {
 		any_owned_province = {
+			is_territory = no
 			NOT = { devastation = 1 }
 			is_prosperous = yes
 		}
@@ -400,13 +401,8 @@ country_event = {
 			limit = {
 				devastation = 1
 			}
-			random_list = {
-				10 = { add_base_tax = -1 }
-				10 = { add_base_production = -1 }
-				10 = { add_base_manpower = -1 }
-			}
 			add_province_modifier = {
-				name = DVE_scars_of_war #+25% Local Dev Cost
+				name = DVE_scars_of_war #+25% Local Dev Cost, -25% Goods Produced, -25% Tax income
 				duration = 9125
 			}
 		}
