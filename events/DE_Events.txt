@@ -61,8 +61,8 @@ country_event = {
 					is_prosperous = yes 
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 40 years, +10 dev total
-					117 = { }
+				random_list = { #once every 20 years, +20 dev total
+					57 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -71,7 +71,7 @@ country_event = {
 			if = {
 				limit = {
 					devastation = 1
-					NOT = { has_province_modifier = slaves_raided }
+					#NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -84,7 +84,7 @@ country_event = {
 				limit = {
 					development = 10
 					devastation = 1
-					NOT = { has_province_modifier = slaves_raided }
+					#NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -97,7 +97,7 @@ country_event = {
 				limit = {
 					development = 20
 					devastation = 1
-					NOT = { has_province_modifier = slaves_raided }
+					#NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -110,7 +110,7 @@ country_event = {
 				limit = {
 					development = 30
 					devastation = 1
-					NOT = { has_province_modifier = slaves_raided }
+					#NOT = { has_province_modifier = slaves_raided }
 				}
 				random_list = { #once every 4 years, -200 dev total
 					9 = { }
@@ -215,6 +215,23 @@ country_event = {
 				}
 				random_list = { #once every 20 years, +20 dev total (+40 dev total, once every 10 years)
 					57 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_local_modifier_value = {
+							which = local_development_cost 
+							value = -0.05
+						}
+					}
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 5 years
+					12 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
