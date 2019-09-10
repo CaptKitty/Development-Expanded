@@ -61,8 +61,8 @@ country_event = {
 					is_prosperous = yes 
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 20 years, +20 dev total
-					57 = { }
+				random_list = { #once every 30 years, +15 dev total
+					87 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -71,7 +71,12 @@ country_event = {
 			if = {
 				limit = {
 					devastation = 1
-					#NOT = { has_province_modifier = slaves_raided }
+					OR = {
+						NOT = { has_province_modifier = slaves_raided }
+						owner = {
+							was_player = yes
+						}
+					}
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -84,7 +89,12 @@ country_event = {
 				limit = {
 					development = 10
 					devastation = 1
-					#NOT = { has_province_modifier = slaves_raided }
+					OR = {
+						NOT = { has_province_modifier = slaves_raided }
+						owner = {
+							was_player = yes
+						}
+					}
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -97,7 +107,12 @@ country_event = {
 				limit = {
 					development = 20
 					devastation = 1
-					#NOT = { has_province_modifier = slaves_raided }
+					OR = {
+						NOT = { has_province_modifier = slaves_raided }
+						owner = {
+							was_player = yes
+						}
+					}
 				}
 				random_list = { #once every 4 years, -100 dev total
 					9 = { }
@@ -110,7 +125,12 @@ country_event = {
 				limit = {
 					development = 30
 					devastation = 1
-					#NOT = { has_province_modifier = slaves_raided }
+					OR = {
+						NOT = { has_province_modifier = slaves_raided }
+						owner = {
+							was_player = yes
+						}
+					}
 				}
 				random_list = { #once every 4 years, -200 dev total
 					9 = { }
@@ -377,10 +397,11 @@ country_event = {
 	
 
 	trigger = {
-		any_owned_province = {
-			is_territory = no
-			NOT = { devastation = 1 }
-			is_prosperous = yes
+		every_owned_province = {
+			OR = {
+				is_territory = no
+				is_prosperous = yes
+			}
 		}
 	}
 	
