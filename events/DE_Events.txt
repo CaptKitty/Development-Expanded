@@ -213,7 +213,7 @@ country_event = {
 					NOT = {
 						has_local_modifier_value = {
 							which = local_development_cost 
-							value = -0.05
+							value = -0.15
 						}
 					}
 					NOT = { devastation = 1 }
@@ -471,3 +471,34 @@ country_event = {
 		add_adm_power = -25
 	}
 }
+
+country_event = {
+	id = DVE_Events.6
+	title = DVE_Events.6.t
+	desc = DVE_Events.6.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		every_province = {
+			limit = {
+				region = british_isles_region
+			}
+			add_province_modifier = {
+				name = DVE_screw_england #+10 Local Development Cost
+				duration = -1
+				picture = "development_icon"
+			}
+		}
+	}
+	option = {
+		name = DVE_Events.6.a
+	}
+	
+}
+

@@ -24,3 +24,6 @@ DVE_scars_of_war = {
 	trade_goods_size_modifier = -0.25
 	local_tax_modifier = -0.25
 }
+DVE_screw_england = {
+	local_development_cost = 0.10
+}
