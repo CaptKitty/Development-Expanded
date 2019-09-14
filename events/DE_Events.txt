@@ -14,6 +14,14 @@ country_event = {
 	
 	mean_time_to_happen = {
 		days = 365
+		modifier = {
+			factor = 0.1
+			has_global_flag = DVE_Madness_Mode
+		}
+		modifier = {
+			factor = 0.75
+			has_global_flag = DVE_Fun_Mode
+		}
 	}
 	
 	immediate = {
@@ -140,11 +148,12 @@ country_event = {
 				}
 			}
 			
-			#### BB_CHANGES_START ####
-			
 			if = {
 				limit = {
-					devastation = 25
+					devastation = 15
+					NOT = {
+						has_global_flag = DVE_Realism_Mode
+					}
 				}
 				random_list = { #once every year, -400 dev total
 					1 = { add_base_manpower = -1 }
@@ -156,7 +165,10 @@ country_event = {
 			
 			if = {
 				limit = {
-					devastation = 50
+					devastation = 30
+					NOT = {
+						has_global_flag = DVE_Realism_Mode
+					}
 				}
 				random_list = { #once every year, -400 dev total
 					1 = { add_base_manpower = -1 }
@@ -166,7 +178,28 @@ country_event = {
 				add_devastation = -5
 			}
 			
-			#### BB_CHANGES_END ####
+			if = { 
+				limit = {
+					devastation = 5
+					has_global_flag = DVE_Realism_Mode
+				}
+				random_list = { #once every year, -400 dev total
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+			}
+			if = { 
+				limit = {
+					devastation = 10
+					has_global_flag = DVE_Realism_Mode
+				}
+				random_list = { #once every year, -400 dev total
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+			}
 			
 			if = {
 				limit = {
@@ -530,6 +563,39 @@ country_event = {
 	}
 	option = {
 		name = DVE_Events.7.a
+	}
+	
+}
+
+country_event = {
+	id = DVE_Events.8
+	title = DVE_Events.8.t
+	desc = DVE_Events.8.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		was_player = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = DVE_Events.8.a
+		set_global_flag = DVE_Madness_Mode
+	}
+	
+	option = {
+		name = DVE_Events.8.b
+		set_global_flag = DVE_Fun_Mode
+	}
+	
+	option = {
+		name = DVE_Events.8.c
+		set_global_flag = DVE_Realism_Mode
 	}
 	
 }
