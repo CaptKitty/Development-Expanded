@@ -168,6 +168,27 @@ country_event = {
 					1 = { add_base_production = -1 }
 				}
 			}
+			if = { 
+				limit = {
+					devastation = 25
+					has_global_flag = DVE_Realism_Mode
+				}
+				random_list = { #once every year, -400 dev total
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+				random_list = { #once every year, -400 dev total
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+				random_list = { #once every year, -400 dev total
+					1 = { add_base_manpower = -1 }
+					1 = { add_base_tax = -1 }
+					1 = { add_base_production = -1 }
+				}
+			}
 			
 			
 			#Growth
@@ -221,15 +242,35 @@ country_event = {
 					}
 					is_territory = no
 					NOT = { devastation = 1 }
+					NOT = { has_global_flag = DVE_Realism_Mode }
 				}
 				random_list = { #once every 40 years, +10 dev total
-					147 = { }
+					127 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
 				}
 			}
-			
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_global_modifier_value = {
+								which = development_cost 
+								value = -0.09
+							}
+						}
+					}
+					is_territory = no
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 30 years, +15 dev total
+					127 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
 			if = {
 				limit = {
 					owner = {
@@ -256,7 +297,7 @@ country_event = {
 						NOT = {
 							has_global_modifier_value = {
 								which = development_cost 
-								value = -0.49
+								value = -0.39
 							}
 						}
 					}
