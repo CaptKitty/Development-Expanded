@@ -201,6 +201,25 @@ country_event = {
 				}
 			}
 			
+			
+			#Growth
+			
+			if = {
+				limit = {
+					owner = {
+						is_at_war = no
+					}
+					is_territory = no
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 40 years, +10 dev total
+					147 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			
 			if = {
 				limit = {
 					owner = {
