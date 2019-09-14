@@ -489,8 +489,8 @@ country_event = {
 			limit = {
 				region = british_isles_region
 			}
-			add_province_modifier = {
-				name = DVE_screw_england #+10 Local Development Cost
+			add_permanent_province_modifier = {
+				name = DVE_screw_england #+15% Local Development Cost
 				duration = -1
 				picture = "development_icon"
 			}
@@ -521,8 +521,8 @@ country_event = {
 					culture = ruthenian
 				}
 			}
-			add_province_modifier = {
-				name = DVE_screw_lithuania #+10 Local Development Cost
+			add_permanent_province_modifier = {
+				name = DVE_screw_lithuania #+15% Local Development Cost
 				duration = 36500
 				picture = "devestation_icon"
 			}
