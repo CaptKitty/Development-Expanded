@@ -4,10 +4,14 @@ country_decisions = {
 			always = yes
 		}
 		allow = {
-			years_of_income = 0.5
+			AND = {
+				treasury = 250
+				years_of_income = 0.4
+			}
 		}
 		effect = {
-			add_years_of_income = -0.5
+			add_treasury = -200
+			add_years_of_income = -0.3
 			random_owned_area = {
 				limit = {
 					OR = {
