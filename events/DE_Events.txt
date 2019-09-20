@@ -664,3 +664,71 @@ country_event = {
 	}
 	
 }
+
+country_event = {
+	id = DVE_Events.9
+	title = DVE_Events.9.t
+	desc = DVE_Events.9.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	mean_time_to_happen = {
+		days = 1 #3650
+	}
+	
+	trigger = {
+		always = no
+		any_owned_area = {
+			AND = {
+				any_owned_province = {
+					center_of_trade = 1
+				}
+				any_owned_province = {
+					NOT = { center_of_trade = 1 }
+				}
+			}
+		}
+	}
+		
+	
+	immediate = {
+		random_owned_area = {
+			limit = {
+				AND = {
+					any_owned_province = {
+						center_of_trade = 1
+					}
+					any_owned_province = {
+						NOT = { center_of_trade = 1 }
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					center_of_trade = 1
+				}
+				save_event_target_as = urbanization_flag_one
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { center_of_trade = 1 }
+				}
+				save_event_target_as = urbanization_flag_two
+			}
+		}
+	}
+	option = {
+		name = DVE_Events.9.a
+		
+		event_target:urbanization_flag_one = {
+			add_base_manpower = 1
+			add_base_production = 1
+			add_base_tax = 1
+		}
+		event_target:urbanization_flag_two = {
+			add_base_manpower = -1
+			add_base_production = -1
+			add_base_tax = -1
+		}
+	}
+	
+}
