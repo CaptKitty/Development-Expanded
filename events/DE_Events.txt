@@ -15,7 +15,7 @@ country_event = {
 	mean_time_to_happen = {
 		days = 365
 		modifier = {
-			factor = 0.1
+			factor = 0.01
 			has_global_flag = DVE_Madness_Mode
 		}
 		modifier = {
