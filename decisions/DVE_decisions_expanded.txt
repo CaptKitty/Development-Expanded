@@ -4,14 +4,41 @@ country_decisions = {
 			always = yes
 		}
 		allow = {
-			AND = {
-				treasury = 250
-				years_of_income = 0.4
+			if = {
+				limit = {
+					NOT = { monthly_income = 16 }
+				}
+				treasury = 100
+			}
+			else_if = {
+				limit = {
+					monthly_income = 16
+					NOT = { monthly_income = 80 }
+				}
+				years_of_income = -0.5
+			}
+			else = {
+				treasury = 500
 			}
 		}
 		effect = {
-			add_treasury = -200
-			add_years_of_income = -0.3
+			if = {
+				limit = {
+					NOT = { monthly_income = 16 }
+				}
+				add_treasury = -100
+			}
+			else_if = {
+				limit = {
+					monthly_income = 16
+					NOT = { monthly_income = 80 }
+				}
+				add_years_of_income = -0.5
+			}
+			else = {
+				add_treasury = -500
+			}
+			
 			random_owned_area = {
 				limit = {
 					OR = {
@@ -79,6 +106,11 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 0
+			modifier = {
+				factor = 0
+					NOT = { years_of_income = 10 }
+					NOT = { treasury = 1000 }
+			}	
 		}
 	}
 }
