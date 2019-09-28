@@ -225,10 +225,34 @@ country_event = {
 			if = {
 				limit = {
 					is_prosperous = yes 
+					OR = {
+						has_terrain = farmlands 
+						has_terrain = grasslands
+						has_terrain = woods
+					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years, +15 dev total
-					87 = { }
+				random_list = { #once every 30 years
+					87 = { } #3/90 1/30
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					is_prosperous = yes 
+					NOT = {
+						OR = {
+							has_terrain = farmlands 
+							has_terrain = grasslands
+							has_terrain = woods
+						}
+					}
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 50 years
+					147 = { } #3/150 1/50
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -245,11 +269,33 @@ country_event = {
 							}
 						}
 					}
+					NOT = { development = 10 }
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years, +15 dev total
-					147 = { }
+				random_list = { #once every 40 years
+					117 = { } #3/120 1/40
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_global_modifier_value = {
+								which = development_cost 
+								value = -0.14
+							}
+						}
+					}
+					development = 10
+					is_territory = no
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 60 years
+					177 = { } #3/180, 1/60
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -265,11 +311,33 @@ country_event = {
 							}
 						}
 					}
+					NOT = { development = 20 }
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years, +15 dev total
-					87 = { }
+				random_list = { #once every 30 years
+					87 = { } #3/90 1/30
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_global_modifier_value = {
+								which = development_cost 
+								value = -0.29
+							}
+						}
+					}
+					development = 20
+					is_territory = no
+					NOT = { devastation = 1 }
+				}
+				random_list = { #once every 40 years
+					117 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
