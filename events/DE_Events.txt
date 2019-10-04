@@ -725,7 +725,7 @@ country_event = {
 	picture = EUROPEAN_REFUGEES_eventPicture
 	
 	mean_time_to_happen = {
-		days = 1 #3650
+		days = 10950
 	}
 	
 	trigger = {

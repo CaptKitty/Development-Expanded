@@ -15,7 +15,7 @@ country_decisions = {
 					monthly_income = 16
 					NOT = { monthly_income = 80 }
 				}
-				years_of_income = -0.5
+				years_of_income = 0.5
 			}
 			else = {
 				treasury = 500
