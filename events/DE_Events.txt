@@ -695,6 +695,9 @@ country_event = {
 	
 	trigger = {
 		was_player = yes
+		NOT = { has_global_flag = DVE_Madness_Mode }
+		NOT = { has_global_flag = DVE_Fun_Mode }
+		NOT = { has_global_flag = DVE_Realism_Mode }
 	}
 	
 	mean_time_to_happen = {
