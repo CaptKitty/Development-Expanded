@@ -118,7 +118,7 @@ country_event = {
 			
 			if = {
 				limit = {
-					devastation = 25
+					devastation = 15
 					NOT = {
 						has_global_flag = DVE_Realism_Mode
 					}
@@ -133,7 +133,7 @@ country_event = {
 			
 			if = {
 				limit = {
-					devastation = 50
+					devastation = 30
 					NOT = {
 						has_global_flag = DVE_Realism_Mode
 					}
@@ -454,6 +454,7 @@ country_event = {
 		any_owned_province = {
 			nationalism = 10
 			NOT = { is_core = ROOT }
+			development = 6
 			any_country = {
 				is_neighbor_of = ROOT
 				primary_culture = PREV

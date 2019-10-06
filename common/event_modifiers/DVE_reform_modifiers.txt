@@ -25,8 +25,8 @@ DVE_scars_of_war = {
 	local_tax_modifier = -0.25
 }
 DVE_screw_england = {
-	local_development_cost = 0.15
+	local_development_cost = 0.25
 }
 DVE_screw_lithuania = {
-	local_development_cost = 0.15
+	local_development_cost = 0.25
 }
