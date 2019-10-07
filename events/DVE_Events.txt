@@ -789,3 +789,77 @@ country_event = {
 	}
 	
 }
+
+country_event = {
+	id = DVE_Events.10
+	title = DVE_Events.10.t
+	desc = DVE_Events.10.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.001
+			has_global_flag = DVE_Madness_Mode
+		}
+		modifier = {
+			factor = 1
+			has_global_flag = DVE_Fun_Mode
+		}
+	}
+	
+	trigger = {
+		owns = 1
+	}
+		
+	
+	immediate = {
+		#random_owned_province = {
+		#	limit = {
+		#		#development = 3
+		#		#devastation = 10
+		#		random_neighbor_province = {
+		#			NOT = { culture = PREV }
+		#		}
+		#	}
+		#	random_neighbor_province = {
+		#		limit = {
+		#			NOT = { culture = PREV }
+		#		}
+		#		save_event_target_as = culture_flag_one
+		#	}
+		#	change_culture = event_target:culture_flag_one
+		#}
+		every_province = {
+			limit = {
+				development = 3
+				devastation = 11
+				any_neighbor_province = {
+					NOT = { culture = PREV }
+					NOT = { devastation = 1 }
+				}
+			}
+			random_neighbor_province = {	
+				limit = {
+					NOT = { culture = PREV }
+				}
+				PREV = { change_culture = PREV }
+			}
+			add_base_manpower = 1
+			add_base_production = 1
+			add_base_tax = 1
+			add_devastation = -100
+			add_province_modifier = {
+				name = "New_Settlers"
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = DVE_Events.10.a
+		
+		
+	}
+	
+}
