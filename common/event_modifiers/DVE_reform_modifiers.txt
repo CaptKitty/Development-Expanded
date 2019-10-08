@@ -31,6 +31,6 @@ DVE_screw_lithuania = {
 	local_development_cost = 0.25
 }
 New_Settlers = {
-	local_development_cost = -0.25
+	local_development_cost = -0.10
 	local_monthly_devastation = -0.24
 }

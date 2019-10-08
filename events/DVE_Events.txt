@@ -118,7 +118,7 @@ country_event = {
 			
 			if = {
 				limit = {
-					devastation = 15
+					devastation = 20
 					NOT = {
 						has_global_flag = DVE_Realism_Mode
 					}
@@ -143,7 +143,7 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			
 			if = { 
@@ -833,16 +833,16 @@ country_event = {
 		#}
 		every_province = {
 			limit = {
-				development = 3
-				devastation = 11
+				#development = 3
+				devastation = 15
 				any_neighbor_province = {
-					NOT = { culture = PREV }
+					#NOT = { culture = PREV }
 					NOT = { devastation = 1 }
 				}
 			}
-			random_neighbor_province = {	
+			random_neighbor_province = {
 				limit = {
-					NOT = { culture = PREV }
+					#NOT = { culture = PREV }
 				}
 				PREV = { change_culture = PREV }
 			}
@@ -850,9 +850,55 @@ country_event = {
 			add_base_production = 1
 			add_base_tax = 1
 			add_devastation = -100
-			add_province_modifier = {
+			add_permanent_province_modifier = {
 				name = "New_Settlers"
 				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = DVE_Madness_Mode }
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						calc_true_if = {
+							any_neighbor_province = {
+								culture = PREV
+							}
+							amount = 1
+						}
+					}
+				}
+				random_neighbor_province = {	
+					#limit = {
+						#NOT = { culture = PREV }
+					#}
+					PREV = { change_culture = PREV }
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = DVE_Madness_Mode 
+			}
+			every_province = {
+				limit = {
+					NOT = {
+						calc_true_if = {
+							any_neighbor_province = {
+								culture = PREV
+							}
+							amount = 2
+						}
+					}
+				}
+				random_neighbor_province = {	
+					#limit = {
+						#NOT = { culture = PREV }
+					#}
+					PREV = { change_culture = PREV }
+				}
 			}
 		}
 	}
