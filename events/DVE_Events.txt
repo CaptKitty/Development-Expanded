@@ -800,11 +800,11 @@ country_event = {
 	mean_time_to_happen = {
 		days = 365
 		modifier = {
-			factor = 0.001
+			factor = 0.01
 			has_global_flag = DVE_Madness_Mode
 		}
 		modifier = {
-			factor = 1
+			factor = 0.1
 			has_global_flag = DVE_Fun_Mode
 		}
 	}
@@ -833,7 +833,7 @@ country_event = {
 		#}
 		every_province = {
 			limit = {
-				#development = 3
+				development = 3
 				devastation = 15
 				any_neighbor_province = {
 					#NOT = { culture = PREV }
@@ -843,6 +843,7 @@ country_event = {
 			random_neighbor_province = {
 				limit = {
 					#NOT = { culture = PREV }
+					NOT = { devastation = 1 }
 				}
 				PREV = { change_culture = PREV }
 			}
@@ -855,50 +856,22 @@ country_event = {
 				duration = 3650
 			}
 		}
-		if = {
+		every_province = {
 			limit = {
-				NOT = { has_global_flag = DVE_Madness_Mode }
-			}
-			every_province = {
-				limit = {
-					NOT = {
-						calc_true_if = {
-							any_neighbor_province = {
-								culture = PREV
-							}
-							amount = 1
+				NOT = {
+					calc_true_if = {
+						any_neighbor_province = {
+							culture = PREV
 						}
+						amount = 1
 					}
 				}
-				random_neighbor_province = {	
-					#limit = {
-						#NOT = { culture = PREV }
-					#}
-					PREV = { change_culture = PREV }
-				}
 			}
-		}
-		if = {
-			limit = {
-				has_global_flag = DVE_Madness_Mode 
-			}
-			every_province = {
-				limit = {
-					NOT = {
-						calc_true_if = {
-							any_neighbor_province = {
-								culture = PREV
-							}
-							amount = 2
-						}
-					}
-				}
-				random_neighbor_province = {	
-					#limit = {
-						#NOT = { culture = PREV }
-					#}
-					PREV = { change_culture = PREV }
-				}
+			random_neighbor_province = {	
+				#limit = {
+					#NOT = { culture = PREV }
+				#}
+				PREV = { change_culture = PREV }
 			}
 		}
 	}
