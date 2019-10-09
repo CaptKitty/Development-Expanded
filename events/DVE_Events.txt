@@ -48,7 +48,7 @@ country_event = {
 						}
 					}
 				}
-				random_list = { #once every 4 years, -100 dev total
+				random_list = { #once every 3 years, -100 dev total
 					6 = { }
 					1 = { add_base_manpower = -1 }
 					1 = { add_base_tax = -1 }
@@ -68,7 +68,7 @@ country_event = {
 						}
 					}
 				}
-				random_list = { #once every 4 years, -100 dev total
+				random_list = { #once every 3 years, -100 dev total
 					6 = { }
 					1 = { add_base_manpower = -1 }
 					1 = { add_base_tax = -1 }
@@ -88,7 +88,7 @@ country_event = {
 						}
 					}
 				}
-				random_list = { #once every 4 years, -100 dev total
+				random_list = { #once every 3 years, -100 dev total
 					6 = { }
 					1 = { add_base_manpower = -1 }
 					1 = { add_base_tax = -1 }
@@ -108,7 +108,7 @@ country_event = {
 						}
 					}
 				}
-				random_list = { #once every 4 years, -200 dev total
+				random_list = { #once every 3 years, -200 dev total
 					6 = { }
 					1 = { add_base_manpower = -2 }
 					1 = { add_base_tax = -2 }
@@ -128,12 +128,12 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -5
+				add_devastation = -2.5
 			}
 			
 			if = {
 				limit = {
-					devastation = 30
+					devastation = 50
 					NOT = {
 						has_global_flag = DVE_Realism_Mode
 					}
@@ -143,13 +143,16 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
-				add_devastation = -2.5
+				add_devastation = -5
 			}
 			
 			if = { 
 				limit = {
 					devastation = 5
-					has_global_flag = DVE_Realism_Mode
+					OR = {
+						has_global_flag = DVE_Realism_Mode
+						has_global_flag = DVE_Madness_Mode
+					}
 				}
 				random_list = { #once every year, -400 dev total
 					1 = { add_base_manpower = -1 }
@@ -160,7 +163,10 @@ country_event = {
 			if = { 
 				limit = {
 					devastation = 10
-					has_global_flag = DVE_Realism_Mode
+					OR = {
+						has_global_flag = DVE_Realism_Mode
+						has_global_flag = DVE_Madness_Mode
+					}
 				}
 				random_list = { #once every year, -400 dev total
 					1 = { add_base_manpower = -1 }
@@ -171,7 +177,10 @@ country_event = {
 			if = { 
 				limit = {
 					devastation = 25
-					has_global_flag = DVE_Realism_Mode
+					OR = {
+						has_global_flag = DVE_Realism_Mode
+						has_global_flag = DVE_Madness_Mode
+					}
 				}
 				random_list = { #once every year, -400 dev total
 					1 = { add_base_manpower = -1 }
@@ -232,8 +241,8 @@ country_event = {
 					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years
-					87 = { } #3/90 1/30
+				random_list = { #once every 40 years
+					117 = { } #3/120 1/40
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -251,8 +260,8 @@ country_event = {
 					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 50 years
-					147 = { } #3/150 1/50
+				random_list = { #once every 60 years
+					177 = { } #3/180 1/60
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -273,8 +282,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 40 years
-					117 = { } #3/120 1/40
+				random_list = { #once every 50 years
+					147 = { } #3/150 1/50
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -294,8 +303,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 60 years
-					177 = { } #3/180, 1/60
+				random_list = { #once every 70 years
+					207 = { } #3/210, 1/70
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -315,8 +324,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 30 years
-					87 = { } #3/90 1/30
+				random_list = { #once every 40 years
+					117 = { } #3/120 1/40
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -336,8 +345,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 40 years
-					117 = { }
+				random_list = { #once every 60 years
+					177 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -356,8 +365,8 @@ country_event = {
 					is_territory = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 20 years, +20 dev total (+40 dev total, once every 10 years)
-					57 = { }
+				random_list = { #once every 30 years
+					87 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -839,6 +848,7 @@ country_event = {
 					#NOT = { culture = PREV }
 					NOT = { devastation = 1 }
 				}
+				NOT = { has_province_modifier = New_Settlers }
 			}
 			random_neighbor_province = {
 				limit = {
@@ -866,6 +876,7 @@ country_event = {
 						amount = 1
 					}
 				}
+				NOT = { is_capital }
 			}
 			random_neighbor_province = {	
 				#limit = {
