@@ -876,7 +876,7 @@ country_event = {
 						amount = 1
 					}
 				}
-				NOT = { is_capital }
+				NOT = { is_capital = yes }
 			}
 			random_neighbor_province = {	
 				#limit = {
