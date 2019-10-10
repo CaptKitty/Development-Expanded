@@ -18,9 +18,13 @@
  DVE_Events.5.b:0 "Pay people to resettle the region"
  
  DVE_Events.8.t: "Development Expanded"
- DVE_Events.8.d: "Welcome to Development Expanded \n A This mod will aim to let your actions and behaviours affect the natural landscape. \n \n.  Madness Mode provides fast growth and decay at 10 times the rate of normal \n \n Normal Mode offers dyamic development growth and decline within reason and safeguards against a deathspiral or raiding for the AI's sake \n \n Realism mode is a harsh alternative with no safeguards against deathspirals that can drive countries into ruin with ease and a much higher rate of decay."
- DVE_Events.8.a: "Madness Mode,(Not advised)"
- DVE_Events.8.b: "Normal Mode"
- DVE_Events.8.c: "Realism Mode, (Slower Growth and faster Decay)"
+ DVE_Events.8.d: "Welcome to Development Expanded \n A This mod will aim to let your actions and behaviours affect the natural landscape. \n \n Madness Mode provides fast growth and decay at 10 times the rate of normal \n \n Normal Mode offers dyamic development growth and decline within reason and safeguards against a deathspiral or raiding for the AI's sake \n \n Realism mode is a harsh alternative with no safeguards against deathspirals that can drive countries into ruin with ease and a much higher rate of decay."
+ DVE_Events.8.a: "Madness Mode,(Not advised)."
+ DVE_Events.8.b: "Normal Mode."
+ DVE_Events.8.c: "Realism Mode, (Slower Growth and faster Decay)."
  
- 
+ DVE_Events.9.t: "Culture Expanded"
+ DVE_Events.9.d: "Welcome to Development Expanded \n Select your preferred type of culture conversion here! \n \n What kind of ruler are you?"
+ DVE_Events.9.a: "Genocide is my favorite past-time."
+ DVE_Events.9.b: "I like dynamic cultures in some occations."
+ DVE_Events.9.c: "Fuck off Jay."

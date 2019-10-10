@@ -54,6 +54,10 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
+				add_permanent_province_modifier = {
+					name = "Fallow_Lands"
+					duration = 3650
+				}
 			}
 			if = {
 				limit = {
@@ -74,6 +78,10 @@ country_event = {
 					1 = { add_base_tax = -1 }
 					1 = { add_base_production = -1 }
 				}
+				add_permanent_province_modifier = {
+					name = "Fallow_Lands"
+					duration = 3650
+				}
 			}
 			if = {
 				limit = {
@@ -86,6 +94,10 @@ country_event = {
 						owner = {
 							was_player = yes
 						}
+					}
+					add_permanent_province_modifier = {
+						name = "Fallow_Lands"
+						duration = 3650
 					}
 				}
 				random_list = { #once every 3 years, -100 dev total
@@ -107,6 +119,10 @@ country_event = {
 							was_player = yes
 						}
 					}
+					add_permanent_province_modifier = {
+						name = "Fallow_Lands"
+						duration = 3650
+					}
 				}
 				random_list = { #once every 3 years, -200 dev total
 					6 = { }
@@ -118,7 +134,7 @@ country_event = {
 			
 			if = {
 				limit = {
-					devastation = 20
+					devastation = 15
 					NOT = {
 						has_global_flag = DVE_Realism_Mode
 					}
@@ -133,7 +149,7 @@ country_event = {
 			
 			if = {
 				limit = {
-					devastation = 50
+					devastation = 30
 					NOT = {
 						has_global_flag = DVE_Realism_Mode
 					}
@@ -210,9 +226,27 @@ country_event = {
 					}
 					is_territory = no
 					NOT = { devastation = 1 }
+					NOT = { development = 20 }
 				}
 				random_list = { #once every 30 years, +10 dev total
 					87 = { }
+					1 = { add_base_manpower = 1 }
+					1 = { add_base_tax = 1 }
+					1 = { add_base_production = 1 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_province_modifier = river_estuary_modifier
+						province_has_center_of_trade_of_level = 1
+					}
+					is_territory = no
+					NOT = { devastation = 1 }
+					development = 20
+				}
+				random_list = { #once every 50 years, +10 dev total
+					147 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -224,8 +258,8 @@ country_event = {
 					is_island = no
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 50 years, +8 dev total
-					147 = { }
+				random_list = { #once every 80 years
+					237 = { }
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -241,8 +275,8 @@ country_event = {
 					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 40 years
-					117 = { } #3/120 1/40
+				random_list = { #once every 60 years
+					177 = { } #3/120 1/40
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -260,8 +294,8 @@ country_event = {
 					}
 					NOT = { devastation = 1 }
 				}
-				random_list = { #once every 60 years
-					177 = { } #3/180 1/60
+				random_list = { #once every 80 years
+					237 = { } #3/180 1/60
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
@@ -441,6 +475,83 @@ country_event = {
 					1 = { add_base_manpower = 1 }
 					1 = { add_base_tax = 1 }
 					1 = { add_base_production = 1 }
+				}
+			}
+			
+			########## Culture Stuff ##########
+			
+			if = {
+				limit = {
+					NOT = { development = 4 }
+					devastation = 12
+					any_neighbor_province = {
+						#NOT = { culture = PREV }
+						NOT = { devastation = 1 }
+					}
+					NOT = { has_province_modifier = New_Settlers_1 }
+					has_global_flag = DVE_Fun_Mode_Culture
+				}
+				random_neighbor_province = {
+					limit = {
+						#NOT = { culture = PREV }
+						NOT = { devastation = 1 }
+					}
+					PREV = { change_culture = PREV }
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_devastation = -100
+				add_permanent_province_modifier = {
+					name = "New_Settlers_1"
+					duration = 5475
+				}
+			}
+			if = {
+				limit = {
+					NOT = { development = 10 }
+					devastation = 5
+					any_neighbor_province = {
+						#NOT = { culture = PREV }
+						NOT = { devastation = 1 }
+					}
+					has_global_flag = DVE_Madness_Mode_Culture
+
+				}
+				random_neighbor_province = {
+					limit = {
+						#NOT = { culture = PREV }
+						NOT = { devastation = 1 }
+					}
+					PREV = { change_culture = PREV }
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_devastation = -100
+				add_permanent_province_modifier = {
+					name = "New_Settlers"
+					duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						calc_true_if = {
+							any_neighbor_province = {
+								culture = PREV
+							}
+							amount = 1
+						}
+					}
+					NOT = { is_capital = yes }
+					NOT = { has_global_flag = DVE_No_Mode_Culture }
+				}
+				random_neighbor_province = {	
+					#limit = {
+						#NOT = { culture = PREV }
+					#}
+					PREV = { change_culture = PREV }
 				}
 			}
 		}
@@ -751,155 +862,32 @@ country_event = {
 	desc = DVE_Events.9.d
 	picture = EUROPEAN_REFUGEES_eventPicture
 	
-	mean_time_to_happen = {
-		days = 10950
-	}
+	fire_only_once = yes
 	
 	trigger = {
-		always = no
-		any_owned_area = {
-			AND = {
-				any_owned_province = {
-					center_of_trade = 1
-				}
-				any_owned_province = {
-					NOT = { center_of_trade = 1 }
-				}
-			}
-		}
+		was_player = yes
+		NOT = { has_global_flag = DVE_Madness_Mode_Culture }
+		NOT = { has_global_flag = DVE_Fun_Mode_Culture }
+		NOT = { has_global_flag = DVE_No_Mode_Culture }
 	}
-		
 	
-	immediate = {
-		random_owned_area = {
-			limit = {
-				AND = {
-					any_owned_province = {
-						center_of_trade = 1
-					}
-					any_owned_province = {
-						NOT = { center_of_trade = 1 }
-					}
-				}
-			}
-			random_owned_province = {
-				limit = {
-					center_of_trade = 1
-				}
-				save_event_target_as = urbanization_flag_one
-			}
-			random_owned_province = {
-				limit = {
-					NOT = { center_of_trade = 1 }
-				}
-				save_event_target_as = urbanization_flag_two
-			}
-		}
+	mean_time_to_happen = {
+		days = 1
 	}
+
 	option = {
 		name = DVE_Events.9.a
-		
-		event_target:urbanization_flag_one = {
-			add_base_manpower = 1
-			add_base_production = 1
-			add_base_tax = 1
-		}
-		event_target:urbanization_flag_two = {
-			add_base_manpower = -1
-			add_base_production = -1
-			add_base_tax = -1
-		}
+		set_global_flag = DVE_Madness_Mode_Culture
 	}
 	
-}
-
-country_event = {
-	id = DVE_Events.10
-	title = DVE_Events.10.t
-	desc = DVE_Events.10.d
-	picture = EUROPEAN_REFUGEES_eventPicture
-	hidden = yes
-	
-	mean_time_to_happen = {
-		days = 365
-		modifier = {
-			factor = 0.1
-			always = yes
-		}
-	}
-	
-	trigger = {
-		owns = 1
-	}
-		
-	
-	immediate = {
-		#random_owned_province = {
-		#	limit = {
-		#		#development = 3
-		#		#devastation = 10
-		#		random_neighbor_province = {
-		#			NOT = { culture = PREV }
-		#		}
-		#	}
-		#	random_neighbor_province = {
-		#		limit = {
-		#			NOT = { culture = PREV }
-		#		}
-		#		save_event_target_as = culture_flag_one
-		#	}
-		#	change_culture = event_target:culture_flag_one
-		#}
-		every_province = {
-			limit = {
-				NOT = { development = 7 }
-				devastation = 15
-				any_neighbor_province = {
-					#NOT = { culture = PREV }
-					NOT = { devastation = 1 }
-				}
-				NOT = { has_province_modifier = New_Settlers }
-			}
-			random_neighbor_province = {
-				limit = {
-					#NOT = { culture = PREV }
-					NOT = { devastation = 1 }
-				}
-				PREV = { change_culture = PREV }
-			}
-			add_base_tax = 1
-			add_base_production = 1
-			add_base_manpower = 1
-			add_devastation = -100
-			add_permanent_province_modifier = {
-				name = "New_Settlers"
-				duration = 3650
-			}
-		}
-		every_province = {
-			limit = {
-				NOT = {
-					calc_true_if = {
-						any_neighbor_province = {
-							culture = PREV
-						}
-						amount = 1
-					}
-				}
-				NOT = { is_capital = yes }
-			}
-			random_neighbor_province = {	
-				#limit = {
-					#NOT = { culture = PREV }
-				#}
-				PREV = { change_culture = PREV }
-			}
-		}
-	}
 	option = {
-		name = DVE_Events.10.a
-		
-		
+		name = DVE_Events.9.b
+		set_global_flag = DVE_Fun_Mode_Culture
+	}
+	
+	option = {
+		name = DVE_Events.9.c
+		set_global_flag = DVE_No_Mode_Culture
 	}
 	
 }

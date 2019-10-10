@@ -30,6 +30,13 @@ DVE_screw_england = {
 DVE_screw_lithuania = {
 	local_development_cost = 0.25
 }
-New_Settlers = {
+Fallow_Lands = {
 	local_development_cost = -0.10
+}
+New_Settlers = {
+	local_development_cost = -0.15
+}
+New_Settlers_1 = {
+	local_development_cost = -0.15
+	local_monthly_devastation = -0.20
 }

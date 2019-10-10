@@ -39,67 +39,76 @@ country_decisions = {
 				add_treasury = -500
 			}
 			
-			random_owned_area = {
+			random_owned_province = {
 				limit = {
-					OR = {
-						AND = {
-							NOT = { has_province_modifier = DVE_local_development_1 }
-							NOT = { has_province_modifier = DVE_local_development_2 }
-							NOT = { has_province_modifier = DVE_local_development_3 }
-							NOT = { has_province_modifier = DVE_local_development_4 }
+					all_province_in_state = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				every_province_in_state = {
+					limit = {
+						
+						OR = {
+							AND = {
+								NOT = { has_province_modifier = DVE_local_development_1 }
+								NOT = { has_province_modifier = DVE_local_development_2 }
+								NOT = { has_province_modifier = DVE_local_development_3 }
+								NOT = { has_province_modifier = DVE_local_development_4 }
+								NOT = { has_province_modifier = DVE_local_development_5 }
+							}
+							has_province_modifier = DVE_local_development_1
+							has_province_modifier = DVE_local_development_2
+							has_province_modifier = DVE_local_development_3
+							has_province_modifier = DVE_local_development_4
 							NOT = { has_province_modifier = DVE_local_development_5 }
 						}
-						has_province_modifier = DVE_local_development_1
-						has_province_modifier = DVE_local_development_2
-						has_province_modifier = DVE_local_development_3
-						has_province_modifier = DVE_local_development_4
-						NOT = { has_province_modifier = DVE_local_development_5 }
 					}
-				}
-				if = {
-					limit = {
-						has_province_modifier = DVE_local_development_4
+					if = {
+						limit = {
+							has_province_modifier = DVE_local_development_4
+						}
+						remove_province_modifier = DVE_local_development_4
+						add_province_modifier = {
+							name = DVE_local_development_5
+							duration = -1
+						}
 					}
-					remove_province_modifier = DVE_local_development_4
-					add_province_modifier = {
-						name = DVE_local_development_5
-						duration = -1
+					else_if = {
+						limit = {
+							has_province_modifier = DVE_local_development_3
+						}
+						remove_province_modifier = DVE_local_development_3
+						add_province_modifier = {
+							name = DVE_local_development_4
+							duration = -1
+						}
 					}
-				}
-				else_if = {
-					limit = {
-						has_province_modifier = DVE_local_development_3
+					else_if = {
+						limit = {
+							has_province_modifier = DVE_local_development_2
+						}
+						remove_province_modifier = DVE_local_development_2
+						add_province_modifier = {
+							name = DVE_local_development_3
+							duration = -1
+						}
 					}
-					remove_province_modifier = DVE_local_development_3
-					add_province_modifier = {
-						name = DVE_local_development_4
-						duration = -1
+					else_if = {
+						limit = {
+							has_province_modifier = DVE_local_development_1
+						}
+						remove_province_modifier = DVE_local_development_1
+						add_province_modifier = {
+							name = DVE_local_development_2
+							duration = -1
+						}
 					}
-				}
-				else_if = {
-					limit = {
-						has_province_modifier = DVE_local_development_2
-					}
-					remove_province_modifier = DVE_local_development_2
-					add_province_modifier = {
-						name = DVE_local_development_3
-						duration = -1
-					}
-				}
-				else_if = {
-					limit = {
-						has_province_modifier = DVE_local_development_1
-					}
-					remove_province_modifier = DVE_local_development_1
-					add_province_modifier = {
-						name = DVE_local_development_2
-						duration = -1
-					}
-				}
-				else = {
-					add_province_modifier = {
-						name = DVE_local_development_1
-						duration = -1
+					else = {
+						add_province_modifier = {
+							name = DVE_local_development_1
+							duration = -1
+						}
 					}
 				}
 			}
