@@ -28,12 +28,12 @@ country_event = {
 		every_province = {
 			limit = {
 				always = yes
-				NOT = {
-					OR = {
-						continent = north_america
-						continent = south_america
-					}
-				}
+				#NOT = {
+				#	OR = {
+				#		continent = north_america
+				#		continent = south_america
+				#	}
+				#}
 			}
 			
 			if = {
@@ -568,7 +568,6 @@ country_event = {
 			#pro-enclaves#
 			if = {
 				limit = {
-					is_state = yes
 					NOT = {
 						OR = {
 							has_owner_culture = yes
@@ -578,7 +577,7 @@ country_event = {
 					has_global_flag = DVE_Madness_Mode_Culture
 				}
 				random_list = {
-					198 = 0 #takes 200 years to convert a province on average
+					198 = { } #takes 100 years to convert a province on average
 					1 = {
 						random_neighbor_province = {
 							limit = {
