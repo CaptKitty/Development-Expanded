@@ -568,6 +568,7 @@ country_event = {
 			#pro-enclaves#
 			if = {
 				limit = {
+					is_state = yes
 					NOT = {
 						OR = {
 							has_owner_culture = yes
@@ -577,7 +578,7 @@ country_event = {
 					has_global_flag = DVE_Madness_Mode_Culture
 				}
 				random_list = {
-					#98 = 0
+					198 = 0 #takes 200 years to convert a province on average
 					1 = {
 						random_neighbor_province = {
 							limit = {

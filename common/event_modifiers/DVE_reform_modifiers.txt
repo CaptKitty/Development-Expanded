@@ -35,6 +35,7 @@ DVE_screw_russia = {
 }
 Fallow_Lands = {
 	local_development_cost = -0.10
+	local_monthly_devastation = -0.025
 }
 New_Settlers = {
 	local_development_cost = -0.15
