@@ -4,6 +4,19 @@ country_decisions = {
 			always = yes
 		}
 		allow = {
+			any_owned_province = {
+				is_state = yes
+				all_province = {
+					OR = {
+						NOT = { area = PREV }
+						AND = {
+							owned_by = ROOT
+							NOT = { has_province_modifier = DVE_local_development_5 }
+						}
+					}
+				}
+			}
+			
 			if = {
 				limit = {
 					NOT = { monthly_income = 16 }
@@ -12,7 +25,6 @@ country_decisions = {
 			}
 			else_if = {
 				limit = {
-					monthly_income = 16
 					NOT = { monthly_income = 80 }
 				}
 				years_of_income = 0.5
@@ -41,14 +53,22 @@ country_decisions = {
 			
 			random_owned_province = {
 				limit = {
-					all_province_in_state = {
-						type = all
-						owned_by = ROOT
+					is_state = yes
+					all_province = {
+						OR = {
+							NOT = { area = PREV }
+							AND = {
+								owned_by = ROOT
+								NOT = { has_province_modifier = DVE_local_development_5 }
+							}
+						}
 					}
 				}
-				every_province_in_state = {
+				every_province = {
 					limit = {
-						
+						area = PREV
+						owned_by = ROOT
+						NOT = { has_province_modifier = DVE_local_development_5 }
 						OR = {
 							AND = {
 								NOT = { has_province_modifier = DVE_local_development_1 }
@@ -61,7 +81,6 @@ country_decisions = {
 							has_province_modifier = DVE_local_development_2
 							has_province_modifier = DVE_local_development_3
 							has_province_modifier = DVE_local_development_4
-							NOT = { has_province_modifier = DVE_local_development_5 }
 						}
 					}
 					if = {
