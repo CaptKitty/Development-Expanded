@@ -571,14 +571,13 @@ country_event = {
 					NOT = {
 						OR = {
 							has_owner_culture = yes
-							has_owner_accepted_culture = yes
 						}
 					}
 					has_global_flag = DVE_Madness_Mode_Culture
 				}
 				random_list = {
-					198 = { } #takes 100 years to convert a province on average
-					1 = {
+					495 = { } #4/500 1/125 takes 125 years for a province to convert to its neighbour, and 1/500, takes 500 years to form an enclave
+					4 = {
 						random_neighbor_province = {
 							limit = {
 								owned_by = PREV
@@ -591,11 +590,10 @@ country_event = {
 						}
 					}
 					1 = {
-						random_owned_province = {
+						random_province = {
 							limit = {
-								OR = {
-									has_owner_culture = yes
-								}
+								owned_by = PREV
+								is_capital = yes
 							}
 							PREV = { change_culture = PREV }
 						}
