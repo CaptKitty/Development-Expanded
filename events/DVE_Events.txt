@@ -905,6 +905,12 @@ country_event = {
 		days = 1
 	}
 
+	immediate = {
+		clr_global_flag = DVE_Madness_Mode
+		clr_global_flag = DVE_Fun_Mode
+		clr_global_flag = DVE_Realism_Mode
+	}
+	
 	option = {
 		name = DVE_Events.8.a
 		set_global_flag = DVE_Madness_Mode
@@ -939,6 +945,12 @@ country_event = {
 	
 	mean_time_to_happen = {
 		days = 1
+	}
+	
+	immediate = {
+		clr_global_flag = DVE_Madness_Mode_Culture
+		clr_global_flag = DVE_Fun_Mode_Culture
+		clr_global_flag = DVE_No_Mode_Culture
 	}
 
 	option = {
