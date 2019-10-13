@@ -481,14 +481,14 @@ country_event = {
 			
 			if = {
 				limit = {
-					NOT = { development = 4 }
-					devastation = 10
+					NOT = { development = 10 }
+					devastation = 5
 					any_neighbor_province = {
 						#NOT = { culture = PREV }
 						NOT = { devastation = 1 }
 					}
 					NOT = { has_province_modifier = New_Settlers_1 }
-					has_global_flag = DVE_No_Mode_Culture
+					has_global_flag = DVE_Fun_Mode_Culture
 				}
 				random_neighbor_province = {
 					limit = {
@@ -571,6 +571,7 @@ country_event = {
 					NOT = {
 						OR = {
 							has_owner_culture = yes
+							has_owner_accepted_culture = yes
 						}
 					}
 					has_global_flag = DVE_Madness_Mode_Culture
@@ -589,6 +590,28 @@ country_event = {
 							PREV = { change_culture = PREV }
 						}
 					}
+					1 = {
+						random_province = {
+							limit = {
+								owned_by = PREV
+								is_capital = yes
+							}
+							PREV = { change_culture = PREV }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_owner_culture = yes
+						}
+					}
+					has_global_flag = DVE_Madness_Mode_Culture
+				}
+				random_list = {
+					499 = { } #1/500 1/125 takes 125 years for a province to convert to its neighbour, and 1/500, takes 500 years to form an enclave
 					1 = {
 						random_province = {
 							limit = {
