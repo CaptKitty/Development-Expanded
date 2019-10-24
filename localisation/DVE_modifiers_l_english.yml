@@ -11,6 +11,7 @@
  New_Settlers: "New Settlers"
  New_Settlers_1: "New Settlers"
  Fallow_Lands: "Fallow Lands"
+ Fallow_Lands_1: "Fallow Lands"
  
  DVE_regional_growth_spike: "Regional Growth Spike"
  DVE_scars_of_war: "Scars of War"
@@ -20,3 +21,5 @@
  desc_DVE_screw_lithuania: "The Mongol, Tatar and Turkic raids upon our lands have devastated our lands for decades to come. It will take a long time to repopulate the lands once held by the kievan rus."
  DVE_screw_russia: "Russian Winters"
  desc_DVE_screw_russia: "The Russian Winters are harsh and prevent the proper exploitation of the available natural resources."
+ DVE_screw_america: "American Fronteer"
+ desc_DVE_screw_america: "The new american lands are still underpopulated and underdeveloped from a lack of centuries of development."

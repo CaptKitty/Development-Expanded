@@ -31,18 +31,24 @@ DVE_screw_lithuania = {
 	local_development_cost = 0.25
 }
 DVE_screw_russia = {
+	local_development_cost = 0.15
+}
+DVE_screw_america = {
 	local_development_cost = 0.10
 }
 Fallow_Lands = {
 	local_development_cost = -0.10
 	local_monthly_devastation = -0.025
 }
+Fallow_Lands_1 = {
+	local_development_cost = -0.10
+}
 New_Settlers = {
 	local_development_cost = -0.15
 }
 New_Settlers_1 = {
 	local_development_cost = -0.15
-	local_monthly_devastation = -0.20
+	local_monthly_devastation = -0.10
 }
 Settler_Enclave = {
 	local_development_cost = -0.10
