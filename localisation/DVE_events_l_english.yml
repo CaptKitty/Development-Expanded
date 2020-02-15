@@ -22,6 +22,7 @@
  DVE_Events.8.a: "Madness Mode,(Not advised)."
  DVE_Events.8.b: "Normal Mode."
  DVE_Events.8.c: "Realism Mode, (Slower Growth and faster Decay)."
+ DVE_Events.8.d: "Hardcore Mode, (No growth, Not Advised)."
  
  DVE_Events.9.t: "Culture Expanded"
  DVE_Events.9.d: "Welcome to Development Expanded \n Select your preferred type of culture conversion here! \n \n What kind of ruler are you?"
