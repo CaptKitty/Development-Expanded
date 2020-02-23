@@ -1023,3 +1023,83 @@ country_event = {
 	}
 	
 }
+
+country_event = {
+	id = DVE_Events.10
+	title = DVE_Events.10.t
+	desc = DVE_Events.10.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	hidden = yes
+	
+	trigger = {
+		any_owned_province = {
+			OR = {
+				AND = {
+					development = 3
+					NOT = { development = 6 }
+					NOT = { trade_goods = livestock }
+				}
+				AND = {
+					development = 6
+					NOT = { development = 9 }
+					NOT = { trade_goods = grain }
+				}
+				AND = {
+					development = 9
+					NOT = { development = 12 }
+					NOT = { trade_goods = wine }
+				}
+				AND = {
+					development = 12
+					NOT = { development = 15 }
+					NOT = { trade_goods = paper }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		
+	}
+
+	option = {
+		name = DVE_Events.10.a
+		every_owned_province = {
+			limit = {
+				development = 3
+				NOT = { development = 6 }
+				NOT = { trade_goods = livestock }
+			}
+			change_trade_goods = livestock
+		}
+		every_owned_province = {
+			limit = {
+				development = 6
+				NOT = { development = 9 }
+				NOT = { trade_goods = grain }
+			}
+			change_trade_goods = grain
+		}
+		every_owned_province = {
+			limit = {
+				development = 9
+				NOT = { development = 12 }
+				NOT = { trade_goods = wine }
+			}
+			change_trade_goods = wine
+		}
+		every_owned_province = {
+			limit = {
+				development = 12
+				NOT = { development = 15 }
+				NOT = { trade_goods = paper }
+			}
+			change_trade_goods = paper
+		}
+	}
+	
+}
