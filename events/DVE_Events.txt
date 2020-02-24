@@ -1150,7 +1150,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = DVE_Events.11.a
+		name = DVE_Events.11.b
 		event_target:Livestock_to_Wool_Flag = {
 		add_base_tax = -3
 		add_base_production = 1
@@ -1203,12 +1203,120 @@ country_event = {
 		}
 	}
 	
+	#option = {
+	#	name = DVE_Events.12.b
+	#	event_target:Wool_To_Livestock_Flag = {
+	#		add_base_tax = 2
+	#		add_base_manpower = -2
+	#		add_base_production = -2
+	#	}
+	#}
+}
+
+country_event = {
+	id = DVE_Events.13
+	title = DVE_Events.13.t
+	desc = DVE_Events.13.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			OR = {
+				AND = {
+					base_tax = 10
+					trade_goods = wool
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3650
+		modifier = {
+			factor = 0.01
+			always = yes
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				AND = {
+					base_tax = 10
+					trade_goods = wool
+				}
+			}
+			save_event_target_as = Wool_to_Cloth_Flag
+		}
+	}
+
 	option = {
-		name = DVE_Events.12.b
-		event_target:Wool_To_Livestock_Flag = {
-			add_base_tax = 2
-			add_base_manpower = -2
-			add_base_production = -2
+		name = DVE_Events.13.a
+		event_target:Wool_to_Cloth_Flag = {
+			change_trade_goods = cloth
+		}
+	}
+	
+	option = {
+		name = DVE_Events.13.b
+		event_target:Wool_to_Cloth_Flag = {
+			add_base_tax = -2
+			add_base_manpower = 1
+			add_base_production = 1
+		}
+	}
+}
+
+country_event = {
+	id = DVE_Events.14
+	title = DVE_Events.14.t
+	desc = DVE_Events.14.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			OR = {
+				AND = {
+					base_tax = 15
+					trade_goods = cloth
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 3650
+		modifier = {
+			factor = 0.01
+			always = yes
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				AND = {
+					base_tax = 15
+					trade_goods = cloth
+				}
+			}
+			save_event_target_as = Cloth_to_Silk_Flag
+		}
+	}
+
+	option = {
+		name = DVE_Events.14.a
+		event_target:Cloth_to_Silk_Flag = {
+			change_trade_goods = silk
+		}
+	}
+	
+	option = {
+		name = DVE_Events.14.b
+		event_target:Cloth_to_Silk_Flag = {
+			add_base_tax = -2
+			add_base_manpower = 1
+			add_base_production = 1
 		}
 	}
 }
