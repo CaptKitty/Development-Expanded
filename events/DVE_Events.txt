@@ -626,6 +626,7 @@ country_event = {
 				primary_culture = PREV
 			}
 		}
+		NOT = { always = yes }
 	}
 	
 	mean_time_to_happen = {

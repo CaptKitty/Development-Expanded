@@ -1,0 +1,7 @@
+spriteTypes = {
+	# Mod Icon:
+	spriteType = {
+		name = "GFX_mod_icon_development_expanded"
+		textureFile = "gfx/interface/expanded_mod_family/development_expanded_icon_active.dds"
+	}
+}
