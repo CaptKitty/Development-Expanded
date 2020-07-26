@@ -479,34 +479,70 @@ country_event = {
 			
 			########## Culture Stuff ##########
 			
-			# if = {
-				# limit = {
-					# NOT = { development = 4 }
-					# devastation = 10
-					# any_neighbor_province = {
-						# #NOT = { culture = PREV }
-						# NOT = { devastation = 1 }
-					# }
-					# NOT = { has_province_modifier = New_Settlers_1 }
-					# has_global_flag = DVE_No_Mode_Culture
-				# }
-				# random_neighbor_province = {
-					# limit = {
-						# #NOT = { culture = PREV }
-						# NOT = { devastation = 1 }
-					# }
-					# PREV = { change_culture = PREV }
-					# PREV = { change_religion = PREV }
-				# }
-				# add_base_tax = 1
-				# add_base_production = 1
-				# add_base_manpower = 1
-				# add_devastation = -100
-				# add_permanent_province_modifier = {
-					# name = "New_Settlers_1"
-					# duration = 5475
-				# }
-			# }
+			if = {
+				limit = {
+					NOT = { development = 4 }
+					devastation = 10
+					any_neighbor_province = {
+						#NOT = { culture = PREV }
+						NOT = { devastation = 1 }
+					}
+					NOT = { has_province_modifier = New_Settlers_1 }
+					has_global_flag = has_global_flag = DVE_Fun_Mode_Culture
+				}
+				if = {
+					limit = {
+						has_terrain = mountain
+					}
+					random_list = {
+						33 = {
+							random_neighbor_province = {
+								limit = {
+									#NOT = { culture = PREV }
+									NOT = { devastation = 1 }
+								}
+								PREV = { change_culture = PREV }
+								PREV = { change_religion = PREV }
+							}
+							add_base_tax = 1
+							add_base_production = 1
+							add_base_manpower = 1
+							add_devastation = -100
+							add_devastation = 5
+							add_permanent_province_modifier = {
+								name = "New_Settlers_1"
+								duration = 5475
+							}
+						}
+						66 = {
+							add_base_tax = 1
+							add_base_production = 1
+							add_base_manpower = 1
+							add_devastation = -100
+							add_devastation = 5
+						}
+					}
+				}
+				else = {
+					random_neighbor_province = {
+						limit = {
+							#NOT = { culture = PREV }
+							NOT = { devastation = 1 }
+						}
+						PREV = { change_culture = PREV }
+						PREV = { change_religion = PREV }
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					add_devastation = -100
+					add_devastation = 5
+					add_permanent_province_modifier = {
+						name = "New_Settlers_1"
+						duration = 5475
+					}
+				}
+			}
 			if = {
 				limit = {
 					NOT = { development = 10 }
@@ -515,26 +551,58 @@ country_event = {
 						#NOT = { culture = PREV }
 						NOT = { devastation = 1 }
 					}
-					OR = {
-						has_global_flag = DVE_Fun_Mode_Culture
-						has_global_flag = DVE_Madness_Mode_Culture
-					}
+					has_global_flag = DVE_Madness_Mode_Culture
 				}
-				random_neighbor_province = {
+				if = {
 					limit = {
-						#NOT = { culture = PREV }
-						NOT = { devastation = 1 }
+						has_terrain = mountain
 					}
-					PREV = { change_culture = PREV }
-					PREV = { change_religion = PREV }
+					random_list = {
+						33 = {
+							random_neighbor_province = {
+								limit = {
+									#NOT = { culture = PREV }
+									NOT = { devastation = 1 }
+								}
+								PREV = { change_culture = PREV }
+								PREV = { change_religion = PREV }
+							}
+							add_base_tax = 1
+							add_base_production = 1
+							add_base_manpower = 1
+							add_devastation = -100
+							add_devastation = 5
+							add_permanent_province_modifier = {
+								name = "New_Settlers_1"
+								duration = 5475
+							}
+						}
+						66 = {
+							add_base_tax = 1
+							add_base_production = 1
+							add_base_manpower = 1
+							add_devastation = -100
+							add_devastation = 5
+						}
+					}
 				}
-				add_base_tax = 1
-				add_base_production = 1
-				add_base_manpower = 1
-				add_devastation = -100
-				add_permanent_province_modifier = {
-					name = "New_Settlers"
-					duration = 3650
+				else = {
+					random_neighbor_province = {
+						limit = {
+							NOT = { culture = PREV }
+							#NOT = { devastation = 1 }
+						}
+						PREV = { change_culture = PREV }
+						PREV = { change_religion = PREV }
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+					add_devastation = -100
+					add_permanent_province_modifier = {
+						name = "New_Settlers"
+						duration = 3650
+					}
 				}
 			}
 			#anti-enclaves#
