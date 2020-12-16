@@ -1,0 +1,30 @@
+﻿l_spanish:
+ 
+ DVE_Events.2.t:0 "Crisis de Refugiados"
+ DVE_Events.2.d:0 "La [refugee_crisis_flag.Culture.GetName] gente de [refugee_crisis_flag.GetName] parece estar buscando refugio desde la conquista de sus tierras. Se están moviendo hacia [refugee_crisis_receiver_flag.GetName], donde sus hermanos los esperan."
+ DVE_Events.2.a:0 "Menos problemas para nosotros."
+
+ DVE_Events.3.t:0 "Nosotros Quemamos"
+ DVE_Events.3.d:0 "Nosotros quemamos, saqueamos y violamos, no les mostramos piedad, solo los quemamos, la carne se convierte en cenizas"
+ DVE_Events.3.a:0 "No hay crimen si no te atrapan..."
+
+ DVE_Events.4.t:0 "Auge de Población"
+ DVE_Events.4.d:0 "La población local ha crecido y gozado y las familias se encuentran grandes y llenas de espíritu. Sigamos promoviendo su bienestar."
+ DVE_Events.4.a:0 "¡Enhorabuena!"
+ 
+ DVE_Events.5.t:0 "Ellos Destruyen"
+ DVE_Events.5.d:0 "Una de nuestras regiones que ha sido atacada durante la guerra ha reportado más daños de los esperados originalmente, podría tomar décadas recuperarse de los daños infligidos."
+ DVE_Events.5.a:0 "Así es la vida"
+ DVE_Events.5.b:0 "Pagar a la gente para que se re-ubiquen en esta región"
+ 
+ DVE_Events.8.t: "Development Expanded"
+ DVE_Events.8.d: "Bienvenido a Development Expanded \n Este mod tendrá como objetivo permitir que tus acciones y comportamientos afecten el entorno natural. \n \n El modo Locura proporciona un rápido crecimiento y decadencia a 10 veces la velocidad normal \n \n El modo normal ofrece un crecimiento y declive de desarrollo dinámico dentro de lo razonable y te salvaguarda contra el caos absoluto o incursiones por el bien de la IA \n \n El modo de realismo es una alternativa dura sin garantías contra el caos absoluto que puede conducir a los países a la ruina con facilidad y una tasa de descomposición mucho mayor."
+ DVE_Events.8.a: "Modo Locura,(¡No se recomienda!)."
+ DVE_Events.8.b: "Modo Normal."
+ DVE_Events.8.c: "Modo Realismo, (Crecimiento más lento, Decadencia más rápida)."
+ 
+ DVE_Events.9.t: "Culture Expanded"
+ DVE_Events.9.d: "Bienvenido a Development Expanded \n ¡Selecciona tu tipo de conversión cultural preferido aquí! \n \n ¿Qué tipo de gobernante eres?"
+ DVE_Events.9.a: "El genocidio es mi pasatiempo favorito. (Cambios rápidos durante guerras desastrozas)"
+ DVE_Events.9.b: "Me gusta que las culturas sean dinámicas.(Las culturas cambian con guerras grandes)"
+ DVE_Events.9.c: "Prefiero que las culturas se mantengan estables. (No hay cambio cultural durante guerras)"
