@@ -1,1041 +1,2183 @@
 namespace = DVE_Events
-
-country_event = {
-	id = DVE_Events.1
-	title = DVE_Events.1.t
-	desc = DVE_Events.1.d
-	picture = WESTERNISATION_eventPicture
-	hidden = yes
-	
-
-	trigger = {
-		owns = 1
-	}
-	
-	mean_time_to_happen = {
-		days = 365
-		modifier = {
-			factor = 0.1
-			has_global_flag = DVE_Madness_Mode
-		}
-		modifier = {
-			factor = 1
-			has_global_flag = DVE_Fun_Mode
-		}
-	}
-	
-	immediate = {
-		every_province = {
-			limit = {
-				always = yes
-				#NOT = {
-				#	OR = {
-				#		continent = north_america
-				#		continent = south_america
-				#	}
-				#}
-			}
-			
-			if = {
-				limit = {
-					devastation = 1
-					OR = {
-						NOT = { has_province_modifier = slaves_raided }
-						has_global_flag = DVE_Realism_Mode
-						has_global_flag = DVE_Madness_Mode
-						owner = {
-							was_player = yes
-						}
-					}
-				}
-				random_list = { #once every 3 years, -100 dev total
-					6 = { }
-					1 = { add_base_manpower = -1 add_devastation = -1 }
-					1 = { add_base_tax = -1 add_devastation = -1 }
-					1 = { add_base_production = -1 add_devastation = -1 }
-				}
-				add_permanent_province_modifier = {
-					name = "Fallow_Lands"
-					duration = 3650
-				}
-			}
-			if = {
-				limit = {
-					development = 10
-					devastation = 1
-					OR = {
-						NOT = { has_province_modifier = slaves_raided }
-						has_global_flag = DVE_Realism_Mode
-						has_global_flag = DVE_Madness_Mode
-						owner = {
-							was_player = yes
-						}
-					}
-				}
-				random_list = { #once every 3 years, -100 dev total
-					6 = { }
-					1 = { add_base_manpower = -1 add_devastation = -1 }
-					1 = { add_base_tax = -1 add_devastation = -1 }
-					1 = { add_base_production = -1 add_devastation = -1 }
-				}
-				add_permanent_province_modifier = {
-					name = "Fallow_Lands"
-					duration = 3650
-				}
-			}
-			if = {
-				limit = {
-					development = 20
-					devastation = 1
-					OR = {
-						NOT = { has_province_modifier = slaves_raided }
-						has_global_flag = DVE_Realism_Mode
-						has_global_flag = DVE_Madness_Mode
-						owner = {
-							was_player = yes
-						}
-					}
-					add_permanent_province_modifier = {
-						name = "Fallow_Lands"
-						duration = 3650
-					}
-				}
-				random_list = { #once every 3 years, -100 dev total
-					6 = { }
-					1 = { add_base_manpower = -1 add_devastation = -1 }
-					1 = { add_base_tax = -1 add_devastation = -1 }
-					1 = { add_base_production = -1 add_devastation = -1 }
-				}
-			}
-			if = {
-				limit = {
-					development = 30
-					devastation = 1
-					OR = {
-						NOT = { has_province_modifier = slaves_raided }
-						has_global_flag = DVE_Realism_Mode
-						has_global_flag = DVE_Madness_Mode
-						owner = {
-							was_player = yes
-						}
-					}
-					add_permanent_province_modifier = {
-						name = "Fallow_Lands"
-						duration = 3650
-					}
-				}
-				random_list = { #once every 3 years, -200 dev total
-					6 = { }
-					1 = { add_base_manpower = -2 add_devastation = -2 }
-					1 = { add_base_tax = -2 add_devastation = -2 }
-					1 = { add_base_production = -2 add_devastation = -2 }
-				}
-			}
-			
-			if = {
-				limit = {
-					devastation = 15
-					NOT = {
-						has_global_flag = DVE_Realism_Mode
-					}
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				add_devastation = -2.5
-			}
-			
-			if = {
-				limit = {
-					devastation = 30
-					NOT = {
-						has_global_flag = DVE_Realism_Mode
-					}
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				add_devastation = -5
-			}
-			
-			if = { 
-				limit = {
-					devastation = 5
-					OR = {
-						has_global_flag = DVE_Realism_Mode
-					}
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				add_devastation = -1 
-			}
-			if = { 
-				limit = {
-					devastation = 10
-					OR = {
-						has_global_flag = DVE_Realism_Mode
-						has_global_flag = DVE_Madness_Mode
-					}
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				add_devastation = -1
-			}
-			if = { 
-				limit = {
-					devastation = 25
-					OR = {
-						has_global_flag = DVE_Realism_Mode
-						has_global_flag = DVE_Madness_Mode
-					}
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				random_list = { #once every year, -400 dev total
-					1 = { add_base_manpower = -1 }
-					1 = { add_base_tax = -1 }
-					1 = { add_base_production = -1 }
-				}
-				add_devastation = -3
-			}
-			
-			
-			#Growth
-			
-			if = {
-				limit = {
-					OR = {
-						has_province_modifier = river_estuary_modifier
-						province_has_center_of_trade_of_level = 1
-					}
-					is_territory = no
-					NOT = { devastation = 1 }
-					NOT = { development = 20 }
-				}
-				random_list = { #once every 30 years, +10 dev total
-					87 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					OR = {
-						has_province_modifier = river_estuary_modifier
-						province_has_center_of_trade_of_level = 1
-					}
-					is_territory = no
-					NOT = { devastation = 1 }
-					development = 20
-				}
-				random_list = { #once every 50 years, +10 dev total
-					147 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					has_port = yes
-					is_island = no
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 80 years
-					237 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					is_prosperous = yes 
-					OR = {
-						has_terrain = farmlands 
-						has_terrain = grasslands
-						has_terrain = woods
-					}
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 60 years
-					177 = { } #3/120 1/40
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					is_prosperous = yes 
-					NOT = {
-						OR = {
-							has_terrain = farmlands 
-							has_terrain = grasslands
-							has_terrain = woods
-						}
-					}
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 80 years
-					237 = { } #3/180 1/60
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			
-			if = {
-				limit = {
-					owner = {
-						NOT = {
-							has_global_modifier_value = {
-								which = development_cost 
-								value = -0.14
-							}
-						}
-					}
-					NOT = { development = 10 }
-					is_territory = no
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 50 years
-					147 = { } #3/150 1/50
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					owner = {
-						NOT = {
-							has_global_modifier_value = {
-								which = development_cost 
-								value = -0.14
-							}
-						}
-					}
-					development = 10
-					is_territory = no
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 70 years
-					207 = { } #3/210, 1/70
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					owner = {
-						NOT = {
-							has_global_modifier_value = {
-								which = development_cost 
-								value = -0.29
-							}
-						}
-					}
-					NOT = { development = 20 }
-					is_territory = no
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 40 years
-					117 = { } #3/120 1/40
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					owner = {
-						NOT = {
-							has_global_modifier_value = {
-								which = development_cost 
-								value = -0.29
-							}
-						}
-					}
-					development = 20
-					is_territory = no
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 60 years
-					177 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					owner = {
-						NOT = {
-							has_global_modifier_value = {
-								which = development_cost 
-								value = -0.49
-							}
-						}
-					}
-					is_territory = no
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 30 years
-					87 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_local_modifier_value = {
-							which = local_development_cost 
-							value = -0.15
-						}
-					}
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 5 years
-					12 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_local_modifier_value = {
-							which = local_development_cost 
-							value = 0.10
-						}
-					}
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 10 years
-					27 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_local_modifier_value = {
-							which = local_development_cost 
-							value = 0.30
-						}
-					}
-					NOT = { development = 6 }
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 15 years
-					42 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_local_modifier_value = {
-							which = local_development_cost 
-							value = 0.25
-						}
-					}
-					development = 6
-					NOT = { development = 10 }
-					NOT = { devastation = 1 }
-				}
-				random_list = { #once every 20 years
-					57 = { }
-					1 = { add_base_manpower = 1 }
-					1 = { add_base_tax = 1 }
-					1 = { add_base_production = 1 }
-				}
-			}
-			
-			########## Culture Stuff ##########
-			
-			if = {
-				limit = {
-					NOT = { development = 4 }
-					devastation = 10
-					any_neighbor_province = {
-						#NOT = { culture = PREV }
-						NOT = { devastation = 1 }
-					}
-					NOT = { has_province_modifier = New_Settlers_1 }
-					has_global_flag = has_global_flag = DVE_Fun_Mode_Culture
-				}
-				if = {
-					limit = {
-						has_terrain = mountain
-					}
-					random_list = {
-						33 = {
-							random_neighbor_province = {
-								limit = {
-									#NOT = { culture = PREV }
-									NOT = { devastation = 1 }
-								}
-								PREV = { change_culture = PREV }
-								PREV = { change_religion = PREV }
-							}
-							add_base_tax = 1
-							add_base_production = 1
-							add_base_manpower = 1
-							add_devastation = -100
-							add_devastation = 5
-							add_permanent_province_modifier = {
-								name = "New_Settlers_1"
-								duration = 5475
-							}
-						}
-						66 = {
-							add_base_tax = 1
-							add_base_production = 1
-							add_base_manpower = 1
-							add_devastation = -100
-							add_devastation = 5
-						}
-					}
-				}
-				else = {
-					random_neighbor_province = {
-						limit = {
-							#NOT = { culture = PREV }
-							NOT = { devastation = 1 }
-						}
-						PREV = { change_culture = PREV }
-						PREV = { change_religion = PREV }
-					}
-					add_base_tax = 1
-					add_base_production = 1
-					add_base_manpower = 1
-					add_devastation = -100
-					add_devastation = 5
-					add_permanent_province_modifier = {
-						name = "New_Settlers_1"
-						duration = 5475
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = { development = 10 }
-					devastation = 5
-					any_neighbor_province = {
-						#NOT = { culture = PREV }
-						NOT = { devastation = 1 }
-					}
-					has_global_flag = DVE_Madness_Mode_Culture
-				}
-				if = {
-					limit = {
-						has_terrain = mountain
-					}
-					random_list = {
-						33 = {
-							random_neighbor_province = {
-								limit = {
-									#NOT = { culture = PREV }
-									NOT = { devastation = 1 }
-								}
-								PREV = { change_culture = PREV }
-								PREV = { change_religion = PREV }
-							}
-							add_base_tax = 1
-							add_base_production = 1
-							add_base_manpower = 1
-							add_devastation = -100
-							add_permanent_province_modifier = {
-								name = "New_Settlers_1"
-								duration = 5475
-							}
-						}
-						66 = {
-							add_base_tax = 1
-							add_base_production = 1
-							add_base_manpower = 1
-							add_devastation = -100
-						}
-					}
-				}
-				else = {
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = PREV }
-							#NOT = { devastation = 1 }
-						}
-						PREV = { change_culture = PREV }
-						PREV = { change_religion = PREV }
-					}
-					add_base_tax = 1
-					add_base_production = 1
-					add_base_manpower = 1
-					add_devastation = -100
-					add_permanent_province_modifier = {
-						name = "New_Settlers"
-						duration = 3650
-					}
-				}
-			}
-			#anti-enclaves#
-			if = {
-				limit = {
-					NOT = {
-						calc_true_if = {
-							any_neighbor_province = {
-								culture = PREV
-							}
-							amount = 1
-						}
-					}
-					NOT = { is_capital = yes }
-					NOT = { 
-						OR = {
-							has_owner_culture = yes
-							has_owner_accepted_culture = yes
-						}
-					}
-					NOT = { has_global_flag = DVE_No_Mode_Culture }
-				}
-				random_neighbor_province = {
-					#limit = {
-						#NOT = { culture = PREV }
-					#}
-					PREV = { change_culture = PREV }
-					PREV = { change_religion = PREV }
-				}
-			}
-			#pro-enclaves#
-			if = {
-				limit = {
-					NOT = {
-						OR = {
-							has_owner_culture = yes
-						}
-					}
-					has_global_flag = DVE_Madness_Mode_Culture
-				}
-				random_list = {
-					495 = { } #4/500 1/125 takes 125 years for a province to convert to its neighbour, and 1/500, takes 500 years to form an enclave
-					4 = {
-						random_neighbor_province = {
-							limit = {
-								owned_by = PREV
-								OR = {
-									has_owner_culture = yes
-									has_owner_accepted_culture = yes
-								}
-							}
-							PREV = { change_culture = PREV }
-						}
-					}
-					1 = {
-						random_province = {
-							limit = {
-								owned_by = PREV
-								is_capital = yes
-							}
-							PREV = { change_culture = PREV }
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = DVE_Events.1.a
+# #{
+# 	country_event = {
+# 		id = DVE_Events.1
+# 		title = DVE_Events.1.t
+# 		desc = DVE_Events.1.d
+# 		picture = WESTERNISATION_eventPicture
+# 		hidden = yes
 		
-	}
-}
 
-country_event = {
-	id = DVE_Events.2
-	title = DVE_Events.2.t
-	desc = DVE_Events.2.d
+# 		trigger = {
+# 			owns = 1
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 365
+# 			modifier = {
+# 				factor = 0.1
+# 				has_global_flag = DVE_Madness_Mode
+# 			}
+# 			modifier = {
+# 				factor = 1
+# 				has_global_flag = DVE_Fun_Mode
+# 			}
+# 		}
+		
+# 		immediate = {
+# 			every_province = {
+# 				limit = {
+# 					always = yes
+# 					#NOT = {
+# 					#	OR = {
+# 					#		continent = north_america
+# 					#		continent = south_america
+# 					#	}
+# 					#}
+# 				}
+				
+# 				if = {
+# 					limit = {
+# 						devastation = 1
+# 						OR = {
+# 							NOT = { has_province_modifier = slaves_raided }
+# 							has_global_flag = DVE_Realism_Mode
+# 							has_global_flag = DVE_Madness_Mode
+# 							owner = {
+# 								was_player = yes
+# 							}
+# 						}
+# 					}
+# 					random_list = { #once every 3 years, -100 dev total
+# 						6 = { }
+# 						1 = { add_base_manpower = -1 add_devastation = -1 }
+# 						1 = { add_base_tax = -1 add_devastation = -1 }
+# 						1 = { add_base_production = -1 add_devastation = -1 }
+# 					}
+# 					add_permanent_province_modifier = {
+# 						name = "Fallow_Lands"
+# 						duration = 3650
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						development = 10
+# 						devastation = 1
+# 						OR = {
+# 							NOT = { has_province_modifier = slaves_raided }
+# 							has_global_flag = DVE_Realism_Mode
+# 							has_global_flag = DVE_Madness_Mode
+# 							owner = {
+# 								was_player = yes
+# 							}
+# 						}
+# 					}
+# 					random_list = { #once every 3 years, -100 dev total
+# 						6 = { }
+# 						1 = { add_base_manpower = -1 add_devastation = -1 }
+# 						1 = { add_base_tax = -1 add_devastation = -1 }
+# 						1 = { add_base_production = -1 add_devastation = -1 }
+# 					}
+# 					add_permanent_province_modifier = {
+# 						name = "Fallow_Lands"
+# 						duration = 3650
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						development = 20
+# 						devastation = 1
+# 						OR = {
+# 							NOT = { has_province_modifier = slaves_raided }
+# 							has_global_flag = DVE_Realism_Mode
+# 							has_global_flag = DVE_Madness_Mode
+# 							owner = {
+# 								was_player = yes
+# 							}
+# 						}
+# 						add_permanent_province_modifier = {
+# 							name = "Fallow_Lands"
+# 							duration = 3650
+# 						}
+# 					}
+# 					random_list = { #once every 3 years, -100 dev total
+# 						6 = { }
+# 						1 = { add_base_manpower = -1 add_devastation = -1 }
+# 						1 = { add_base_tax = -1 add_devastation = -1 }
+# 						1 = { add_base_production = -1 add_devastation = -1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						development = 30
+# 						devastation = 1
+# 						OR = {
+# 							NOT = { has_province_modifier = slaves_raided }
+# 							has_global_flag = DVE_Realism_Mode
+# 							has_global_flag = DVE_Madness_Mode
+# 							owner = {
+# 								was_player = yes
+# 							}
+# 						}
+# 						add_permanent_province_modifier = {
+# 							name = "Fallow_Lands"
+# 							duration = 3650
+# 						}
+# 					}
+# 					random_list = { #once every 3 years, -200 dev total
+# 						6 = { }
+# 						1 = { add_base_manpower = -2 add_devastation = -2 }
+# 						1 = { add_base_tax = -2 add_devastation = -2 }
+# 						1 = { add_base_production = -2 add_devastation = -2 }
+# 					}
+# 				}
+				
+# 				if = {
+# 					limit = {
+# 						devastation = 15
+# 						NOT = {
+# 							has_global_flag = DVE_Realism_Mode
+# 						}
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					add_devastation = -2.5
+# 				}
+				
+# 				if = {
+# 					limit = {
+# 						devastation = 30
+# 						NOT = {
+# 							has_global_flag = DVE_Realism_Mode
+# 						}
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					add_devastation = -5
+# 				}
+				
+# 				if = { 
+# 					limit = {
+# 						devastation = 5
+# 						OR = {
+# 							has_global_flag = DVE_Realism_Mode
+# 						}
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					add_devastation = -1 
+# 				}
+# 				if = { 
+# 					limit = {
+# 						devastation = 10
+# 						OR = {
+# 							has_global_flag = DVE_Realism_Mode
+# 							has_global_flag = DVE_Madness_Mode
+# 						}
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					add_devastation = -1
+# 				}
+# 				if = { 
+# 					limit = {
+# 						devastation = 25
+# 						OR = {
+# 							has_global_flag = DVE_Realism_Mode
+# 							has_global_flag = DVE_Madness_Mode
+# 						}
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					random_list = { #once every year, -400 dev total
+# 						1 = { add_base_manpower = -1 }
+# 						1 = { add_base_tax = -1 }
+# 						1 = { add_base_production = -1 }
+# 					}
+# 					add_devastation = -3
+# 				}
+				
+				
+# 				#Growth
+				
+# 				if = {
+# 					limit = {
+# 						OR = {
+# 							has_province_modifier = river_estuary_modifier
+# 							province_has_center_of_trade_of_level = 1
+# 						}
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 						NOT = { development = 20 }
+# 					}
+# 					random_list = { #once every 30 years, +10 dev total
+# 						87 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						OR = {
+# 							has_province_modifier = river_estuary_modifier
+# 							province_has_center_of_trade_of_level = 1
+# 						}
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 						development = 20
+# 					}
+# 					random_list = { #once every 50 years, +10 dev total
+# 						147 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						has_port = yes
+# 						is_island = no
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 80 years
+# 						237 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						is_prosperous = yes 
+# 						OR = {
+# 							has_terrain = farmlands 
+# 							has_terrain = grasslands
+# 							has_terrain = woods
+# 						}
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 60 years
+# 						177 = { } #3/120 1/40
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						is_prosperous = yes 
+# 						NOT = {
+# 							OR = {
+# 								has_terrain = farmlands 
+# 								has_terrain = grasslands
+# 								has_terrain = woods
+# 							}
+# 						}
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 80 years
+# 						237 = { } #3/180 1/60
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+				
+# 				if = {
+# 					limit = {
+# 						owner = {
+# 							NOT = {
+# 								has_global_modifier_value = {
+# 									which = development_cost 
+# 									value = -0.14
+# 								}
+# 							}
+# 						}
+# 						NOT = { development = 10 }
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 50 years
+# 						147 = { } #3/150 1/50
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						owner = {
+# 							NOT = {
+# 								has_global_modifier_value = {
+# 									which = development_cost 
+# 									value = -0.14
+# 								}
+# 							}
+# 						}
+# 						development = 10
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 70 years
+# 						207 = { } #3/210, 1/70
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						owner = {
+# 							NOT = {
+# 								has_global_modifier_value = {
+# 									which = development_cost 
+# 									value = -0.29
+# 								}
+# 							}
+# 						}
+# 						NOT = { development = 20 }
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 40 years
+# 						117 = { } #3/120 1/40
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						owner = {
+# 							NOT = {
+# 								has_global_modifier_value = {
+# 									which = development_cost 
+# 									value = -0.29
+# 								}
+# 							}
+# 						}
+# 						development = 20
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 60 years
+# 						177 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						owner = {
+# 							NOT = {
+# 								has_global_modifier_value = {
+# 									which = development_cost 
+# 									value = -0.49
+# 								}
+# 							}
+# 						}
+# 						is_territory = no
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 30 years
+# 						87 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							has_local_modifier_value = {
+# 								which = local_development_cost 
+# 								value = -0.15
+# 							}
+# 						}
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 5 years
+# 						12 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							has_local_modifier_value = {
+# 								which = local_development_cost 
+# 								value = 0.10
+# 							}
+# 						}
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 10 years
+# 						27 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							has_local_modifier_value = {
+# 								which = local_development_cost 
+# 								value = 0.30
+# 							}
+# 						}
+# 						NOT = { development = 6 }
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 15 years
+# 						42 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							has_local_modifier_value = {
+# 								which = local_development_cost 
+# 								value = 0.25
+# 							}
+# 						}
+# 						development = 6
+# 						NOT = { development = 10 }
+# 						NOT = { devastation = 1 }
+# 					}
+# 					random_list = { #once every 20 years
+# 						57 = { }
+# 						1 = { add_base_manpower = 1 }
+# 						1 = { add_base_tax = 1 }
+# 						1 = { add_base_production = 1 }
+# 					}
+# 				}
+				
+# 				########## Culture Stuff ##########
+				
+# 				if = {
+# 					limit = {
+# 						NOT = { development = 4 }
+# 						devastation = 10
+# 						any_neighbor_province = {
+# 							#NOT = { culture = PREV }
+# 							NOT = { devastation = 1 }
+# 						}
+# 						NOT = { has_province_modifier = New_Settlers_1 }
+# 						has_global_flag = DVE_Fun_Mode_Culture
+# 					}
+# 					if = {
+# 						limit = {
+# 							has_terrain = mountain
+# 						}
+# 						random_list = {
+# 							33 = {
+# 								random_neighbor_province = {
+# 									limit = {
+# 										#NOT = { culture = PREV }
+# 										NOT = { devastation = 1 }
+# 									}
+# 									PREV = { change_culture = PREV }
+# 									PREV = { change_religion = PREV }
+# 								}
+# 								add_base_tax = 1
+# 								add_base_production = 1
+# 								add_base_manpower = 1
+# 								add_devastation = -100
+# 								add_devastation = 5
+# 								add_permanent_province_modifier = {
+# 									name = "New_Settlers_1"
+# 									duration = 5475
+# 								}
+# 							}
+# 							66 = {
+# 								add_base_tax = 1
+# 								add_base_production = 1
+# 								add_base_manpower = 1
+# 								add_devastation = -100
+# 								add_devastation = 5
+# 							}
+# 						}
+# 					}
+# 					else = {
+# 						random_neighbor_province = {
+# 							limit = {
+# 								#NOT = { culture = PREV }
+# 								NOT = { devastation = 1 }
+# 							}
+# 							PREV = { change_culture = PREV }
+# 							PREV = { change_religion = PREV }
+# 						}
+# 						add_base_tax = 1
+# 						add_base_production = 1
+# 						add_base_manpower = 1
+# 						add_devastation = -100
+# 						add_devastation = 5
+# 						add_permanent_province_modifier = {
+# 							name = "New_Settlers_1"
+# 							duration = 5475
+# 						}
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						NOT = { development = 10 }
+# 						devastation = 5
+# 						any_neighbor_province = {
+# 							#NOT = { culture = PREV }
+# 							NOT = { devastation = 1 }
+# 						}
+# 						has_global_flag = DVE_Madness_Mode_Culture
+# 					}
+# 					if = {
+# 						limit = {
+# 							has_terrain = mountain
+# 						}
+# 						random_list = {
+# 							33 = {
+# 								random_neighbor_province = {
+# 									limit = {
+# 										#NOT = { culture = PREV }
+# 										NOT = { devastation = 1 }
+# 									}
+# 									PREV = { change_culture = PREV }
+# 									PREV = { change_religion = PREV }
+# 								}
+# 								add_base_tax = 1
+# 								add_base_production = 1
+# 								add_base_manpower = 1
+# 								add_devastation = -100
+# 								add_permanent_province_modifier = {
+# 									name = "New_Settlers_1"
+# 									duration = 5475
+# 								}
+# 							}
+# 							66 = {
+# 								add_base_tax = 1
+# 								add_base_production = 1
+# 								add_base_manpower = 1
+# 								add_devastation = -100
+# 							}
+# 						}
+# 					}
+# 					else = {
+# 						random_neighbor_province = {
+# 							limit = {
+# 								NOT = { culture = PREV }
+# 								#NOT = { devastation = 1 }
+# 							}
+# 							PREV = { change_culture = PREV }
+# 							PREV = { change_religion = PREV }
+# 						}
+# 						add_base_tax = 1
+# 						add_base_production = 1
+# 						add_base_manpower = 1
+# 						add_devastation = -100
+# 						add_permanent_province_modifier = {
+# 							name = "New_Settlers"
+# 							duration = 3650
+# 						}
+# 					}
+# 				}
+# 				#anti-enclaves#
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							calc_true_if = {
+# 								any_neighbor_province = {
+# 									culture = PREV
+# 								}
+# 								amount = 1
+# 							}
+# 						}
+# 						NOT = { is_capital = yes }
+# 						NOT = { 
+# 							OR = {
+# 								has_owner_culture = yes
+# 								has_owner_accepted_culture = yes
+# 							}
+# 						}
+# 						NOT = { has_global_flag = DVE_No_Mode_Culture }
+# 					}
+# 					random_neighbor_province = {
+# 						#limit = {
+# 							#NOT = { culture = PREV }
+# 						#}
+# 						PREV = { change_culture = PREV }
+# 						PREV = { change_religion = PREV }
+# 					}
+# 				}
+# 				#pro-enclaves#
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							OR = {
+# 								has_owner_culture = yes
+# 							}
+# 						}
+# 						has_global_flag = DVE_Madness_Mode_Culture
+# 					}
+# 					random_list = {
+# 						495 = { } #4/500 1/125 takes 125 years for a province to convert to its neighbour, and 1/500, takes 500 years to form an enclave
+# 						4 = {
+# 							random_neighbor_province = {
+# 								limit = {
+# 									owned_by = PREV
+# 									OR = {
+# 										has_owner_culture = yes
+# 										has_owner_accepted_culture = yes
+# 									}
+# 								}
+# 								PREV = { change_culture = PREV }
+# 							}
+# 						}
+# 						1 = {
+# 							random_province = {
+# 								limit = {
+# 									owned_by = PREV
+# 									is_capital = yes
+# 								}
+# 								PREV = { change_culture = PREV }
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.1.a
+			
+# 		}
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.2
+# 		title = DVE_Events.2.t
+# 		desc = DVE_Events.2.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+		
+
+# 		trigger = {
+# 			any_owned_province = {
+# 				nationalism = 10
+# 				NOT = { is_core = ROOT }
+# 				development = 6
+# 				any_country = {
+# 					is_neighbor_of = ROOT
+# 					primary_culture = PREV
+# 				}
+# 			}
+# 			NOT = { always = yes }
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 3650
+# 			modifier = {
+# 				factor = 1.5
+# 				has_reform = decentralize_reform
+# 			}
+# 			modifier = {
+# 				factor = 0.75
+# 				has_reform = centralize_reform
+# 			}
+# 			modifier = {
+# 				factor = 0.90
+# 				has_reform = letat_cest_moi_reform
+# 			}
+# 			modifier = {
+# 				factor = 0.75
+# 				full_idea_group = religious_ideas
+# 			}
+# 			modifier = {
+# 				factor = 1.5
+# 				full_idea_group = humanist_ideas
+# 			}
+# 		}
+		
+# 		immediate = {
+# 			hidden_effect = {
+# 				random_owned_province = {
+# 					limit = {
+# 						nationalism = 10
+# 						NOT = { is_core = ROOT }
+# 					}
+# 					save_event_target_as = refugee_crisis_flag
+# 				}
+# 				random_neighbor_country = {
+# 					limit = {
+# 						primary_culture = event_target:refugee_crisis_flag
+# 					}
+# 					random_owned_province = {
+# 						limit = {
+# 							culture = event_target:refugee_crisis_flag
+# 						}
+# 						save_event_target_as = refugee_crisis_receiver_flag
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		option = {
+# 			name = DVE_Events.2.a
+			
+# 			event_target:refugee_crisis_flag = {
+# 				add_base_manpower = -1
+# 				add_base_production = -1
+# 				add_base_tax = -1
+# 				add_nationalism = -10
+# 			}
+# 			event_target:refugee_crisis_receiver_flag = {
+# 				add_base_manpower = 1
+# 				add_base_production = 1
+# 				add_base_tax = 1
+# 			}
+# 		}
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.3
+# 		title = DVE_Events.3.t
+# 		desc = DVE_Events.3.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+		
+# 		is_triggered_only = yes
+		
+# 		immediate = {
+# 			every_province = {
+# 				set_base_manpower = 1
+# 				set_base_production = 1
+# 				set_base_tax = 1
+# 			}
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.3.a
+			
+			
+# 		}
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.4
+# 		title = DVE_Events.4.t
+# 		desc = DVE_Events.4.d
+# 		picture = CITY_DEVELOPMENT_eventPicture
+		
+
+# 		trigger = {
+# 			any_owned_province = {
+# 				is_prosperous = yes
+# 			}
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 7300
+# 			modifier = {
+# 				factor = 0.75
+# 				full_idea_group = economic_ideas
+# 			}
+# 		}
+
+# 		option = {
+# 			name = DVE_Events.4.a
+			
+# 			random_owned_area = {
+# 				limit = {
+# 					is_prosperous = yes
+# 				}
+# 				add_province_modifier = {
+# 					name = DVE_regional_growth_spike #-25% Local Dev Cost, -15% Local Build Cost
+# 					duration = 9125
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.5
+# 		title = DVE_Events.5.t
+# 		desc = DVE_Events.5.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+		
+
+# 		trigger = {
+# 			any_owned_province = {
+# 				devastation = 15
+# 			}
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 7300
+# 			modifier = {
+# 				factor = 1.25
+# 				full_idea_group = economic_ideas
+# 			}
+# 		}
+
+# 		option = {
+# 			name = DVE_Events.5.a
+			
+# 			random_owned_area = {
+# 				limit = {
+# 					devastation = 15
+# 				}
+# 				add_province_modifier = {
+# 					name = DVE_scars_of_war #+25% Local Dev Cost, -25% Goods Produced, -25% Tax income
+# 					duration = 9125
+# 				}
+# 			}
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.5.b
+			
+# 			add_years_of_income = -0.5
+# 			add_adm_power = -25
+# 		}
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.6
+# 		title = DVE_Events.6.t
+# 		desc = DVE_Events.6.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+# 		hidden = yes
+		
+# 		fire_only_once = yes
+		
+# 		trigger = { 
+# 			NOT = {
+# 				is_year = 1445
+# 			}
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 1
+# 		}
+
+# 		immediate = {
+# 			every_province = {
+# 				if = {
+# 					limit = {
+# 						region = british_isles_region
+# 					}
+# 					add_permanent_province_modifier = {
+# 						name = DVE_screw_england #+20% Local Development Cost
+# 						duration = 73000
+# 						picture = "development_icon"
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						OR = {
+# 							culture = ryazanian
+# 							culture = ruthenian
+# 						}
+# 					}
+# 					add_permanent_province_modifier = {
+# 						name = DVE_screw_lithuania #+25% Local Development Cost
+# 						duration = 36500
+# 						picture = "devestation_icon"
+# 					}
+# 				}
+# 				if = {
+# 					limit = {
+# 						OR = {
+# 							region = russia_region
+# 							region = ural_region
+# 						}
+# 					}
+# 					add_permanent_province_modifier = {
+# 						name = DVE_screw_russia #+10% Local Development Cost
+# 						duration = 36500
+# 						picture = "devestation_icon"
+# 					}
+# 				}
+# 			}
+# 		}
+# 		option = {
+# 			name = DVE_Events.6.a
+# 		}
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.7
+# 		title = DVE_Events.7.t
+# 		desc = DVE_Events.7.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+# 		hidden = yes
+		
+# 		fire_only_once = yes
+		
+# 			trigger = { 
+# 			NOT = {
+# 				is_year = 1445
+# 			}
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 1
+# 		}
+
+# 		immediate = {
+			
+# 		}
+# 		option = {
+# 			name = DVE_Events.7.a
+# 		}
+		
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.8
+# 		title = DVE_Events.8.t
+# 		desc = DVE_Events.8.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+		
+# 		fire_only_once = yes
+		
+# 		trigger = {
+# 			was_player = yes
+# 			NOT = { has_global_flag = DVE_Madness_Mode }
+# 			NOT = { has_global_flag = DVE_Fun_Mode }
+# 			NOT = { has_global_flag = DVE_Realism_Mode }
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 1
+# 		}
+
+# 		immediate = {
+# 			clr_global_flag = DVE_Madness_Mode
+# 			clr_global_flag = DVE_Fun_Mode
+# 			clr_global_flag = DVE_Realism_Mode
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.8.a
+# 			set_global_flag = DVE_Madness_Mode
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.8.b
+# 			set_global_flag = DVE_Fun_Mode
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.8.c
+# 			set_global_flag = DVE_Realism_Mode
+# 		}
+		
+# 	}
+
+# 	country_event = {
+# 		id = DVE_Events.9
+# 		title = DVE_Events.9.t
+# 		desc = DVE_Events.9.d
+# 		picture = EUROPEAN_REFUGEES_eventPicture
+		
+# 		fire_only_once = yes
+		
+# 		trigger = {
+# 			was_player = yes
+# 			NOT = { has_global_flag = DVE_Madness_Mode_Culture }
+# 			NOT = { has_global_flag = DVE_Fun_Mode_Culture }
+# 			NOT = { has_global_flag = DVE_No_Mode_Culture }
+# 		}
+		
+# 		mean_time_to_happen = {
+# 			days = 1
+# 		}
+		
+# 		immediate = {
+# 			clr_global_flag = DVE_Madness_Mode_Culture
+# 			clr_global_flag = DVE_Fun_Mode_Culture
+# 			clr_global_flag = DVE_No_Mode_Culture
+# 		}
+
+# 		option = {
+# 			name = DVE_Events.9.a
+# 			set_global_flag = DVE_Madness_Mode_Culture
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.9.b
+# 			set_global_flag = DVE_Fun_Mode_Culture
+# 		}
+		
+# 		option = {
+# 			name = DVE_Events.9.c
+# 			set_global_flag = DVE_No_Mode_Culture
+# 		}
+# 	}
+# #}
+#BREAK
+country_event = { #The Big One
+	id = DVE_Events.10
+	title = DVE_Events.10.t
+	desc = DVE_Events.10.d
 	picture = EUROPEAN_REFUGEES_eventPicture
 	
-
 	trigger = {
-		any_owned_province = {
-			nationalism = 10
-			NOT = { is_core = ROOT }
-			development = 6
-			any_country = {
-				is_neighbor_of = ROOT
-				primary_culture = PREV
+		owns = 1
+		OR = {
+			had_global_flag = {
+				flag = DVE_Anti_Trigger_Flag
+				days = 335
 			}
+			has_global_flag = DVE_Madness_Mode_Yes
 		}
-		NOT = { always = yes }
 	}
 	
 	mean_time_to_happen = {
-		days = 3650
-		modifier = {
-			factor = 1.5
-			has_reform = decentralize_reform
-		}
-		modifier = {
-			factor = 0.75
-			has_reform = centralize_reform
-		}
-		modifier = {
-			factor = 0.90
-			has_reform = letat_cest_moi_reform
-		}
-		modifier = {
-			factor = 0.75
-			full_idea_group = religious_ideas
-		}
-		modifier = {
-			factor = 1.5
-			full_idea_group = humanist_ideas
-		}
+		days = 30
 	}
-	
+
 	immediate = {
-		hidden_effect = {
-			random_owned_province = {
-				limit = {
-					nationalism = 10
-					NOT = { is_core = ROOT }
-				}
-				save_event_target_as = refugee_crisis_flag
-			}
-			random_neighbor_country = {
-				limit = {
-					primary_culture = event_target:refugee_crisis_flag
-				}
-				random_owned_province = {
+		every_province = {
+			#{ Piracy
+				if = {
 					limit = {
-						culture = event_target:refugee_crisis_flag
+						has_global_flag = DVE_Pirate_Protection_Yes
+						has_province_modifier = slaves_raided
 					}
-					save_event_target_as = refugee_crisis_receiver_flag
+					add_devastation = -10
 				}
-			}
+			#}
+			#{ #Growth
+				#{ Local Growth
+					if = {
+						limit = {
+							NOT = {
+								has_global_flag = DVE_Growth_Local_Off
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_local_modifier_value = {
+										which = local_development_cost 
+										value = 0.10
+									}
+								}
+								NOT = { devastation = 1 }
+							}
+							if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Medium
+								}
+								random_list = { #once every 10 years
+									27 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Small
+								}
+								random_list = { #once every 20 years
+									57 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Large
+								}
+								random_list = { #once every 5 years
+									12 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_local_modifier_value = {
+										which = local_development_cost 
+										value = 0.30
+									}
+								}
+								NOT = { development = 6 }
+								NOT = { devastation = 1 }
+							}
+							if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Medium
+								}
+								random_list = { #once every 15 years
+									42 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Small
+								}
+								random_list = { #once every 25 years
+									72 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Large
+								}
+								random_list = { #once every 10 years
+									27 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_local_modifier_value = {
+										which = local_development_cost 
+										value = 0.25
+									}
+								}
+								development = 6
+								NOT = { development = 10 }
+								NOT = { devastation = 1 }
+							}
+							if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Medium
+								}
+								random_list = { #once every 20 years
+									57 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Small
+								}
+								random_list = { #once every 30 years
+									87 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Large
+								}
+								random_list = { #once every 10 years
+									27 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+						}
+						if = {
+							limit = {
+								OR = {
+									has_province_modifier = river_estuary_modifier
+									province_has_center_of_trade_of_level = 1
+								}
+								is_territory = no
+								NOT = { devastation = 1 }
+							}
+							if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Medium
+								}
+								random_list = { #once every 30 years
+									87 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Small
+								}
+								random_list = { #once every 45 years
+									132 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+							else_if = {
+								limit = {
+									has_global_flag = DVE_Growth_Local_Large
+								}
+								random_list = { #once every 15 years
+									42 = { }
+									1 = { add_base_manpower = 1 }
+									1 = { add_base_tax = 1 }
+									1 = { add_base_production = 1 }
+								}
+							}
+						}
+					}
+				#}
+				#{ Prosperity Growth
+					if = {
+						limit = {
+							is_prosperous = yes 
+							NOT = { devastation = 1 }
+							NOT = { has_global_flag = DVE_Growth_Prosperity_Off }
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Growth_Prosperity_Small
+							}
+							random_list = { #once every 80 years
+								237 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Prosperity_Medium
+							}
+							random_list = { #once every 60 years
+								177 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Prosperity_Large
+							}
+							random_list = { #once every 40 years
+								117 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+					}
+				#}
+				#{ Development Growth
+					if = { #-15% GDC
+						limit = {
+							owner = {
+								NOT = {
+									has_global_modifier_value = {
+										which = development_cost 
+										value = -0.14
+									}
+								}
+							}
+							NOT = { devastation = 1 }
+							NOT = { has_global_flag = DVE_Growth_Global_Development_Off }
+							is_territory = no
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Medium
+							}
+							random_list = { #once every 60 years
+								177 = { } #3/150 1/50
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Small
+							}
+							random_list = { #once every 100 years
+								297 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Large
+							}
+							random_list = { #once every 40 years
+								117 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+					}
+					if = { #-30% GDC
+						limit = {
+							owner = {
+								NOT = {
+									has_global_modifier_value = {
+										which = development_cost 
+										value = -0.29
+									}
+								}
+							}
+							NOT = { devastation = 1 }
+							NOT = { has_global_flag = DVE_Growth_Global_Development_Off }
+							is_territory = no
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Medium
+							}
+							random_list = { #once every 50 years
+								147 = { } #3/150 1/50
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Small
+							}
+							random_list = { #once every 60 years
+								237 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Large
+							}
+							random_list = { #once every 35 years
+								102 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+					}
+					if = { #-50% GDC
+						limit = {
+							owner = {
+								NOT = {
+									has_global_modifier_value = {
+										which = development_cost 
+										value = -0.49
+									}
+								}
+							}
+							NOT = { devastation = 1 }
+							NOT = { has_global_flag = DVE_Growth_Global_Development_Off }
+							is_territory = no
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Medium
+							}
+							random_list = { #once every 40 years
+								117 = { } #3/150 1/50
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Small
+							}
+							random_list = { #once every 60 years
+								177 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Growth_Global_Development_Large
+							}
+							random_list = { #once every 30 years
+								57 = { } #3/120 1/40
+								1 = { add_base_manpower = 1 }
+								1 = { add_base_tax = 1 }
+								1 = { add_base_production = 1 }
+							}
+						}
+					}
+				#}
+			#}
+			#{ Decline
+				if = { #No Limiter
+					limit = {
+						devastation = 1
+						NOT = { has_global_flag = DVE_Decline_Speed_On }
+						has_global_flag = DVE_Decline_Limiter_Off
+					}
+					if = { #No Scale
+						limit = {
+							NOT = { has_global_flag = DVE_Decline_Scale_Off }
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+					}
+					if = { #Small Scale 20+
+						limit = {
+							OR = {
+								has_global_flag = DVE_Decline_Scale_Small
+								has_global_flag = DVE_Decline_Scale_Medium
+								has_global_flag = DVE_Decline_Scale_Large
+							}
+							development = 20
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+					}
+					if = { #Medium Scale 10+
+						limit = {
+							OR = {
+								has_global_flag = DVE_Decline_Scale_Medium
+								has_global_flag = DVE_Decline_Scale_Large
+							}
+							development = 10
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+					}
+					if = { #Large Scale 10+
+						limit = {
+							has_global_flag = DVE_Decline_Scale_Large
+							development = 10
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 }
+								1 = { add_base_tax = -1 }
+								1 = { add_base_production = -1 }
+							}
+						}
+					}
+				}
+				if = { #Limiter
+					limit = {
+						devastation = 1
+						NOT = { has_global_flag = DVE_Decline_Speed_Off }
+						has_global_flag = DVE_Decline_Limiter_On
+					}
+					if = { #No Scale
+						limit = {
+							NOT = { has_global_flag = DVE_Decline_Scale_Off }
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+							}
+						}
+					}
+					if = { #Small Scale 20+
+						limit = {
+							OR = {
+								has_global_flag = DVE_Decline_Scale_Small
+								has_global_flag = DVE_Decline_Scale_Medium
+								has_global_flag = DVE_Decline_Scale_Large
+							}
+							development = 20
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 } }
+							}
+						}
+					}
+					if = { #Medium Scale 10+
+						limit = {
+							OR = {
+								has_global_flag = DVE_Decline_Scale_Medium
+								has_global_flag = DVE_Decline_Scale_Large
+							}
+							development = 10
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+							}
+						}
+					}
+					if = { #Large Scale 10+
+						limit = {
+							has_global_flag = DVE_Decline_Scale_Large
+							development = 10
+						}
+						if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Medium
+							}
+							random_list = { #once every 2 years
+								3 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Small
+							}
+							random_list = { #once every 5 years
+								12 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+							}
+						}
+						else_if = {
+							limit = {
+								has_global_flag = DVE_Decline_Speed_Large
+							}
+							random_list = { #once every 1 years
+								#0 = { }
+								1 = { add_base_manpower = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_tax = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+								1 = { add_base_production = -1 add_devastation = -1 add_province_modifier = { name = Fallow_Lands duration = 3650 }  }
+							}
+						}
+					}
+				}
+			#}
+			#{ Culture
+				#lulno
+			#}
 		}
 	}
 
 	option = {
-		name = DVE_Events.2.a
-		
-		event_target:refugee_crisis_flag = {
-			add_base_manpower = -1
-			add_base_production = -1
-			add_base_tax = -1
-			add_nationalism = -10
-		}
-		event_target:refugee_crisis_receiver_flag = {
-			add_base_manpower = 1
-			add_base_production = 1
-			add_base_tax = 1
-		}
+		name = DVE_Events.10.a
+		add_prestige = 1
 	}
 }
 
-country_event = {
-	id = DVE_Events.3
-	title = DVE_Events.3.t
-	desc = DVE_Events.3.d
+country_event = { #Skip, Recommend, Change
+	id = DVE_Events.11
+	title = DVE_Events.11.t
+	desc = DVE_Events.11.d
 	picture = EUROPEAN_REFUGEES_eventPicture
 	
 	is_triggered_only = yes
-	
-	immediate = {
-		every_province = {
-			set_base_manpower = 1
-			set_base_production = 1
-			set_base_tax = 1
-		}
+
+	option = {
+		name = DVE_Events.11.a
+		add_prestige = -1
 	}
 	
 	option = {
-		name = DVE_Events.3.a
-		
-		
+		name = DVE_Events.10.b
+		#Recommended
+		set_global_flag = DVE_Madness_Mode_No
+		set_global_flag = DVE_Pirate_Protection_Yes
+		set_global_flag = DVE_Growth_Local_Medium
+		set_global_flag = DVE_Growth_Prosperity_Medium
+		set_global_flag = DVE_Growth_Global_Development_Small
+		set_global_flag = DVE_Decline_Speed_Medium
+		set_global_flag = DVE_Decline_Scale_Medium
+		set_global_flag = DVE_Decline_Limiter_On
+		set_global_flag = DVE_Culture_Dynamic_Medium
+		set_global_flag = DVE_Culture_Active_Small
+		set_global_flag = DVE_Infrastructure_Yes
 	}
-}
-
-country_event = {
-	id = DVE_Events.4
-	title = DVE_Events.4.t
-	desc = DVE_Events.4.d
-	picture = CITY_DEVELOPMENT_eventPicture
-	
-
-	trigger = {
-		any_owned_province = {
-			is_prosperous = yes
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 7300
-		modifier = {
-			factor = 0.75
-			full_idea_group = economic_ideas
-		}
-	}
-
 	option = {
-		name = DVE_Events.4.a
-		
-		random_owned_area = {
-			limit = {
-				is_prosperous = yes
-			}
-			add_province_modifier = {
-				name = DVE_regional_growth_spike #-25% Local Dev Cost, -15% Local Build Cost
-				duration = 9125
-			}
+		name = DVE_Events.11.c
+		country_event = {
+			id = DVE_Events.12
 		}
 	}
 }
-
-country_event = {
-	id = DVE_Events.5
-	title = DVE_Events.5.t
-	desc = DVE_Events.5.d
+country_event = { #12,Madness Mode
+	id = DVE_Events.12
+	title = DVE_Events.12.t
+	desc = DVE_Events.12.d
 	picture = EUROPEAN_REFUGEES_eventPicture
 	
+	is_triggered_only = yes
 
-	trigger = {
-		any_owned_province = {
-			devastation = 15
-		}
+	option = {
+		name = DVE_Events.12.a
+		clr_country_flag = DVE_Madness_Mode_No
+		set_global_flag = DVE_Madness_Mode_Yes
 	}
 	
-	mean_time_to_happen = {
-		days = 7300
-		modifier = {
-			factor = 1.25
-			full_idea_group = economic_ideas
+	option = {
+		name = DVE_Events.12.b
+		#Recommended
+		clr_country_flag = DVE_Madness_Mode_Yes
+		set_global_flag = DVE_Madness_Mode_No
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.13
 		}
+	}
+}
+country_event = { #13,Pirate Protection
+	id = DVE_Events.13
+	title = DVE_Events.13.t
+	desc = DVE_Events.13.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.13.a
+		clr_country_flag = DVE_Pirate_Protection_No
+		set_global_flag = DVE_Pirate_Protection_Yes
+	}
+	
+	option = {
+		name = DVE_Events.13.b
+		#Recommended
+		clr_country_flag = DVE_Pirate_Protection_Yes
+		set_global_flag = DVE_Pirate_Protection_No
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.14
+		}
+	}
+}
+country_event = { #14,Local Growth
+	id = DVE_Events.14
+	title = DVE_Events.14.t
+	desc = DVE_Events.14.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.14.a
+		clr_country_flag = DVE_Growth_Local_Small
+		clr_country_flag = DVE_Growth_Local_Medium
+		clr_country_flag = DVE_Growth_Local_Large
+		set_global_flag = DVE_Growth_Local_Off
+	}
+	
+	option = {
+		name = DVE_Events.14.b
+		clr_country_flag = DVE_Growth_Local_Off
+		clr_country_flag = DVE_Growth_Local_Medium
+		clr_country_flag = DVE_Growth_Local_Large
+		set_global_flag = DVE_Growth_Local_Small
 	}
 
 	option = {
-		name = DVE_Events.5.a
+		name = DVE_Events.14.c
+		#Recommended
+		clr_country_flag = DVE_Growth_Local_Off
+		clr_country_flag = DVE_Growth_Local_Small
+		clr_country_flag = DVE_Growth_Local_Large
+		set_global_flag = DVE_Growth_Local_Medium
+	}
+
+	option = {
+		name = DVE_Events.14.e
+		clr_country_flag = DVE_Growth_Local_Off
+		clr_country_flag = DVE_Growth_Local_Small
+		clr_country_flag = DVE_Growth_Local_Medium
+		set_global_flag = DVE_Growth_Local_Large
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.15
+		}
+	}
+}
+country_event = { #15,Prosperity Growth
+	id = DVE_Events.15
+	title = DVE_Events.15.t
+	desc = DVE_Events.15.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.15.a
+		clr_country_flag = DVE_Growth_Prosperity_Small
+		clr_country_flag = DVE_Growth_Prosperity_Medium
+		clr_country_flag = DVE_Growth_Prosperity_Large
+		set_global_flag = DVE_Growth_Prosperity_Off
+	}
+	
+	option = {
+		name = DVE_Events.15.b
+		#Recommended
+		clr_country_flag = DVE_Growth_Prosperity_Off
+		clr_country_flag = DVE_Growth_Prosperity_Medium
+		clr_country_flag = DVE_Growth_Prosperity_Large
+		set_global_flag = DVE_Growth_Prosperity_Small
+	}
+
+	option = {
+		name = DVE_Events.15.c
+		clr_country_flag = DVE_Growth_Prosperity_Off
+		clr_country_flag = DVE_Growth_Prosperity_Small
+		clr_country_flag = DVE_Growth_Prosperity_Large
+		set_global_flag = DVE_Growth_Prosperity_Medium
+	}
+
+	option = {
+		name = DVE_Events.15.e
+		clr_country_flag = DVE_Growth_Prosperity_Off
+		clr_country_flag = DVE_Growth_Prosperity_Small
+		clr_country_flag = DVE_Growth_Prosperity_Medium
+		set_global_flag = DVE_Growth_Prosperity_Large
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.16
+		}
+	}
+}
+country_event = { #16,Global Development Growth
+	id = DVE_Events.16
+	title = DVE_Events.16.t
+	desc = DVE_Events.16.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.16.a
+		clr_country_flag = DVE_Growth_Global_Development_Small
+		clr_country_flag = DVE_Growth_Global_Development_Medium
+		clr_country_flag = DVE_Growth_Global_Development_Large
+		set_global_flag = DVE_Growth_Global_Development_Off
+	}
+	
+	option = {
+		name = DVE_Events.16.b
+		#Recommended
+		clr_country_flag = DVE_Growth_Global_Development_Off
+		clr_country_flag = DVE_Growth_Global_Development_Medium
+		clr_country_flag = DVE_Growth_Global_Development_Large
+		set_global_flag = DVE_Growth_Global_Development_Small
+	}
+
+	option = {
+		name = DVE_Events.16.c
+		clr_country_flag = DVE_Growth_Global_Development_Off
+		clr_country_flag = DVE_Growth_Global_Development_Small
+		clr_country_flag = DVE_Growth_Global_Development_Large
+		set_global_flag = DVE_Growth_Global_Development_Medium
+	}
+
+	option = {
+		name = DVE_Events.16.e
+		clr_country_flag = DVE_Growth_Global_Development_Off
+		clr_country_flag = DVE_Growth_Global_Development_Small
+		clr_country_flag = DVE_Growth_Global_Development_Medium
+		set_global_flag = DVE_Growth_Global_Development_Large
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.17
+		}
+	}
+}
+country_event = { #17,Decline Speed
+	id = DVE_Events.17
+	title = DVE_Events.17.t
+	desc = DVE_Events.17.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.17.a
+		clr_country_flag = DVE_Decline_Speed_Small
+		clr_country_flag = DVE_Decline_Speed_Medium
+		clr_country_flag = DVE_Decline_Speed_Large
+		set_global_flag = DVE_Decline_Speed_Off
+	}
+	
+	option = {
+		name = DVE_Events.17.b
+		#Recommended
+		clr_country_flag = DVE_Decline_Speed_Off
+		clr_country_flag = DVE_Decline_Speed_Medium
+		clr_country_flag = DVE_Decline_Speed_Large
+		set_global_flag = DVE_Decline_Speed_Small
+	}
+
+	option = {
+		name = DVE_Events.17.c
+		clr_country_flag = DVE_Decline_Speed_Off
+		clr_country_flag = DVE_Decline_Speed_Small
+		clr_country_flag = DVE_Decline_Speed_Large
+		set_global_flag = DVE_Decline_Speed_Medium
+	}
+
+	option = {
+		name = DVE_Events.17.e
+		clr_country_flag = DVE_Decline_Speed_Off
+		clr_country_flag = DVE_Decline_Speed_Small
+		clr_country_flag = DVE_Decline_Speed_Medium
+		set_global_flag = DVE_Decline_Speed_Large
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.18
+		}
+	}
+}
+country_event = { #18,Decline Scale
+	id = DVE_Events.18
+	title = DVE_Events.18.t
+	desc = DVE_Events.18.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.18.a
+		clr_country_flag = DVE_Decline_Scale_Small
+		clr_country_flag = DVE_Decline_Scale_Medium
+		clr_country_flag = DVE_Decline_Scale_Large
+		set_global_flag = DVE_Decline_Scale_Off
+	}
+	
+	option = {
+		name = DVE_Events.18.b
+		#Recommended
+		clr_country_flag = DVE_Decline_Scale_Off
+		clr_country_flag = DVE_Decline_Scale_Medium
+		clr_country_flag = DVE_Decline_Scale_Large
+		set_global_flag = DVE_Decline_Scale_Small
+	}
+
+	option = {
+		name = DVE_Events.18.c
+		clr_country_flag = DVE_Decline_Scale_Off
+		clr_country_flag = DVE_Decline_Scale_Small
+		clr_country_flag = DVE_Decline_Scale_Large
+		set_global_flag = DVE_Decline_Scale_Medium
+	}
+
+	option = {
+		name = DVE_Events.18.e
+		clr_country_flag = DVE_Decline_Scale_Off
+		clr_country_flag = DVE_Decline_Scale_Small
+		clr_country_flag = DVE_Decline_Scale_Medium
+		set_global_flag = DVE_Decline_Scale_Large
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.19
+		}
+	}
+}
+country_event = { #19,Decline Limiter
+	id = DVE_Events.19
+	title = DVE_Events.19.t
+	desc = DVE_Events.19.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.19.a
+		clr_country_flag = DVE_Decline_Limiter_On
+		set_global_flag = DVE_Decline_Limiter_Off
+	}
+	
+	option = {
+		name = DVE_Events.19.b
+		#Recommended
+		clr_country_flag = DVE_Decline_Limiter_Off
+		set_global_flag = DVE_Decline_Limiter_On
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.20
+		}
+	}
+}
+country_event = { #20,Infrastructure
+	id = DVE_Events.20
+	title = DVE_Events.20.t
+	desc = DVE_Events.20.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.20.a
+		#Recommended
+		clr_country_flag = DVE_Infrastructure_No
+		set_global_flag = DVE_Infrastructure_Yes
+	}
+	
+	option = {
+		name = DVE_Events.20.b
 		
-		random_owned_area = {
-			limit = {
-				devastation = 15
-			}
-			add_province_modifier = {
-				name = DVE_scars_of_war #+25% Local Dev Cost, -25% Goods Produced, -25% Tax income
-				duration = 9125
-			}
+		clr_country_flag = DVE_Infrastructure_Yes
+		set_global_flag = DVE_Infrastructure_No
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.21
 		}
 	}
-	
-	option = {
-		name = DVE_Events.5.b
-		
-		add_years_of_income = -0.5
-		add_adm_power = -25
-	}
-}
-
-country_event = {
-	id = DVE_Events.6
-	title = DVE_Events.6.t
-	desc = DVE_Events.6.d
-	picture = EUROPEAN_REFUGEES_eventPicture
-	hidden = yes
-	
-	fire_only_once = yes
-	
-	trigger = { 
-		NOT = {
-			is_year = 1445
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		every_province = {
-			if = {
-				limit = {
-					region = british_isles_region
-				}
-				add_permanent_province_modifier = {
-					name = DVE_screw_england #+20% Local Development Cost
-					duration = 73000
-					picture = "development_icon"
-				}
-			}
-			if = {
-				limit = {
-					OR = {
-						culture = ryazanian
-						culture = ruthenian
-					}
-				}
-				add_permanent_province_modifier = {
-					name = DVE_screw_lithuania #+25% Local Development Cost
-					duration = 36500
-					picture = "devestation_icon"
-				}
-			}
-			if = {
-				limit = {
-					OR = {
-						region = russia_region
-						region = ural_region
-					}
-				}
-				add_permanent_province_modifier = {
-					name = DVE_screw_russia #+10% Local Development Cost
-					duration = 36500
-					picture = "devestation_icon"
-				}
-			}
-		}
-	}
-	option = {
-		name = DVE_Events.6.a
-	}
-}
-
-country_event = {
-	id = DVE_Events.7
-	title = DVE_Events.7.t
-	desc = DVE_Events.7.d
-	picture = EUROPEAN_REFUGEES_eventPicture
-	hidden = yes
-	
-	fire_only_once = yes
-	
-		trigger = { 
-		NOT = {
-			is_year = 1445
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		
-	}
-	option = {
-		name = DVE_Events.7.a
-	}
-	
-}
-
-country_event = {
-	id = DVE_Events.8
-	title = DVE_Events.8.t
-	desc = DVE_Events.8.d
-	picture = EUROPEAN_REFUGEES_eventPicture
-	
-	fire_only_once = yes
-	
-	trigger = {
-		was_player = yes
-		NOT = { has_global_flag = DVE_Madness_Mode }
-		NOT = { has_global_flag = DVE_Fun_Mode }
-		NOT = { has_global_flag = DVE_Realism_Mode }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		clr_global_flag = DVE_Madness_Mode
-		clr_global_flag = DVE_Fun_Mode
-		clr_global_flag = DVE_Realism_Mode
-	}
-	
-	option = {
-		name = DVE_Events.8.a
-		set_global_flag = DVE_Madness_Mode
-	}
-	
-	option = {
-		name = DVE_Events.8.b
-		set_global_flag = DVE_Fun_Mode
-	}
-	
-	option = {
-		name = DVE_Events.8.c
-		set_global_flag = DVE_Realism_Mode
-	}
-	
-}
-
-country_event = {
-	id = DVE_Events.9
-	title = DVE_Events.9.t
-	desc = DVE_Events.9.d
-	picture = EUROPEAN_REFUGEES_eventPicture
-	
-	fire_only_once = yes
-	
-	trigger = {
-		was_player = yes
-		NOT = { has_global_flag = DVE_Madness_Mode_Culture }
-		NOT = { has_global_flag = DVE_Fun_Mode_Culture }
-		NOT = { has_global_flag = DVE_No_Mode_Culture }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	immediate = {
-		clr_global_flag = DVE_Madness_Mode_Culture
-		clr_global_flag = DVE_Fun_Mode_Culture
-		clr_global_flag = DVE_No_Mode_Culture
-	}
-
-	option = {
-		name = DVE_Events.9.a
-		set_global_flag = DVE_Madness_Mode_Culture
-	}
-	
-	option = {
-		name = DVE_Events.9.b
-		set_global_flag = DVE_Fun_Mode_Culture
-	}
-	
-	option = {
-		name = DVE_Events.9.c
-		set_global_flag = DVE_No_Mode_Culture
-	}
-	
 }
