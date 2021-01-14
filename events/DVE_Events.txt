@@ -864,69 +864,69 @@ namespace = DVE_Events
 # 		}
 # 	}
 
-# 	country_event = {
-# 		id = DVE_Events.6
-# 		title = DVE_Events.6.t
-# 		desc = DVE_Events.6.d
-# 		picture = EUROPEAN_REFUGEES_eventPicture
-# 		hidden = yes
+	country_event = {
+		id = DVE_Events.6
+		title = DVE_Events.6.t
+		desc = DVE_Events.6.d
+		picture = EUROPEAN_REFUGEES_eventPicture
+		hidden = yes
 		
-# 		fire_only_once = yes
+		fire_only_once = yes
 		
-# 		trigger = { 
-# 			NOT = {
-# 				is_year = 1445
-# 			}
-# 		}
+		trigger = { 
+			NOT = {
+				is_year = 1445
+			}
+		}
 		
-# 		mean_time_to_happen = {
-# 			days = 1
-# 		}
+		mean_time_to_happen = {
+			days = 1
+		}
 
-# 		immediate = {
-# 			every_province = {
-# 				if = {
-# 					limit = {
-# 						region = british_isles_region
-# 					}
-# 					add_permanent_province_modifier = {
-# 						name = DVE_screw_england #+20% Local Development Cost
-# 						duration = 73000
-# 						picture = "development_icon"
-# 					}
-# 				}
-# 				if = {
-# 					limit = {
-# 						OR = {
-# 							culture = ryazanian
-# 							culture = ruthenian
-# 						}
-# 					}
-# 					add_permanent_province_modifier = {
-# 						name = DVE_screw_lithuania #+25% Local Development Cost
-# 						duration = 36500
-# 						picture = "devestation_icon"
-# 					}
-# 				}
-# 				if = {
-# 					limit = {
-# 						OR = {
-# 							region = russia_region
-# 							region = ural_region
-# 						}
-# 					}
-# 					add_permanent_province_modifier = {
-# 						name = DVE_screw_russia #+10% Local Development Cost
-# 						duration = 36500
-# 						picture = "devestation_icon"
-# 					}
-# 				}
-# 			}
-# 		}
-# 		option = {
-# 			name = DVE_Events.6.a
-# 		}
-# 	}
+		immediate = {
+			every_province = {
+				if = {
+					limit = {
+						region = british_isles_region
+					}
+					add_permanent_province_modifier = {
+						name = DVE_screw_england #+20% Local Development Cost
+						duration = 73000
+						picture = "development_icon"
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							culture = ryazanian
+							culture = ruthenian
+						}
+					}
+					add_permanent_province_modifier = {
+						name = DVE_screw_lithuania #+25% Local Development Cost
+						duration = 36500
+						picture = "devestation_icon"
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							region = russia_region
+							region = ural_region
+						}
+					}
+					add_permanent_province_modifier = {
+						name = DVE_screw_russia #+10% Local Development Cost
+						duration = 36500
+						picture = "devestation_icon"
+					}
+				}
+			}
+		}
+		option = {
+			name = DVE_Events.6.a
+		}
+	}
 
 # 	country_event = {
 # 		id = DVE_Events.7
@@ -1045,6 +1045,7 @@ country_event = { #The Big One
 	title = DVE_Events.10.t
 	desc = DVE_Events.10.d
 	picture = EUROPEAN_REFUGEES_eventPicture
+	hidden = yes
 	
 	trigger = {
 		owns = 1
@@ -1054,6 +1055,9 @@ country_event = { #The Big One
 				days = 335
 			}
 			has_global_flag = DVE_Madness_Mode_Yes
+			NOT = {
+				has_global_flag = DVE_Anti_Trigger_Flag
+			}
 		}
 	}
 	
@@ -1062,14 +1066,24 @@ country_event = { #The Big One
 	}
 
 	immediate = {
+		clr_global_flag = DVE_Anti_Trigger_Flag
+		set_global_flag = DVE_Anti_Trigger_Flag
 		every_province = {
 			#{ Piracy
 				if = {
 					limit = {
 						has_global_flag = DVE_Pirate_Protection_Yes
 						has_province_modifier = slaves_raided
+						NOT = {
+							had_province_flag = {
+								flag = DVE_Pirate_Protection
+								days = 3600
+							}
+						}
 					}
 					add_devastation = -10
+					clr_province_flag = DVE_Pirate_Protection
+					set_province_flag = DVE_Pirate_Protection
 				}
 			#}
 			#{ #Growth
@@ -1455,7 +1469,7 @@ country_event = { #The Big One
 					limit = {
 						devastation = 1
 						NOT = { has_global_flag = DVE_Decline_Speed_On }
-						has_global_flag = DVE_Decline_Limiter_Off
+						#has_global_flag = DVE_Decline_Limiter_Off
 					}
 					if = { #No Scale
 						limit = {
@@ -1791,14 +1805,207 @@ country_event = { #The Big One
 				}
 			#}
 			#{ Culture
-				#lulno
+				if = {
+					limit = {
+						NOT = { has_global_flag = DVE_Culture_Dynamic_Off }
+					}
+					#anti-enclave {
+						if = {
+							limit = {
+								NOT = {
+									calc_true_if = {
+										any_neighbor_province = {
+											culture = PREV
+										}
+										amount = 1
+									}
+								}
+								NOT = { is_capital = yes }
+								NOT = { 
+									OR = {
+										has_owner_culture = yes
+										has_owner_accepted_culture = yes
+									}
+								}
+							}
+							random_neighbor_province = {
+								PREV = { change_culture = PREV }
+								PREV = { change_religion = PREV }
+							}
+						}
+					#}
+					if = {
+						limit = {
+							has_global_flag = DVE_Culture_Dynamic_Small
+							devastation = 10
+							NOT = { development = 5 }
+						}
+						random_neighbour_province = {
+							limit = {
+								always = yes
+							}
+							save_event_target_as = DVE_culture_dummy
+						}
+						change_culture = event_target:DVE_culture_dummy
+						change_religion = event_target:DVE_culture_dummy
+						add_base_tax = 1
+						add_base_manpower = 1
+						add_base_production = 1
+						add_devastation = -10
+					}
+					if = {
+						limit = {
+							has_global_flag = DVE_Culture_Dynamic_Medium
+							devastation = 5
+							NOT = { development = 7 }
+						}
+						random_neighbour_province = {
+							limit = {
+								NOT = { devastation = 1 }
+							}
+							save_event_target_as = DVE_culture_dummy
+						}
+						change_culture = event_target:DVE_culture_dummy
+						change_religion = event_target:DVE_culture_dummy
+						add_base_tax = 1
+						add_base_manpower = 1
+						add_base_production = 1
+						add_devastation = -10
+					}
+					if = {
+						limit = {
+							has_global_flag = DVE_Culture_Dynamic_Large
+							devastation = 1
+							NOT = { development = 10 }
+						}
+						if = {
+							limit = {
+								any_neighbor_province = {
+									NOT = {
+										culure = ROOT
+									}
+								}
+							}
+							save_event_target_as = DVE_culture_dummy
+						}
+						else = {	
+							random_neighbour_province = {
+								limit = {
+									NOT = { devastation = 1 }
+									NOT = { culture }
+								}
+								save_event_target_as = DVE_culture_dummy
+							}
+						}
+						change_culture = event_target:DVE_culture_dummy
+						change_religion = event_target:DVE_culture_dummy
+						add_base_tax = 1
+						add_base_manpower = 1
+						add_base_production = 1
+						add_devastation = -100
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_global_flag = DVE_Culture_Active_Off
+						}
+						NOT = { has_owner_culture = yes }
+					}
+					if = {
+						limit = {
+							has_global_flag = DVE_Culture_Active_Small
+						}
+						random_list = {
+							995 = { } #4/1000 1/125 takes 250 years for a province to convert to its neighbour, and 1/1000, takes 1000 years to form an enclave
+							4 = {
+								random_neighbor_province = {
+									limit = {
+										owned_by = PREV
+										OR = {
+											has_owner_culture = yes
+											has_owner_accepted_culture = yes
+										}
+									}
+									PREV = { change_culture = PREV }
+								}
+							}
+							1 = {
+								random_province = {
+									limit = {
+										owned_by = PREV
+										is_capital = yes
+									}
+									PREV = { change_culture = PREV }
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = DVE_Culture_Active_Medium
+						}
+						random_list = {
+							495 = { } #4/1000 1/125 takes 250 years for a province to convert to its neighbour, and 1/500, takes 500 years to form an enclave
+							4 = {
+								random_neighbor_province = {
+									limit = {
+										owned_by = PREV
+										OR = {
+											has_owner_culture = yes
+											has_owner_accepted_culture = yes
+										}
+									}
+									PREV = { change_culture = PREV }
+								}
+							}
+							1 = {
+								random_province = {
+									limit = {
+										owned_by = PREV
+										is_capital = yes
+									}
+									PREV = { change_culture = PREV }
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = DVE_Culture_Active_Large
+						}
+						random_list = {
+							245 = { } #4/250 1/62 takes 62 years for a province to convert to its neighbour, and 1/250, takes 250 years to form an enclave
+							4 = {
+								random_neighbor_province = {
+									limit = {
+										owned_by = PREV
+										OR = {
+											has_owner_culture = yes
+											has_owner_accepted_culture = yes
+										}
+									}
+									PREV = { change_culture = PREV }
+								}
+							}
+							1 = {
+								random_province = {
+									limit = {
+										owned_by = PREV
+										is_capital = yes
+									}
+									PREV = { change_culture = PREV }
+								}
+							}
+						}
+					}
+				}
 			#}
 		}
 	}
 
 	option = {
 		name = DVE_Events.10.a
-		add_prestige = 1
 	}
 }
 
@@ -1812,11 +2019,10 @@ country_event = { #Skip, Recommend, Change
 
 	option = {
 		name = DVE_Events.11.a
-		add_prestige = -1
 	}
 	
 	option = {
-		name = DVE_Events.10.b
+		name = DVE_Events.11.b
 		#Recommended
 		set_global_flag = DVE_Madness_Mode_No
 		set_global_flag = DVE_Pirate_Protection_Yes
@@ -1826,7 +2032,7 @@ country_event = { #Skip, Recommend, Change
 		set_global_flag = DVE_Decline_Speed_Medium
 		set_global_flag = DVE_Decline_Scale_Medium
 		set_global_flag = DVE_Decline_Limiter_On
-		set_global_flag = DVE_Culture_Dynamic_Medium
+		set_global_flag = DVE_Culture_Dynamic_Small
 		set_global_flag = DVE_Culture_Active_Small
 		set_global_flag = DVE_Infrastructure_Yes
 	}
@@ -2122,7 +2328,7 @@ country_event = { #18,Decline Scale
 	
 	after = {
 		country_event = {
-			id = DVE_Events.19
+			id = DVE_Events.20
 		}
 	}
 }
@@ -2153,7 +2359,7 @@ country_event = { #19,Decline Limiter
 		}
 	}
 }
-country_event = { #20,Infrastructure
+country_event = { #20,Dynamic Cultures
 	id = DVE_Events.20
 	title = DVE_Events.20.t
 	desc = DVE_Events.20.d
@@ -2163,21 +2369,109 @@ country_event = { #20,Infrastructure
 
 	option = {
 		name = DVE_Events.20.a
-		#Recommended
-		clr_country_flag = DVE_Infrastructure_No
-		set_global_flag = DVE_Infrastructure_Yes
+		clr_country_flag = DVE_Culture_Dynamic_Small
+		clr_country_flag = DVE_Culture_Dynamic_Medium
+		clr_country_flag = DVE_Culture_Dynamic_Large
+		set_global_flag = DVE_Culture_Dynamic_Off
 	}
 	
 	option = {
 		name = DVE_Events.20.b
-		
-		clr_country_flag = DVE_Infrastructure_Yes
-		set_global_flag = DVE_Infrastructure_No
+		clr_country_flag = DVE_Culture_Dynamic_Off
+		clr_country_flag = DVE_Culture_Dynamic_Medium
+		clr_country_flag = DVE_Culture_Dynamic_Large
+		set_global_flag = DVE_Culture_Dynamic_Small
+	}
+
+	option = {
+		name = DVE_Events.20.c
+		#Recommended
+		clr_country_flag = DVE_Culture_Dynamic_Off
+		clr_country_flag = DVE_Culture_Dynamic_Small
+		clr_country_flag = DVE_Culture_Dynamic_Large
+		set_global_flag = DVE_Culture_Dynamic_Medium
+	}
+
+	option = {
+		name = DVE_Events.20.e
+		clr_country_flag = DVE_Culture_Dynamic_Off
+		clr_country_flag = DVE_Culture_Dynamic_Small
+		clr_country_flag = DVE_Culture_Dynamic_Medium
+		set_global_flag = DVE_Culture_Dynamic_Large
 	}
 	
 	after = {
 		country_event = {
 			id = DVE_Events.21
 		}
+	}
+}
+country_event = { #21,Active Cultures
+	id = DVE_Events.21
+	title = DVE_Events.21.t
+	desc = DVE_Events.21.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.21.a
+		clr_country_flag = DVE_Culture_Active_Small
+		clr_country_flag = DVE_Culture_Active_Medium
+		clr_country_flag = DVE_Culture_Active_Large
+		set_global_flag = DVE_Culture_Active_Off
+	}
+	
+	option = {
+		name = DVE_Events.21.b
+		#Recommended
+		clr_country_flag = DVE_Culture_Active_Off
+		clr_country_flag = DVE_Culture_Active_Medium
+		clr_country_flag = DVE_Culture_Active_Large
+		set_global_flag = DVE_Culture_Active_Small
+	}
+
+	option = {
+		name = DVE_Events.21.c
+		clr_country_flag = DVE_Culture_Active_Off
+		clr_country_flag = DVE_Culture_Active_Small
+		clr_country_flag = DVE_Culture_Active_Large
+		set_global_flag = DVE_Culture_Active_Medium
+	}
+
+	option = {
+		name = DVE_Events.21.e
+		clr_country_flag = DVE_Culture_Active_Off
+		clr_country_flag = DVE_Culture_Active_Small
+		clr_country_flag = DVE_Culture_Active_Medium
+		set_global_flag = DVE_Culture_Active_Large
+	}
+	
+	after = {
+		country_event = {
+			id = DVE_Events.22
+		}
+	}
+}
+country_event = { #22,Infrastructure
+	id = DVE_Events.22
+	title = DVE_Events.22.t
+	desc = DVE_Events.22.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = DVE_Events.22.a
+		#Recommended
+		clr_country_flag = DVE_Infrastructure_No
+		set_global_flag = DVE_Infrastructure_Yes
+	}
+	
+	option = {
+		name = DVE_Events.22.b
+		
+		clr_country_flag = DVE_Infrastructure_Yes
+		set_global_flag = DVE_Infrastructure_No
 	}
 }

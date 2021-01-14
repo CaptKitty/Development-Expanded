@@ -1,7 +1,7 @@
 country_decisions = {
 	DVE_develop_local_area = {
 		potential = {
-			always = yes
+			has_global_flag = DVE_Infrastructure_Yes
 		}
 		allow = {
 			any_owned_province = {
@@ -139,6 +139,22 @@ country_decisions = {
 					NOT = { years_of_income = 10 }
 					NOT = { treasury = 1000 }
 			}	
+		}
+	}
+	DVE_call_event = {
+		potential = {
+			always = yes
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			country_event = {
+				id = DVE_Events.11
+			}
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

@@ -2,6 +2,8 @@
  
  DVE_develop_local_area_title: "Develop Local Area"
  DVE_develop_local_area_desc: "Let us invest in the infrastructure of our lands."
+ DVE_call_event_title: "Development Expanded Settings"
+ DVE_call_event_desc: "In case you wish to activate or change Development Expanded, use this button."
  
  DVE_local_development_1: "Initial Infrastructure"
  DVE_local_development_2: "Basic Infrastructure"
