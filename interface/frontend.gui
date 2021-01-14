@@ -1289,11 +1289,11 @@ guiTypes = {
 					}
 
 					### Second Row of Mod Icons
-					iconType = {
-						name = "mod_icon_idea_groups_expanded"
-						position = { x = 51 y = 206 }
-						spriteType = "GFX_mod_icon_idea_groups_expanded"
-					}
+					# iconType = {
+					# 	name = "mod_icon_idea_groups_expanded"
+					# 	position = { x = 51 y = 206 }
+					# 	spriteType = "GFX_mod_icon_idea_groups_expanded"
+					# }
 
 					iconType = {
 						name = "mod_icon_trade_goods_expanded"
