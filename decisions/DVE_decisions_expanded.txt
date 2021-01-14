@@ -142,6 +142,7 @@ country_decisions = {
 		}
 	}
 	DVE_call_event = {
+		major = yes
 		potential = {
 			always = yes
 		}
