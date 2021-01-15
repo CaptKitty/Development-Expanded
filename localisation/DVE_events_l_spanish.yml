@@ -28,3 +28,81 @@
  DVE_Events.9.a: "El genocidio es mi pasatiempo favorito. (Cambios rápidos durante guerras desastrozas)"
  DVE_Events.9.b: "Me gusta que las culturas sean dinámicas.(Las culturas cambian con guerras grandes)"
  DVE_Events.9.c: "Prefiero que las culturas se mantengan estables. (No hay cambio cultural durante guerras)"
+
+ DVE_Events.10.t: "Developmment Expanded"
+ DVE_Events.10.d: "You should not see this."
+ DVE_Events.10.a: "Contact Jay if you can see this."
+
+ DVE_Events.11.t: "Development Expandend"
+ DVE_Events.11.d: "Bienvenidos a Development Expanded. Este evento está aquí para ayudarse ustéd preparar la experiencia más disfrutable para la mod. El “Modo Recommendado” es cómo yo personalmente te recomiendo jugar, y se ofrece un cambio de desarrollo y culturas dependiendo de la guerra, el terreno, y la prosperidad más o menos variado y dynámico. También he incluido una cadena de eventos dónde puede ustéd escoger cada opción manualmente, ¡para crear la experienca que usted va a disfrutar!\n\nCada evento también explicará cóma cada modo funciona si a ustéd le interesa.\n¡Le deseo un juego disfrutable!"
+ DVE_Events.11.a: "Sin cambio "
+ DVE_Events.11.b: "Habilite el Modo Recommendado"
+ DVE_Events.11.c: "Deseo escoger cada opción por mi mismo"
+
+ DVE_Events.12.t: "Modo de Locura"
+ DVE_Events.12.d: "Modo de locura está un poco un modo meme, donde están todos los effectos están ampliado por un factor de 12, no le recomiendo a ustéd para cualquier tipo de juego serio. Reempleza cualqiuer caso dónde se ve “al año” con 'al mes.'"
+ DVE_Events.12.a: "Active Modo de Locura"
+ DVE_Events.12.b: "Modo Normal §G(Recommendado)§!"
+
+ DVE_Events.13.t: "Protección Pirata"
+ DVE_Events.13.d: "La piratería y las redadas golpea mucho más duro en Development Expanded que en vainilla, y se puede perder el desarrollo por la devastación que hacen. Si desea, se puede apagar esto para salvarse las costas suyas y de los AIs de ser baldíos."
+ DVE_Events.13.a: "Modo de Protección Pirata §G(Recommendado)§!"
+ DVE_Events.13.b: "No Protección Pirata"
+
+ DVE_Events.14.t: "Crecimiento del Desarrollo Local"
+ DVE_Events.14.d: "Crecimiento del Desarrollo Local es el creciemiento del desarrollo de las provincias que está determinado exclusivamente por modificadores locales, incluyendo centros comerciales, el terreno, y el desarrollo presente. Esto se causará una provincia crecerse lentamente hasta un costo de desarrollo de 55 antes que parar. Esto no incluye modificadores nacionales que reduce el costo de desarrollo. \n\n§BNo crecimiento local:§! Esto inhabilite este tipo de creciemiento del desarrollo provincial entiramente.\n§BMenor crecimiento local:§! se causará una provincia crecerse por un promedio de 1 desarrollo al 20 años hasta llega al límite estricto. \n§BNormal crecimiento local:§! se causará una provincia crecerse por un promedio de 1 desarrollo al 10 años hasta llega al límite estricto. \n§BMayor crecimiento local:§!  se causará una provincia crecerse por un promedio de 1 desarrollo al 5 años hasta llega al límite estricto"
+ DVE_Events.14.a: "No crecimiento local"
+ DVE_Events.14.b: "Menor crecimiento local"
+ DVE_Events.14.c: "Normal crecimiento local §G(Recommendado)§!"
+ DVE_Events.14.e: "Mayor crecimiento local"
+
+ DVE_Events.15.t: "Crecimiento de Prosperidad"
+ DVE_Events.15.d: "Crecimiento de Prosperidad es el creciemiento del desarrollo de las provincias que está determinado exclusivamente por si una provincia está 100% prospéra o no. NOTA: esto se causará una provincia crecerse constantemente hasta no está prospéra más. Nota: Mayor Crecimiento de Prosperidad se puede causar unas islas, la Siberia, y otras areas isladas crecerse a alturas irrazonables.\n\n§BNo Crecimiento de Prosperidad:§! Esto inhabilite este tipo de creciemiento del desarrollo entiramente.\n§BMenor Crecimiento de Prosperidad:§! se causará una provincia crecerse por un promedio de 1 desarrollo al 80 años.\n§BNormal Crecimiento de Prosperidad:§!  se causará una provincia crecerse por un promedio de 1 desarrollo al 60 años.\n§BMayor Crecimiento de Prosperidad§! se causará una provincia crecerse por un promedio de 1 desarrollo al 40 años."
+ DVE_Events.15.a: "No Crecimiento de Prosperidad"
+ DVE_Events.15.b: "Menor Crecimiento de Prosperidad"
+ DVE_Events.15.c: "Normal Crecimiento de Prosperidad §G(Recommendado)§!"
+ DVE_Events.15.e: "Mayor Crecimiento de Prosperidad"
+
+ DVE_Events.16.t: "Crecimiento del Costo de Desarrollo Global"
+ DVE_Events.16.d: "Crecimiento del Costo de Desarrollo Global es el creciemiento del desarrollo de las provincias que está determinado exclusivamente por los modificadores de costo de desarrollo nacional. Esto se aumenta por cuántas reduccións hay en un país. NOTA: Mayor Crecimiento del Costo de Desarrollo Global puede resultar en naciones con tierras grandes pero subdesarrolladas crecerse desproporciónadamente.\n\n§BNo Crecimiento del Costo de Desarrollo Global§! Esto inhabilite este tipo de creciemiento del
+desarrollo entiramente\n§BMenor Crecimiento del Costo de Desarrollo Global§! se causará una provincia crecerse hasta un rato de 1 desarrollo al 30 años.\n§BNormal Crecimiento del Costo de Desarrollo Global:§! se causará una provincia crecerse hasta un rato de 1 desarrollo al 20 años.\n§BMayor Crecimiento del Costo de Desarrollo Global§! se causará una provincia crecerse hasta un rato de 1 desarrollo al 10 años. "
+ DVE_Events.16.a: "No Crecimiento del Costo de Desarrollo Global"
+ DVE_Events.16.b: "Menor Crecimiento del Costo de Desarrollo Global §G(Recommendado)§!"
+ DVE_Events.16.c: "Normal Crecimiento del Costo de Desarrollo Global"
+ DVE_Events.16.e: "Mayor Crecimiento del Costo de Desarrollo Global"
+
+ DVE_Events.17.t: "Rato de Decaimiento"
+ DVE_Events.17.d: "Rato de Decaimiento es que rapido una provincia va a decaer después que pase el límite de 1 devastación.\n\n§BNo Rato de Decaimiento:§! esto inhabilite decaimiento provincial entiramente. \n§BMenor Rato de Decaimiento:§! se causará una provincia perder por un promedio de 1 desarrollo al 5 años de estar devastada.\n§BNormal Rato de Decaimiento:§! se causará una provincia perder por un promedio de 1 desarrollo al 2 años de estar devastada.\n§BMayor Rato de Decaimiento:§! se causará una provincia perder por un promedio de 1 desarrollo al 1 años de estar devastada. "
+ DVE_Events.17.a: "No Rato de Decaimiento"
+ DVE_Events.17.b: "Menor Rato de Decaimiento"
+ DVE_Events.17.c: "Normal Rato de Decaimiento §G(Recommendado)§!"
+ DVE_Events.17.e: "Mayor Rato de Decaimiento"
+
+ DVE_Events.18.t: "Escala de Decaimiento"
+ DVE_Events.18.d: "Escala de Decaimiento determina que rápido una provincia grande se decea. Esto está modificado por Rato de Escala de Decaimiento que se elige.\n\n§BNo Escala de Decaimiento:§!esto se causará todas las provincias tener el mismo rato de decaimiento.\n§BMenor Escala de Decaimiento:§! esto se causará las provincias que tengan más que 10 desarrollo perder doble el desarrollo.\n§BNormal Escala de Decaimiento:§! esto se causará las provincias que tengan más que 10 desarrollo perder doble el desarrollo, y las provincias que tengan más que 20 desarrollo perder triple el desarrollo.\n§BMayor Escala de Decaimiento:§! esto se causará las provincias que tengan más que 10 desarrollo
+perder desarrollo cuatro veces más rápidamente."
+ DVE_Events.18.a: "No Escala de Decaimiento"
+ DVE_Events.18.b: "Menor Escala de Decaimiento"
+ DVE_Events.18.c: "Normal Escala de Decaimiento §G(Recommendado)§!"
+ DVE_Events.18.e: "Mayor Escala de Decaimiento"
+
+ DVE_Events.20.t: "Culturas Dynámicas"
+ DVE_Events.20.d: "Culturas Dynámicas determina que rápidamente una provincia convierte arruinada y repoplada con gente de una provincia adyacente. Esto require un desarrollo bajo y una devastactión muy alta para pasar.\n§BNo Culturas Dynámicas:§! las provincias no van a cambiar su cultura por la guerra y la migración.\n§BMenor Culturas Dynámicas:§! esto se causará provincias que tengan más que 10 devastación y menos que 5 desarrollo perder cohesión y estar repoplado con gente de un vecino aleatorio.\n§BNormal Culturas Dynámicas:§! esto se causará provincias que tengan más que 5 devastación y menos que 7 desarrollo perder cohesión y estar repoplado con gente de un vecino sin devastación.\n§BMayor Culturas Dynámicas:§! esto se causará que tengan más que 1 devastación y menos que 10 desarrollo perder cohesión y estar repoplado con gente de una cultura extranjera que no tenga devastación."
+ DVE_Events.20.a: "No Culturas Dynámicas"
+ DVE_Events.20.b: "Menor Culturas Dynámicas §G(Recommendado)§!"
+ DVE_Events.20.c: "Normal Culturas Dynámicas"
+ DVE_Events.20.e: "Mayor Culturas Dynámicas"
+
+ DVE_Events.21.t: "Asentamientos Áctivas"
+ DVE_Events.21.d: "Asentamientos Áctivas determinan que rápidamente una provincia va a aceptar tu cultura primaria o aceptada y convertir en apoyeros patrióticos de tu regimen. Esto es un progreso muy lento que en circumstancias básicas toma siglos.\n\n§BNo Asentamientos Áctivas§! no hará expansión de tus culturas primarias o aceptadas.\n§BMenor Asentamientos Áctivas§!  esto se causará las provincias aceptar tu cultura primaria después que un promedio de 1000 años, y convertir en culturas vecinas aceptadas después que un promedio de 250 años.\n§BNormal Asentamientos Áctivas:§! : esto se causará las provincias aceptar tu cultura primaria después que un promedio de 1000 años, y convertir en culturas vecinas aceptadas después que un promedio de 250 años.\n§BMayor Asentamientos Áctivas§! esto se causará las provincias aceptar tu cultura primaria después que un promedio de 250 años, y convertir en culturas vecinas aceptadas después que un promedio de 65 años."
+ DVE_Events.21.a: "No Asentamientos Áctivas"
+ DVE_Events.21.b: "Menor Asentamientos Áctivas §G(Recommendado)§!"
+ DVE_Events.21.c: "Normal Asentamientos Áctivas"
+ DVE_Events.21.e: "Mayor Asentamientos Áctivas"
+
+ DVE_Events.22.t: "Infraestructura"
+ DVE_Events.22.d: "Infraestructura se permite gastar dinero para aumentar el crecimiento dynámico de las provincias
+por invertir dinero en ellos. Esto está completamente depiendiente en la opción de el Crecimiento
+de Desarrollo Local que ya se elegió."
+ DVE_Events.22.a: "Infraestructura §G(Recommendado)§!"
+ DVE_Events.22.b: "No Infraestructura"

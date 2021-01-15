@@ -1840,7 +1840,7 @@ country_event = { #The Big One
 							devastation = 10
 							NOT = { development = 5 }
 						}
-						random_neighbour_province = {
+						random_neighbor_province = {
 							limit = {
 								always = yes
 							}
@@ -1859,7 +1859,7 @@ country_event = { #The Big One
 							devastation = 5
 							NOT = { development = 7 }
 						}
-						random_neighbour_province = {
+						random_neighbor_province = {
 							limit = {
 								NOT = { devastation = 1 }
 							}
@@ -1881,21 +1881,33 @@ country_event = { #The Big One
 						if = {
 							limit = {
 								any_neighbor_province = {
-									NOT = {
-										culure = ROOT
-									}
+									NOT = {	culure = ROOT }
 								}
 							}
-							save_event_target_as = DVE_culture_dummy
-						}
-						else = {	
-							random_neighbour_province = {
+							random_neighbor_province = {
 								limit = {
-									NOT = { devastation = 1 }
-									NOT = { culture }
+									NOT = { culure = ROOT }
 								}
 								save_event_target_as = DVE_culture_dummy
 							}
+						}
+						else_if = {	
+							limit = {
+								any_neighbor_province = {
+									is_city = yes
+								}
+							}
+							random_neighbor_province = {
+								save_event_target_as = DVE_culture_dummy
+							}
+						}
+						else = {
+							owner = {
+								random_owned_province = {
+									has_owner_culture = yes
+								}
+							}
+							save_event_target_as = DVE_culture_dummy
 						}
 						change_culture = event_target:DVE_culture_dummy
 						change_religion = event_target:DVE_culture_dummy
