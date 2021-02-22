@@ -400,8 +400,39 @@ guiTypes = {
 					}
 
 					windowType = {
-						name = "development_expanded"
+						name = "idea_groups_expanded"
 						position = { x = 10 y = 296 }
+						size = { x = 147 y = 26 }
+
+						iconType = {
+							name = "mod_icon"
+							position = { x = 0 y = 1 }
+							spriteType = "GFX_mod_icon_idea_groups_expanded"
+							scale = 0.5
+						}
+
+						iconType = {
+							name = "mod_text_bg"
+							position = { x = 26 y = 2 }
+							spriteType = "GFX_expanded_mod_family_entry_background"
+						}
+
+						instantTextBoxType = {
+							name = "mod_text"
+							position = { x = 26 y = 6 }
+							format = center
+							font = "Main_16"
+							text = "MOD_TEXT_IDEA_GROUPS_EXPANDED"
+							maxWidth = 120
+							maxHeight = 20
+							alwaystransparent = yes
+						}
+					}
+
+					### Second Column of Mods
+					windowType = {
+						name = "development_expanded"
+						position = { x = 157 y = 166 }
 						size = { x = 147 y = 26 }
 
 						iconType = {
@@ -429,10 +460,9 @@ guiTypes = {
 						}
 					}
 
-					### Second Column of Mods
 					windowType = {
 						name = "mercenary_companies_expanded"
-						position = { x = 157 y = 166 }
+						position = { x = 157 y = 192 }
 						size = { x = 147 y = 26 }
 
 						iconType = {
@@ -462,7 +492,7 @@ guiTypes = {
 
 					windowType = {
 						name = "ages_and_splendor_expanded"
-						position = { x = 157 y = 192 }
+						position = { x = 157 y = 218 }
 						size = { x = 147 y = 26 }
 
 						iconType = {
@@ -491,8 +521,38 @@ guiTypes = {
 					}
 
 					windowType = {
+						name = "advisors_expanded"
+						position = { x = 157 y = 244 }
+						size = { x = 147 y = 26 }
+
+						iconType = {
+							name = "mod_icon"
+							position = { x = 0 y = 1 }
+							spriteType = "GFX_mod_icon_advisors_expanded"
+							scale = 0.5
+						}
+
+						iconType = {
+							name = "mod_text_bg"
+							position = { x = 26 y = 2 }
+							spriteType = "GFX_expanded_mod_family_entry_background"
+						}
+
+						instantTextBoxType = {
+							name = "mod_text"
+							position = { x = 26 y = 6 }
+							format = center
+							font = "Main_16"
+							text = "MOD_TEXT_ADVISORS_EXPANDED"
+							maxWidth = 120
+							maxHeight = 20
+							alwaystransparent = yes
+						}
+					}
+
+					windowType = {
 						name = "flavour_and_events_expanded"
-						position = { x = 157 y = 218 }
+						position = { x = 157 y = 270 }
 						size = { x = 147 y = 26 }
 
 						iconType = {
@@ -522,7 +582,7 @@ guiTypes = {
 
 					windowType = {
 						name = "formables_expanded"
-						position = { x = 157 y = 244 }
+						position = { x = 157 y = 296 }
 						size = { x = 147 y = 26 }
 
 						iconType = {
