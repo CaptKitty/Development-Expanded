@@ -1,0 +1,30 @@
+﻿l_german:
+ 
+ DVE_Events.2.t:0 "Flüchtlingskrise"
+ DVE_Events.2.d:0 "Die [refugee_crisis_flag.Culture.GetName] Menschen von [refugee_crisis_flag.GetName] scheinen seit unserer Eroberung ihres Landes Zuflucht zu suchen. [refugee_crisis_receiver_flag.GetName], wo ihre Atemzüge auf sie warten."
+ DVE_Events.2.a:0 "Weniger Unruhestifter für uns."
+
+ DVE_Events.3.t:0 "Wir verbrennen"
+ DVE_Events.3.d:0 "Wir brennen, plündern und vergewaltigen, zeigen ihnen keine Gnade, brennen nur, Fleisch verwandelt sich in Asche"
+ DVE_Events.3.a:0 "Es gibt kein Verbrechen, wenn Sie nicht erwischt werden"
+
+ DVE_Events.4.t:0 "Bevölkerungsboom"
+ DVE_Events.4.d:0 "Die örtliche Bevölkerung ist dick, glücklich und die Familien groß und geistreich geworden. Lassen Sie uns ihr Wohlergehen weiterhin fördern."
+ DVE_Events.4.a:0 "Gute Zeiten"
+ 
+ DVE_Events.5.t:0 "Sie verbrennen"
+ DVE_Events.5.d:0 "Eine unserer Regionen, die während des Krieges überfallen wurde, hat mehr Schäden gemeldet als ursprünglich erwartet, es könnte Jahrzehnte dauern, bis sie sich von den entstandenen Schäden erholt hat."
+ DVE_Events.5.a:0 "So ist das Leben"
+ DVE_Events.5.b:0 "Menschen für die Umsiedlung der Region bezahlen"
+ 
+ DVE_Events.8.t: "Entwicklung ausgeweitet"
+ DVE_Events.8.d: "Willkommen bei Development Expanded \n A Diese Mod wird darauf abzielen, dass Ihre Handlungen und Ihr Verhalten die natürliche Landschaft beeinflussen. \n \n Der Wahnsinnsmodus bietet schnelles Wachstum und Verfall mit einer 10-mal höheren Rate als normal \n \n Der Normalmodus bietet Wachstum und Rückgang der dyamischen Entwicklung im Rahmen des Möglichen und Schutz vor einer Todesspirale oder einem Überfall um der KI willen \n \n Der Realismus-Modus ist eine harte Alternative ohne Schutzvorkehrungen gegen Todesspiralen, die Länder mit Leichtigkeit und einer viel höheren Zerfallsrate in den Ruin treiben können."
+ DVE_Events.8.a: "Wahnsinn-Modus,(Nicht empfohlen)."
+ DVE_Events.8.b: "Normaler Modus."
+ DVE_Events.8.c: "Realismus-Modus, (langsameres Wachstum und schnellerer Verfall)."
+ 
+ DVE_Events.9.t: "Kultur erweitert"
+ DVE_Events.9.d: "Willkommen bei Development Expanded \n Wählen Sie hier Ihre bevorzugte Art der Kulturkonversion aus! \n \n Was für ein Herrscher sind Sie?"
+ DVE_Events.9.a: "Völkermord ist mein liebster Zeitvertreib."
+ DVE_Events.9.b: "Ich mag dynamische Kulturen."
+ DVE_Events.9.c: "Ich bevorzuge meist stabile Kulturen."

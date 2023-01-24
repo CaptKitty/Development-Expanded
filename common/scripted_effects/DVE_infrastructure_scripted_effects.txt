@@ -1,0 +1,849 @@
+DVE_skipped_development_target_effect = {
+	set_variable = {
+		which = DVE_num_of_skipped_development_target_var
+		value = 0
+	}
+	every_owned_province = {
+		limit = { has_province_flag = DVE_skipped_development_target_flag }
+		ROOT = {
+			change_variable = {
+				which = DVE_num_of_skipped_development_target_var
+				value = 1
+			}
+		}
+	}
+}
+
+DVE_clear_development_target_filter_effect = {
+	clr_country_flag = DVE_target_state_filter_flag
+	clr_country_flag = DVE_target_is_state_flag
+	clr_country_flag = DVE_target_is_territory_flag
+	clr_country_flag = DVE_target_is_trade_company_flag
+
+	clr_country_flag = DVE_target_base_tax_filter_flag
+	clr_country_flag = DVE_target_base_tax_1_flag
+	clr_country_flag = DVE_target_base_tax_2_flag
+	clr_country_flag = DVE_target_base_tax_3_flag
+	clr_country_flag = DVE_target_base_tax_4_flag
+	clr_country_flag = DVE_target_base_tax_5_flag
+	clr_country_flag = DVE_target_base_tax_6_flag
+	clr_country_flag = DVE_target_base_tax_7_flag
+	clr_country_flag = DVE_target_base_tax_8_flag
+	clr_country_flag = DVE_target_base_tax_9_flag
+	clr_country_flag = DVE_target_base_tax_10_flag
+	clr_country_flag = DVE_target_base_tax_11_flag
+	clr_country_flag = DVE_target_base_tax_12_flag
+	clr_country_flag = DVE_target_base_tax_13_flag
+	clr_country_flag = DVE_target_base_tax_14_flag
+	clr_country_flag = DVE_target_base_tax_15_flag
+	clr_country_flag = DVE_target_base_tax_16_flag
+	clr_country_flag = DVE_target_base_tax_17_flag
+	clr_country_flag = DVE_target_base_tax_18_flag
+	clr_country_flag = DVE_target_base_tax_19_flag
+	clr_country_flag = DVE_target_base_tax_20_flag
+	clr_country_flag = DVE_target_base_tax_21_flag
+	clr_country_flag = DVE_target_base_tax_22_flag
+	clr_country_flag = DVE_target_base_tax_23_flag
+	clr_country_flag = DVE_target_base_tax_24_flag
+	clr_country_flag = DVE_target_base_tax_25_flag
+	clr_country_flag = DVE_target_base_tax_26_flag
+	clr_country_flag = DVE_target_base_tax_27_flag
+	clr_country_flag = DVE_target_base_tax_28_flag
+	clr_country_flag = DVE_target_base_tax_29_flag
+	clr_country_flag = DVE_target_base_tax_30_flag
+	clr_country_flag = DVE_target_base_tax_higher_than_30_flag
+
+	clr_country_flag = DVE_target_base_production_filter_flag
+	clr_country_flag = DVE_target_base_production_1_flag
+	clr_country_flag = DVE_target_base_production_2_flag
+	clr_country_flag = DVE_target_base_production_3_flag
+	clr_country_flag = DVE_target_base_production_4_flag
+	clr_country_flag = DVE_target_base_production_5_flag
+	clr_country_flag = DVE_target_base_production_6_flag
+	clr_country_flag = DVE_target_base_production_7_flag
+	clr_country_flag = DVE_target_base_production_8_flag
+	clr_country_flag = DVE_target_base_production_9_flag
+	clr_country_flag = DVE_target_base_production_10_flag
+	clr_country_flag = DVE_target_base_production_11_flag
+	clr_country_flag = DVE_target_base_production_12_flag
+	clr_country_flag = DVE_target_base_production_13_flag
+	clr_country_flag = DVE_target_base_production_14_flag
+	clr_country_flag = DVE_target_base_production_15_flag
+	clr_country_flag = DVE_target_base_production_16_flag
+	clr_country_flag = DVE_target_base_production_17_flag
+	clr_country_flag = DVE_target_base_production_18_flag
+	clr_country_flag = DVE_target_base_production_19_flag
+	clr_country_flag = DVE_target_base_production_20_flag
+	clr_country_flag = DVE_target_base_production_21_flag
+	clr_country_flag = DVE_target_base_production_22_flag
+	clr_country_flag = DVE_target_base_production_23_flag
+	clr_country_flag = DVE_target_base_production_24_flag
+	clr_country_flag = DVE_target_base_production_25_flag
+	clr_country_flag = DVE_target_base_production_26_flag
+	clr_country_flag = DVE_target_base_production_27_flag
+	clr_country_flag = DVE_target_base_production_28_flag
+	clr_country_flag = DVE_target_base_production_29_flag
+	clr_country_flag = DVE_target_base_production_30_flag
+	clr_country_flag = DVE_target_base_production_higher_than_30_flag
+
+	clr_country_flag = DVE_target_base_manpower_filter_flag
+	clr_country_flag = DVE_target_base_manpower_1_flag
+	clr_country_flag = DVE_target_base_manpower_2_flag
+	clr_country_flag = DVE_target_base_manpower_3_flag
+	clr_country_flag = DVE_target_base_manpower_4_flag
+	clr_country_flag = DVE_target_base_manpower_5_flag
+	clr_country_flag = DVE_target_base_manpower_6_flag
+	clr_country_flag = DVE_target_base_manpower_7_flag
+	clr_country_flag = DVE_target_base_manpower_8_flag
+	clr_country_flag = DVE_target_base_manpower_9_flag
+	clr_country_flag = DVE_target_base_manpower_10_flag
+	clr_country_flag = DVE_target_base_manpower_11_flag
+	clr_country_flag = DVE_target_base_manpower_12_flag
+	clr_country_flag = DVE_target_base_manpower_13_flag
+	clr_country_flag = DVE_target_base_manpower_14_flag
+	clr_country_flag = DVE_target_base_manpower_15_flag
+	clr_country_flag = DVE_target_base_manpower_16_flag
+	clr_country_flag = DVE_target_base_manpower_17_flag
+	clr_country_flag = DVE_target_base_manpower_18_flag
+	clr_country_flag = DVE_target_base_manpower_19_flag
+	clr_country_flag = DVE_target_base_manpower_20_flag
+	clr_country_flag = DVE_target_base_manpower_21_flag
+	clr_country_flag = DVE_target_base_manpower_22_flag
+	clr_country_flag = DVE_target_base_manpower_23_flag
+	clr_country_flag = DVE_target_base_manpower_24_flag
+	clr_country_flag = DVE_target_base_manpower_25_flag
+	clr_country_flag = DVE_target_base_manpower_26_flag
+	clr_country_flag = DVE_target_base_manpower_27_flag
+	clr_country_flag = DVE_target_base_manpower_28_flag
+	clr_country_flag = DVE_target_base_manpower_29_flag
+	clr_country_flag = DVE_target_base_manpower_30_flag
+	clr_country_flag = DVE_target_base_manpower_higher_than_30_flag
+
+	clr_country_flag = DVE_target_development_filter_flag
+	clr_country_flag = DVE_target_development_1_flag
+	clr_country_flag = DVE_target_development_6_flag
+	clr_country_flag = DVE_target_development_11_flag
+	clr_country_flag = DVE_target_development_16_flag
+	clr_country_flag = DVE_target_development_21_flag
+	clr_country_flag = DVE_target_development_26_flag
+	clr_country_flag = DVE_target_development_31_flag
+	clr_country_flag = DVE_target_development_36_flag
+	clr_country_flag = DVE_target_development_41_flag
+	clr_country_flag = DVE_target_development_46_flag
+	clr_country_flag = DVE_target_development_51_flag
+	clr_country_flag = DVE_target_development_56_flag
+	clr_country_flag = DVE_target_development_61_flag
+	clr_country_flag = DVE_target_development_66_flag
+	clr_country_flag = DVE_target_development_71_flag
+	clr_country_flag = DVE_target_development_76_flag
+	clr_country_flag = DVE_target_development_81_flag
+	clr_country_flag = DVE_target_development_86_flag
+	clr_country_flag = DVE_target_development_91_flag
+	clr_country_flag = DVE_target_development_96_flag
+	clr_country_flag = DVE_target_development_higher_than_100_flag
+
+	clr_country_flag = DVE_target_terrain_filter_flag
+	clr_country_flag = DVE_target_is_grasslands_flag
+	clr_country_flag = DVE_target_is_farmlands_flag
+	clr_country_flag = DVE_target_is_drylands_flag
+	clr_country_flag = DVE_target_is_woods_flag
+	clr_country_flag = DVE_target_is_coastline_flag
+	clr_country_flag = DVE_target_is_savannah_flag
+	clr_country_flag = DVE_target_is_forest_flag
+	clr_country_flag = DVE_target_is_highlands_flag
+	clr_country_flag = DVE_target_is_steppes_flag
+	clr_country_flag = DVE_target_is_hills_flag
+	clr_country_flag = DVE_target_is_marsh_flag
+	clr_country_flag = DVE_target_is_mountain_flag
+	clr_country_flag = DVE_target_is_jungle_flag
+	clr_country_flag = DVE_target_is_coastal_desert_flag
+	clr_country_flag = DVE_target_is_glacier_flag
+	clr_country_flag = DVE_target_is_desert_flag
+
+	clr_country_flag = DVE_target_center_of_trade_filter_flag
+	clr_country_flag = DVE_target_is_not_center_of_trade_flag
+	clr_country_flag = DVE_target_is_center_of_trade_flag
+	clr_country_flag = DVE_target_is_center_of_trade_1_flag
+	clr_country_flag = DVE_target_is_center_of_trade_2_flag
+	clr_country_flag = DVE_target_is_center_of_trade_3_flag
+
+	clr_country_flag = DVE_target_infrastructure_filter_flag
+	clr_country_flag = DVE_target_local_development_0_flag
+	clr_country_flag = DVE_target_local_development_1_flag
+	clr_country_flag = DVE_target_local_development_2_flag
+	clr_country_flag = DVE_target_local_development_3_flag
+	clr_country_flag = DVE_target_local_development_4_flag
+
+	clr_country_flag = DVE_target_superregion_filter_flag
+	clr_country_flag = DVE_target_in_india_superregion_flag
+	clr_country_flag = DVE_target_in_east_indies_superregion_flag
+	clr_country_flag = DVE_target_in_oceania_superregion_flag
+	clr_country_flag = DVE_target_in_china_superregion_flag
+	clr_country_flag = DVE_target_in_europe_superregion_flag
+	clr_country_flag = DVE_target_in_eastern_europe_superregion_flag
+	clr_country_flag = DVE_target_in_tartary_superregion_flag
+	clr_country_flag = DVE_target_in_far_east_superregion_flag
+	clr_country_flag = DVE_target_in_africa_superregion_flag
+	clr_country_flag = DVE_target_in_southern_africa_superregion_flag
+	clr_country_flag = DVE_target_in_south_america_superregion_flag
+	clr_country_flag = DVE_target_in_andes_superregion_flag
+	clr_country_flag = DVE_target_in_north_america_superregion_flag
+	clr_country_flag = DVE_target_in_central_america_superregion_flag
+	clr_country_flag = DVE_target_in_near_east_superregion_flag
+	clr_country_flag = DVE_target_in_persia_superregion_flag
+}
+
+DVE_exclude_development_target_effect = {
+	set_variable = {
+		which = DVE_num_of_included_development_target_var
+		value = 0
+	}
+	set_variable = {
+		which = DVE_num_of_excluded_development_target_var
+		value = 0
+	}
+	set_variable = {
+		which = DVE_num_of_local_development_5_var
+		value = 0
+	}
+	every_owned_province = {
+		clr_province_flag = DVE_excluded_development_target_flag
+	}
+	#every_owned_province = {
+	#	limit = { has_province_modifier = DVE_local_development_5 }
+	#	set_province_flag = DVE_excluded_development_target_flag
+	#}
+	IF = {
+		limit = { has_country_flag = DVE_target_state_filter_flag }
+		IF = {
+			limit = { has_country_flag = DVE_target_is_state_flag }
+			every_owned_province = {
+				limit = { is_state = no }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_is_trade_company_flag }
+			every_owned_province = {
+				limit = { is_owned_by_trade_company = no }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_is_territory_flag }
+			every_owned_province = {
+				limit = {
+					OR = {
+						is_state = yes
+						is_owned_by_trade_company = yes
+					}
+				}
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_base_tax_filter_flag }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 1 BASETAX2 = 2 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 2 BASETAX2 = 3 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 3 BASETAX2 = 4 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 4 BASETAX2 = 5 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 5 BASETAX2 = 6 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 6 BASETAX2 = 7 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 7 BASETAX2 = 8 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 8 BASETAX2 = 9 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 9 BASETAX2 = 10 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 10 BASETAX2 = 11 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 11 BASETAX2 = 12 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 12 BASETAX2 = 13 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 13 BASETAX2 = 14 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 14 BASETAX2 = 15 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 15 BASETAX2 = 16 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 16 BASETAX2 = 17 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 17 BASETAX2 = 18 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 18 BASETAX2 = 19 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 19 BASETAX2 = 20 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 20 BASETAX2 = 21 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 21 BASETAX2 = 22 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 22 BASETAX2 = 23 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 23 BASETAX2 = 24 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 24 BASETAX2 = 25 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 25 BASETAX2 = 26 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 26 BASETAX2 = 27 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 27 BASETAX2 = 28 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 28 BASETAX2 = 29 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 29 BASETAX2 = 30 }
+		DVE_exclude_development_target_base_tax_effect = { BASETAX1 = 30 BASETAX2 = 31 }
+		IF = {
+			limit = { has_country_flag = DVE_target_base_tax_higher_than_30_flag }
+			every_owned_province = {
+				limit = { NOT = { base_tax = 31 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_base_production_filter_flag }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 1 BASEPRODUCTION2 = 2 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 2 BASEPRODUCTION2 = 3 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 3 BASEPRODUCTION2 = 4 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 4 BASEPRODUCTION2 = 5 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 5 BASEPRODUCTION2 = 6 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 6 BASEPRODUCTION2 = 7 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 7 BASEPRODUCTION2 = 8 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 8 BASEPRODUCTION2 = 9 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 9 BASEPRODUCTION2 = 10 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 10 BASEPRODUCTION2 = 11 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 11 BASEPRODUCTION2 = 12 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 12 BASEPRODUCTION2 = 13 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 13 BASEPRODUCTION2 = 14 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 14 BASEPRODUCTION2 = 15 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 15 BASEPRODUCTION2 = 16 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 16 BASEPRODUCTION2 = 17 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 17 BASEPRODUCTION2 = 18 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 18 BASEPRODUCTION2 = 19 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 19 BASEPRODUCTION2 = 20 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 20 BASEPRODUCTION2 = 21 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 21 BASEPRODUCTION2 = 22 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 22 BASEPRODUCTION2 = 23 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 23 BASEPRODUCTION2 = 24 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 24 BASEPRODUCTION2 = 25 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 25 BASEPRODUCTION2 = 26 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 26 BASEPRODUCTION2 = 27 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 27 BASEPRODUCTION2 = 28 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 28 BASEPRODUCTION2 = 29 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 29 BASEPRODUCTION2 = 30 }
+		DVE_exclude_development_target_base_production_effect = { BASEPRODUCTION1 = 30 BASEPRODUCTION2 = 31 }
+		IF = {
+			limit = { has_country_flag = DVE_target_base_production_higher_than_30_flag }
+			every_owned_province = {
+				limit = { NOT = { base_production = 31 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_base_manpower_filter_flag }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 1 BASEMANPOWER2 = 2 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 2 BASEMANPOWER2 = 3 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 3 BASEMANPOWER2 = 4 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 4 BASEMANPOWER2 = 5 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 5 BASEMANPOWER2 = 6 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 6 BASEMANPOWER2 = 7 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 7 BASEMANPOWER2 = 8 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 8 BASEMANPOWER2 = 9 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 9 BASEMANPOWER2 = 10 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 10 BASEMANPOWER2 = 11 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 11 BASEMANPOWER2 = 12 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 12 BASEMANPOWER2 = 13 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 13 BASEMANPOWER2 = 14 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 14 BASEMANPOWER2 = 15 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 15 BASEMANPOWER2 = 16 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 16 BASEMANPOWER2 = 17 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 17 BASEMANPOWER2 = 18 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 18 BASEMANPOWER2 = 19 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 19 BASEMANPOWER2 = 20 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 20 BASEMANPOWER2 = 21 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 21 BASEMANPOWER2 = 22 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 22 BASEMANPOWER2 = 23 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 23 BASEMANPOWER2 = 24 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 24 BASEMANPOWER2 = 25 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 25 BASEMANPOWER2 = 26 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 26 BASEMANPOWER2 = 27 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 27 BASEMANPOWER2 = 28 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 28 BASEMANPOWER2 = 29 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 29 BASEMANPOWER2 = 30 }
+		DVE_exclude_development_target_base_manpower_effect = { BASEMANPOWER1 = 30 BASEMANPOWER2 = 31 }
+		IF = {
+			limit = { has_country_flag = DVE_target_base_manpower_higher_than_30_flag }
+			every_owned_province = {
+				limit = { NOT = { base_manpower = 31 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_development_filter_flag }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 1 DEVELOPMENT2 = 6 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 6 DEVELOPMENT2 = 11 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 11 DEVELOPMENT2 = 16 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 16 DEVELOPMENT2 = 21 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 21 DEVELOPMENT2 = 26 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 26 DEVELOPMENT2 = 31 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 31 DEVELOPMENT2 = 36 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 36 DEVELOPMENT2 = 41 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 41 DEVELOPMENT2 = 46 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 46 DEVELOPMENT2 = 51 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 51 DEVELOPMENT2 = 56 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 56 DEVELOPMENT2 = 61 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 61 DEVELOPMENT2 = 66 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 66 DEVELOPMENT2 = 71 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 71 DEVELOPMENT2 = 76 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 76 DEVELOPMENT2 = 81 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 81 DEVELOPMENT2 = 86 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 86 DEVELOPMENT2 = 91 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 91 DEVELOPMENT2 = 96 }
+		DVE_exclude_development_target_development_effect = { DEVELOPMENT1 = 96 DEVELOPMENT2 = 101 }
+		IF = {
+			limit = { has_country_flag = DVE_target_development_higher_than_100_flag }
+			every_owned_province = {
+				limit = { NOT = { development = 100 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_terrain_filter_flag }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = grasslands }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = farmlands }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = drylands }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = woods }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = coastline }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = savannah }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = forest }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = highlands }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = steppes }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = hills }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = marsh }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = mountain }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = jungle }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = coastal_desert }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = glacier }
+		DVE_exclude_development_target_terrain_effect = { TERRAIN = desert }
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_center_of_trade_filter_flag }
+		IF = {
+			limit = { has_country_flag = DVE_target_is_not_center_of_trade_flag }
+			every_owned_province = {
+				limit = { NOT = { province_has_center_of_trade_of_level = 1 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_is_center_of_trade_flag }
+			every_owned_province = {
+				limit = { province_has_center_of_trade_of_level = 1 }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_is_center_of_trade_1_flag }
+			every_owned_province = {
+				limit = {
+					OR = {
+						NOT = { province_has_center_of_trade_of_level = 1 }
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_is_center_of_trade_2_flag }
+			every_owned_province = {
+				limit = {
+					OR = {
+						NOT = { province_has_center_of_trade_of_level = 2 }
+						province_has_center_of_trade_of_level = 3
+					}
+				}
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_is_center_of_trade_3_flag }
+			every_owned_province = {
+				limit = { NOT = { province_has_center_of_trade_of_level = 3 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_infrastructure_filter_flag }
+		IF = {
+			limit = { has_country_flag = DVE_target_local_development_0_flag }
+			every_owned_province = {
+				limit = { 
+					OR = {
+						has_province_modifier = DVE_local_development_1
+						has_province_modifier = DVE_local_development_2
+						has_province_modifier = DVE_local_development_3
+						has_province_modifier = DVE_local_development_4
+					}
+				}
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_local_development_1_flag }
+			every_owned_province = {
+				limit = { NOT = { has_province_modifier = DVE_local_development_1 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_local_development_2_flag }
+			every_owned_province = {
+				limit = { NOT = { has_province_modifier = DVE_local_development_2 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_local_development_3_flag }
+			every_owned_province = {
+				limit = { NOT = { has_province_modifier = DVE_local_development_3 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+		IF = {
+			limit = { has_country_flag = DVE_target_local_development_4_flag }
+			every_owned_province = {
+				limit = { NOT = { has_province_modifier = DVE_local_development_4 } }
+				set_province_flag = DVE_excluded_development_target_flag
+			}
+		}
+	}
+	IF = {
+		limit = { has_country_flag = DVE_target_superregion_filter_flag }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = india_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = east_indies_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = oceania_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = china_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = europe_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = eastern_europe_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = tartary_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = far_east_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = africa_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = southern_africa_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = south_america_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = andes_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = north_america_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = central_america_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = near_east_superregion }
+		DVE_exclude_development_target_superregion_effect = { SUPERREGION = persia_superregion }
+	}
+	every_owned_province = {
+		limit = { has_province_flag = DVE_excluded_development_target_flag }
+		ROOT = {
+			change_variable = {
+				which = DVE_num_of_excluded_development_target_var
+				value = 1
+			}
+		}
+	}
+	every_owned_province = {
+		limit = { NOT = { has_province_flag = DVE_excluded_development_target_flag } }
+		ROOT = {
+			change_variable = {
+				which = DVE_num_of_included_development_target_var
+				value = 1
+			}
+		}
+	}
+	every_owned_province = {
+		limit = { has_province_modifier = DVE_local_development_5 }
+		ROOT = {
+			change_variable = {
+				which = DVE_num_of_local_development_5_var
+				value = 1
+			}
+		}
+	}
+	random_owned_province = {
+		limit = {
+			NOT = { has_province_modifier = DVE_local_development_5 }
+			NOT = { has_province_flag = DVE_excluded_development_target_flag }
+			NOT = { has_province_flag = DVE_skipped_development_target_flag }
+			is_city = yes
+		}
+		save_event_target_as = DVE_infrastructure_target
+	}
+}
+
+DVE_exclude_development_target_base_tax_effect = {
+	IF = {
+		limit = { has_country_flag = DVE_target_base_tax_$BASETAX1$_flag }
+		every_owned_province = {
+			limit = {
+				OR = {
+					NOT = { base_tax = $BASETAX1$ }
+					base_tax = $BASETAX2$
+				}
+			}
+			set_province_flag = DVE_excluded_development_target_flag
+		}
+	}
+}
+
+DVE_exclude_development_target_base_production_effect = {
+	IF = {
+		limit = { has_country_flag = DVE_target_base_production_$BASEPRODUCTION1$_flag }
+		every_owned_province = {
+			limit = {
+				OR = {
+					NOT = { base_production = $BASEPRODUCTION1$ }
+					base_production = $BASEPRODUCTION2$
+				}
+			}
+			set_province_flag = DVE_excluded_development_target_flag
+		}
+	}
+}
+
+DVE_exclude_development_target_base_manpower_effect = {
+	IF = {
+		limit = { has_country_flag = DVE_target_base_manpower_$BASEMANPOWER1$_flag }
+		every_owned_province = {
+			limit = {
+				OR = {
+					NOT = { base_manpower = $BASEMANPOWER1$ }
+					base_manpower = $BASEMANPOWER2$
+				}
+			}
+			set_province_flag = DVE_excluded_development_target_flag
+		}
+	}
+}
+
+DVE_exclude_development_target_development_effect = {
+	IF = {
+		limit = { has_country_flag = DVE_target_development_$DEVELOPMENT1$_flag }
+		every_owned_province = {
+			limit = {
+				OR = {
+					NOT = { development = $DEVELOPMENT1$ }
+					development = $DEVELOPMENT2$
+				}
+			}
+			set_province_flag = DVE_excluded_development_target_flag
+		}
+	}
+}
+
+DVE_exclude_development_target_terrain_effect = {
+	IF = {
+		limit = { has_country_flag = DVE_target_is_$TERRAIN$_flag }
+		every_owned_province = {
+			limit = { NOT = { has_terrain = $TERRAIN$ } }
+			set_province_flag = DVE_excluded_development_target_flag
+		}
+	}
+}
+
+DVE_exclude_development_target_superregion_effect = {
+	IF = {
+		limit = { has_country_flag = DVE_target_in_$SUPERREGION$_flag }
+		every_owned_province = {
+			limit = { NOT = { superregion = $SUPERREGION$ } }
+			set_province_flag = DVE_excluded_development_target_flag
+		}
+	}
+}
+
+DVE_checkforglobalvariable = {
+	if = {
+		limit = {
+			has_global_flag = DVE_local_dev_cost_reduction_Yes
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 20
+				}
+				NOT = { has_global_flag = AIadminsupport_1 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = {
+					name = AIadminsupportmodifier_1
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_1
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 40
+				}
+				NOT = { has_global_flag = AIadminsupport_2 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_1
+				add_country_modifier = {
+					name = AIadminsupportmodifier_2
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_2
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 60
+				}
+				NOT = { has_global_flag = AIadminsupport_3 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_2
+				add_country_modifier = {
+					name = AIadminsupportmodifier_3
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_3
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 80
+				}
+				NOT = { has_global_flag = AIadminsupport_4 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_3
+				add_country_modifier = {
+					name = AIadminsupportmodifier_4
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_4
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 100
+				}
+				NOT = { has_global_flag = AIadminsupport_5 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_4
+				add_country_modifier = {
+					name = AIadminsupportmodifier_5
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_4
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 120
+				}
+				NOT = { has_global_flag = AIadminsupport_6 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_5
+				add_country_modifier = {
+					name = AIadminsupportmodifier_6
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_6
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 140
+				}
+				NOT = { has_global_flag = AIadminsupport_7 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_6
+				add_country_modifier = {
+					name = AIadminsupportmodifier_7
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_7
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 160
+				}
+				NOT = { has_global_flag = AIadminsupport_8 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_7
+				add_country_modifier = {
+					name = AIadminsupportmodifier_8
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_8
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 180
+				}
+				NOT = { has_global_flag = AIadminsupport_9 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_8
+				add_country_modifier = {
+					name = AIadminsupportmodifier_9
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_9
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 200
+				}
+				NOT = { has_global_flag = AIadminsupport_10 }
+			}
+			every_country = {
+				limit = {
+					ai = yes
+				}
+				remove_country_modifier = AIadminsupportmodifier_9
+				add_country_modifier = {
+					name = AIadminsupportmodifier_10
+					duration = -1
+				}
+			}
+			set_global_flag = AIadminsupport_10
+		}
+	}
+}

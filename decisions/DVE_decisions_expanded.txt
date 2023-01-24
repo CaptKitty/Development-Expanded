@@ -1,144 +1,24 @@
 country_decisions = {
-	DVE_develop_local_area = {
+	DVE_infrastructure_development = {
+		major = yes
 		potential = {
 			has_global_flag = DVE_Infrastructure_Yes
+			NOT = { has_country_flag = DVE_open_infrastructure_development_flag }
 		}
 		allow = {
-			any_owned_province = {
-				is_state = yes
-				all_province = {
-					OR = {
-						NOT = { area = PREV }
-						AND = {
-							owned_by = ROOT
-							NOT = { has_province_modifier = DVE_local_development_5 }
-						}
-					}
-				}
-			}
-			
-			if = {
-				limit = {
-					NOT = { monthly_income = 16 }
-				}
-				treasury = 100
-			}
-			else_if = {
-				limit = {
-					NOT = { monthly_income = 80 }
-				}
-				years_of_income = 0.5
-			}
-			else = {
-				treasury = 500
-			}
+			always = yes
 		}
 		effect = {
-			if = {
-				limit = {
-					NOT = { monthly_income = 16 }
-				}
-				add_treasury = -100
+			hidden_effect = {
+				DVE_exclude_development_target_effect = yes
+				set_country_flag = DVE_open_infrastructure_development_flag
 			}
-			else_if = {
-				limit = {
-					monthly_income = 16
-					NOT = { monthly_income = 80 }
-				}
-				add_years_of_income = -0.5
-			}
-			else = {
-				add_treasury = -500
-			}
-			
-			random_owned_province = {
-				limit = {
-					is_state = yes
-					all_province = {
-						OR = {
-							NOT = { area = PREV }
-							AND = {
-								owned_by = ROOT
-								NOT = { has_province_modifier = DVE_local_development_5 }
-							}
-						}
-					}
-				}
-				every_province = {
-					limit = {
-						area = PREV
-						owned_by = ROOT
-						NOT = { has_province_modifier = DVE_local_development_5 }
-						OR = {
-							AND = {
-								NOT = { has_province_modifier = DVE_local_development_1 }
-								NOT = { has_province_modifier = DVE_local_development_2 }
-								NOT = { has_province_modifier = DVE_local_development_3 }
-								NOT = { has_province_modifier = DVE_local_development_4 }
-								NOT = { has_province_modifier = DVE_local_development_5 }
-							}
-							has_province_modifier = DVE_local_development_1
-							has_province_modifier = DVE_local_development_2
-							has_province_modifier = DVE_local_development_3
-							has_province_modifier = DVE_local_development_4
-						}
-					}
-					if = {
-						limit = {
-							has_province_modifier = DVE_local_development_4
-						}
-						remove_province_modifier = DVE_local_development_4
-						add_province_modifier = {
-							name = DVE_local_development_5
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = {
-							has_province_modifier = DVE_local_development_3
-						}
-						remove_province_modifier = DVE_local_development_3
-						add_province_modifier = {
-							name = DVE_local_development_4
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = {
-							has_province_modifier = DVE_local_development_2
-						}
-						remove_province_modifier = DVE_local_development_2
-						add_province_modifier = {
-							name = DVE_local_development_3
-							duration = -1
-						}
-					}
-					else_if = {
-						limit = {
-							has_province_modifier = DVE_local_development_1
-						}
-						remove_province_modifier = DVE_local_development_1
-						add_province_modifier = {
-							name = DVE_local_development_2
-							duration = -1
-						}
-					}
-					else = {
-						add_province_modifier = {
-							name = DVE_local_development_1
-							duration = -1
-						}
-					}
-				}
+			country_event = {
+				id = DVE_infrastructure_events.0
 			}
 		}
 		ai_will_do = {
 			factor = 0
-			modifier = {
-				factor = 0
-					NOT = { years_of_income = 10 }
-					NOT = { treasury = 1000 }
-			}	
 		}
 	}
 	DVE_call_event = {

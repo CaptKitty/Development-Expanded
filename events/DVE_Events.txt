@@ -1048,7 +1048,7 @@ country_event = { #The Big One
 	hidden = yes
 	
 	trigger = {
-		owns = 1
+		owns = 118
 		OR = {
 			had_global_flag = {
 				flag = DVE_Anti_Trigger_Flag
@@ -1069,6 +1069,9 @@ country_event = { #The Big One
 		clr_global_flag = DVE_Anti_Trigger_Flag
 		set_global_flag = DVE_Anti_Trigger_Flag
 		every_province = {
+			limit = {
+				is_city = yes
+			}
 			#{ Piracy
 				if = {
 					limit = {
@@ -1859,11 +1862,23 @@ country_event = { #The Big One
 							devastation = 5
 							NOT = { development = 7 }
 						}
-						random_neighbor_province = {
+						if = {
 							limit = {
-								NOT = { devastation = 1 }
+								any_neighbor_province = {
+									NOT = { devastation = 1 }
+								}
 							}
-							save_event_target_as = DVE_culture_dummy
+							random_neighbor_province = {
+								limit = {
+									NOT = { devastation = 1 }
+								}
+								save_event_target_as = DVE_culture_dummy
+							}
+						}
+						else = {
+							random_neighbor_province = {
+								save_event_target_as = DVE_culture_dummy
+							}
 						}
 						change_culture = event_target:DVE_culture_dummy
 						change_religion = event_target:DVE_culture_dummy
@@ -1881,12 +1896,12 @@ country_event = { #The Big One
 						if = {
 							limit = {
 								any_neighbor_province = {
-									NOT = {	culure = ROOT }
+									NOT = {	culture = ROOT }
 								}
 							}
 							random_neighbor_province = {
 								limit = {
-									NOT = { culure = ROOT }
+									NOT = { culture = ROOT }
 								}
 								save_event_target_as = DVE_culture_dummy
 							}
@@ -2065,14 +2080,14 @@ country_event = { #12,Madness Mode
 
 	option = {
 		name = DVE_Events.12.a
-		clr_country_flag = DVE_Madness_Mode_No
+		clr_global_flag = DVE_Madness_Mode_No
 		set_global_flag = DVE_Madness_Mode_Yes
 	}
 	
 	option = {
 		name = DVE_Events.12.b
 		#Recommended
-		clr_country_flag = DVE_Madness_Mode_Yes
+		clr_global_flag = DVE_Madness_Mode_Yes
 		set_global_flag = DVE_Madness_Mode_No
 	}
 	
@@ -2092,14 +2107,14 @@ country_event = { #13,Pirate Protection
 
 	option = {
 		name = DVE_Events.13.a
-		clr_country_flag = DVE_Pirate_Protection_No
+		clr_global_flag = DVE_Pirate_Protection_No
 		set_global_flag = DVE_Pirate_Protection_Yes
 	}
 	
 	option = {
 		name = DVE_Events.13.b
 		#Recommended
-		clr_country_flag = DVE_Pirate_Protection_Yes
+		clr_global_flag = DVE_Pirate_Protection_Yes
 		set_global_flag = DVE_Pirate_Protection_No
 	}
 	
@@ -2119,34 +2134,34 @@ country_event = { #14,Local Growth
 
 	option = {
 		name = DVE_Events.14.a
-		clr_country_flag = DVE_Growth_Local_Small
-		clr_country_flag = DVE_Growth_Local_Medium
-		clr_country_flag = DVE_Growth_Local_Large
+		clr_global_flag = DVE_Growth_Local_Small
+		clr_global_flag = DVE_Growth_Local_Medium
+		clr_global_flag = DVE_Growth_Local_Large
 		set_global_flag = DVE_Growth_Local_Off
 	}
 	
 	option = {
 		name = DVE_Events.14.b
-		clr_country_flag = DVE_Growth_Local_Off
-		clr_country_flag = DVE_Growth_Local_Medium
-		clr_country_flag = DVE_Growth_Local_Large
+		clr_global_flag = DVE_Growth_Local_Off
+		clr_global_flag = DVE_Growth_Local_Medium
+		clr_global_flag = DVE_Growth_Local_Large
 		set_global_flag = DVE_Growth_Local_Small
 	}
 
 	option = {
 		name = DVE_Events.14.c
 		#Recommended
-		clr_country_flag = DVE_Growth_Local_Off
-		clr_country_flag = DVE_Growth_Local_Small
-		clr_country_flag = DVE_Growth_Local_Large
+		clr_global_flag = DVE_Growth_Local_Off
+		clr_global_flag = DVE_Growth_Local_Small
+		clr_global_flag = DVE_Growth_Local_Large
 		set_global_flag = DVE_Growth_Local_Medium
 	}
 
 	option = {
 		name = DVE_Events.14.e
-		clr_country_flag = DVE_Growth_Local_Off
-		clr_country_flag = DVE_Growth_Local_Small
-		clr_country_flag = DVE_Growth_Local_Medium
+		clr_global_flag = DVE_Growth_Local_Off
+		clr_global_flag = DVE_Growth_Local_Small
+		clr_global_flag = DVE_Growth_Local_Medium
 		set_global_flag = DVE_Growth_Local_Large
 	}
 	
@@ -2166,34 +2181,34 @@ country_event = { #15,Prosperity Growth
 
 	option = {
 		name = DVE_Events.15.a
-		clr_country_flag = DVE_Growth_Prosperity_Small
-		clr_country_flag = DVE_Growth_Prosperity_Medium
-		clr_country_flag = DVE_Growth_Prosperity_Large
+		clr_global_flag = DVE_Growth_Prosperity_Small
+		clr_global_flag = DVE_Growth_Prosperity_Medium
+		clr_global_flag = DVE_Growth_Prosperity_Large
 		set_global_flag = DVE_Growth_Prosperity_Off
 	}
 	
 	option = {
 		name = DVE_Events.15.b
 		#Recommended
-		clr_country_flag = DVE_Growth_Prosperity_Off
-		clr_country_flag = DVE_Growth_Prosperity_Medium
-		clr_country_flag = DVE_Growth_Prosperity_Large
+		clr_global_flag = DVE_Growth_Prosperity_Off
+		clr_global_flag = DVE_Growth_Prosperity_Medium
+		clr_global_flag = DVE_Growth_Prosperity_Large
 		set_global_flag = DVE_Growth_Prosperity_Small
 	}
 
 	option = {
 		name = DVE_Events.15.c
-		clr_country_flag = DVE_Growth_Prosperity_Off
-		clr_country_flag = DVE_Growth_Prosperity_Small
-		clr_country_flag = DVE_Growth_Prosperity_Large
+		clr_global_flag = DVE_Growth_Prosperity_Off
+		clr_global_flag = DVE_Growth_Prosperity_Small
+		clr_global_flag = DVE_Growth_Prosperity_Large
 		set_global_flag = DVE_Growth_Prosperity_Medium
 	}
 
 	option = {
 		name = DVE_Events.15.e
-		clr_country_flag = DVE_Growth_Prosperity_Off
-		clr_country_flag = DVE_Growth_Prosperity_Small
-		clr_country_flag = DVE_Growth_Prosperity_Medium
+		clr_global_flag = DVE_Growth_Prosperity_Off
+		clr_global_flag = DVE_Growth_Prosperity_Small
+		clr_global_flag = DVE_Growth_Prosperity_Medium
 		set_global_flag = DVE_Growth_Prosperity_Large
 	}
 	
@@ -2213,34 +2228,34 @@ country_event = { #16,Global Development Growth
 
 	option = {
 		name = DVE_Events.16.a
-		clr_country_flag = DVE_Growth_Global_Development_Small
-		clr_country_flag = DVE_Growth_Global_Development_Medium
-		clr_country_flag = DVE_Growth_Global_Development_Large
+		clr_global_flag = DVE_Growth_Global_Development_Small
+		clr_global_flag = DVE_Growth_Global_Development_Medium
+		clr_global_flag = DVE_Growth_Global_Development_Large
 		set_global_flag = DVE_Growth_Global_Development_Off
 	}
 	
 	option = {
 		name = DVE_Events.16.b
 		#Recommended
-		clr_country_flag = DVE_Growth_Global_Development_Off
-		clr_country_flag = DVE_Growth_Global_Development_Medium
-		clr_country_flag = DVE_Growth_Global_Development_Large
+		clr_global_flag = DVE_Growth_Global_Development_Off
+		clr_global_flag = DVE_Growth_Global_Development_Medium
+		clr_global_flag = DVE_Growth_Global_Development_Large
 		set_global_flag = DVE_Growth_Global_Development_Small
 	}
 
 	option = {
 		name = DVE_Events.16.c
-		clr_country_flag = DVE_Growth_Global_Development_Off
-		clr_country_flag = DVE_Growth_Global_Development_Small
-		clr_country_flag = DVE_Growth_Global_Development_Large
+		clr_global_flag = DVE_Growth_Global_Development_Off
+		clr_global_flag = DVE_Growth_Global_Development_Small
+		clr_global_flag = DVE_Growth_Global_Development_Large
 		set_global_flag = DVE_Growth_Global_Development_Medium
 	}
 
 	option = {
 		name = DVE_Events.16.e
-		clr_country_flag = DVE_Growth_Global_Development_Off
-		clr_country_flag = DVE_Growth_Global_Development_Small
-		clr_country_flag = DVE_Growth_Global_Development_Medium
+		clr_global_flag = DVE_Growth_Global_Development_Off
+		clr_global_flag = DVE_Growth_Global_Development_Small
+		clr_global_flag = DVE_Growth_Global_Development_Medium
 		set_global_flag = DVE_Growth_Global_Development_Large
 	}
 	
@@ -2260,34 +2275,34 @@ country_event = { #17,Decline Speed
 
 	option = {
 		name = DVE_Events.17.a
-		clr_country_flag = DVE_Decline_Speed_Small
-		clr_country_flag = DVE_Decline_Speed_Medium
-		clr_country_flag = DVE_Decline_Speed_Large
+		clr_global_flag = DVE_Decline_Speed_Small
+		clr_global_flag = DVE_Decline_Speed_Medium
+		clr_global_flag = DVE_Decline_Speed_Large
 		set_global_flag = DVE_Decline_Speed_Off
 	}
 	
 	option = {
 		name = DVE_Events.17.b
 		#Recommended
-		clr_country_flag = DVE_Decline_Speed_Off
-		clr_country_flag = DVE_Decline_Speed_Medium
-		clr_country_flag = DVE_Decline_Speed_Large
+		clr_global_flag = DVE_Decline_Speed_Off
+		clr_global_flag = DVE_Decline_Speed_Medium
+		clr_global_flag = DVE_Decline_Speed_Large
 		set_global_flag = DVE_Decline_Speed_Small
 	}
 
 	option = {
 		name = DVE_Events.17.c
-		clr_country_flag = DVE_Decline_Speed_Off
-		clr_country_flag = DVE_Decline_Speed_Small
-		clr_country_flag = DVE_Decline_Speed_Large
+		clr_global_flag = DVE_Decline_Speed_Off
+		clr_global_flag = DVE_Decline_Speed_Small
+		clr_global_flag = DVE_Decline_Speed_Large
 		set_global_flag = DVE_Decline_Speed_Medium
 	}
 
 	option = {
 		name = DVE_Events.17.e
-		clr_country_flag = DVE_Decline_Speed_Off
-		clr_country_flag = DVE_Decline_Speed_Small
-		clr_country_flag = DVE_Decline_Speed_Medium
+		clr_global_flag = DVE_Decline_Speed_Off
+		clr_global_flag = DVE_Decline_Speed_Small
+		clr_global_flag = DVE_Decline_Speed_Medium
 		set_global_flag = DVE_Decline_Speed_Large
 	}
 	
@@ -2307,34 +2322,34 @@ country_event = { #18,Decline Scale
 
 	option = {
 		name = DVE_Events.18.a
-		clr_country_flag = DVE_Decline_Scale_Small
-		clr_country_flag = DVE_Decline_Scale_Medium
-		clr_country_flag = DVE_Decline_Scale_Large
+		clr_global_flag = DVE_Decline_Scale_Small
+		clr_global_flag = DVE_Decline_Scale_Medium
+		clr_global_flag = DVE_Decline_Scale_Large
 		set_global_flag = DVE_Decline_Scale_Off
 	}
 	
 	option = {
 		name = DVE_Events.18.b
 		#Recommended
-		clr_country_flag = DVE_Decline_Scale_Off
-		clr_country_flag = DVE_Decline_Scale_Medium
-		clr_country_flag = DVE_Decline_Scale_Large
+		clr_global_flag = DVE_Decline_Scale_Off
+		clr_global_flag = DVE_Decline_Scale_Medium
+		clr_global_flag = DVE_Decline_Scale_Large
 		set_global_flag = DVE_Decline_Scale_Small
 	}
 
 	option = {
 		name = DVE_Events.18.c
-		clr_country_flag = DVE_Decline_Scale_Off
-		clr_country_flag = DVE_Decline_Scale_Small
-		clr_country_flag = DVE_Decline_Scale_Large
+		clr_global_flag = DVE_Decline_Scale_Off
+		clr_global_flag = DVE_Decline_Scale_Small
+		clr_global_flag = DVE_Decline_Scale_Large
 		set_global_flag = DVE_Decline_Scale_Medium
 	}
 
 	option = {
 		name = DVE_Events.18.e
-		clr_country_flag = DVE_Decline_Scale_Off
-		clr_country_flag = DVE_Decline_Scale_Small
-		clr_country_flag = DVE_Decline_Scale_Medium
+		clr_global_flag = DVE_Decline_Scale_Off
+		clr_global_flag = DVE_Decline_Scale_Small
+		clr_global_flag = DVE_Decline_Scale_Medium
 		set_global_flag = DVE_Decline_Scale_Large
 	}
 	
@@ -2354,14 +2369,14 @@ country_event = { #19,Decline Limiter
 
 	option = {
 		name = DVE_Events.19.a
-		clr_country_flag = DVE_Decline_Limiter_On
+		clr_global_flag = DVE_Decline_Limiter_On
 		set_global_flag = DVE_Decline_Limiter_Off
 	}
 	
 	option = {
 		name = DVE_Events.19.b
 		#Recommended
-		clr_country_flag = DVE_Decline_Limiter_Off
+		clr_global_flag = DVE_Decline_Limiter_Off
 		set_global_flag = DVE_Decline_Limiter_On
 	}
 	
@@ -2381,34 +2396,34 @@ country_event = { #20,Dynamic Cultures
 
 	option = {
 		name = DVE_Events.20.a
-		clr_country_flag = DVE_Culture_Dynamic_Small
-		clr_country_flag = DVE_Culture_Dynamic_Medium
-		clr_country_flag = DVE_Culture_Dynamic_Large
+		clr_global_flag = DVE_Culture_Dynamic_Small
+		clr_global_flag = DVE_Culture_Dynamic_Medium
+		clr_global_flag = DVE_Culture_Dynamic_Large
 		set_global_flag = DVE_Culture_Dynamic_Off
 	}
 	
 	option = {
 		name = DVE_Events.20.b
-		clr_country_flag = DVE_Culture_Dynamic_Off
-		clr_country_flag = DVE_Culture_Dynamic_Medium
-		clr_country_flag = DVE_Culture_Dynamic_Large
+		clr_global_flag = DVE_Culture_Dynamic_Off
+		clr_global_flag = DVE_Culture_Dynamic_Medium
+		clr_global_flag = DVE_Culture_Dynamic_Large
 		set_global_flag = DVE_Culture_Dynamic_Small
 	}
 
 	option = {
 		name = DVE_Events.20.c
 		#Recommended
-		clr_country_flag = DVE_Culture_Dynamic_Off
-		clr_country_flag = DVE_Culture_Dynamic_Small
-		clr_country_flag = DVE_Culture_Dynamic_Large
+		clr_global_flag = DVE_Culture_Dynamic_Off
+		clr_global_flag = DVE_Culture_Dynamic_Small
+		clr_global_flag = DVE_Culture_Dynamic_Large
 		set_global_flag = DVE_Culture_Dynamic_Medium
 	}
 
 	option = {
 		name = DVE_Events.20.e
-		clr_country_flag = DVE_Culture_Dynamic_Off
-		clr_country_flag = DVE_Culture_Dynamic_Small
-		clr_country_flag = DVE_Culture_Dynamic_Medium
+		clr_global_flag = DVE_Culture_Dynamic_Off
+		clr_global_flag = DVE_Culture_Dynamic_Small
+		clr_global_flag = DVE_Culture_Dynamic_Medium
 		set_global_flag = DVE_Culture_Dynamic_Large
 	}
 	
@@ -2428,34 +2443,34 @@ country_event = { #21,Active Cultures
 
 	option = {
 		name = DVE_Events.21.a
-		clr_country_flag = DVE_Culture_Active_Small
-		clr_country_flag = DVE_Culture_Active_Medium
-		clr_country_flag = DVE_Culture_Active_Large
+		clr_global_flag = DVE_Culture_Active_Small
+		clr_global_flag = DVE_Culture_Active_Medium
+		clr_global_flag = DVE_Culture_Active_Large
 		set_global_flag = DVE_Culture_Active_Off
 	}
 	
 	option = {
 		name = DVE_Events.21.b
 		#Recommended
-		clr_country_flag = DVE_Culture_Active_Off
-		clr_country_flag = DVE_Culture_Active_Medium
-		clr_country_flag = DVE_Culture_Active_Large
+		clr_global_flag = DVE_Culture_Active_Off
+		clr_global_flag = DVE_Culture_Active_Medium
+		clr_global_flag = DVE_Culture_Active_Large
 		set_global_flag = DVE_Culture_Active_Small
 	}
 
 	option = {
 		name = DVE_Events.21.c
-		clr_country_flag = DVE_Culture_Active_Off
-		clr_country_flag = DVE_Culture_Active_Small
-		clr_country_flag = DVE_Culture_Active_Large
+		clr_global_flag = DVE_Culture_Active_Off
+		clr_global_flag = DVE_Culture_Active_Small
+		clr_global_flag = DVE_Culture_Active_Large
 		set_global_flag = DVE_Culture_Active_Medium
 	}
 
 	option = {
 		name = DVE_Events.21.e
-		clr_country_flag = DVE_Culture_Active_Off
-		clr_country_flag = DVE_Culture_Active_Small
-		clr_country_flag = DVE_Culture_Active_Medium
+		clr_global_flag = DVE_Culture_Active_Off
+		clr_global_flag = DVE_Culture_Active_Small
+		clr_global_flag = DVE_Culture_Active_Medium
 		set_global_flag = DVE_Culture_Active_Large
 	}
 	
@@ -2476,14 +2491,57 @@ country_event = { #22,Infrastructure
 	option = {
 		name = DVE_Events.22.a
 		#Recommended
-		clr_country_flag = DVE_Infrastructure_No
+		clr_global_flag = DVE_Infrastructure_No
 		set_global_flag = DVE_Infrastructure_Yes
 	}
 	
 	option = {
 		name = DVE_Events.22.b
 		
-		clr_country_flag = DVE_Infrastructure_Yes
+		clr_global_flag = DVE_Infrastructure_Yes
 		set_global_flag = DVE_Infrastructure_No
+	}
+	after = {
+		country_event = {
+			id = DVE_Events.23
+		}
+	}
+}
+country_event = { #23,Global Reaction
+	id = DVE_Events.23
+	title = DVE_Events.23.t
+	desc = DVE_Events.23.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = DVE_local_dev_cost_reduction
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = DVE_local_dev_cost_reduction
+					value = 0
+				}
+			}
+			
+		}
+	}
+
+	option = {
+		name = DVE_Events.23.a
+		clr_global_flag = DVE_local_dev_cost_reduction_Yes
+	}
+	
+	option = {
+		name = DVE_Events.23.b
+		set_global_flag = DVE_local_dev_cost_reduction_Yes
 	}
 }

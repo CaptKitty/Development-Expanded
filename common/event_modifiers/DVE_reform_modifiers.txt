@@ -48,3 +48,33 @@ Settler_Enclave = {
 	local_development_cost = -0.10
 	local_unrest = 6
 }
+AIadminsupportmodifier_1 = {
+	administrative_efficiency = 0.03
+}
+AIadminsupportmodifier_2 = {
+	administrative_efficiency = 0.06
+}
+AIadminsupportmodifier_3 = {
+	administrative_efficiency = 0.09
+}
+AIadminsupportmodifier_4 = {
+	administrative_efficiency = 0.12
+}
+AIadminsupportmodifier_5 = {
+	administrative_efficiency = 0.15
+}
+AIadminsupportmodifier_6 = {
+	administrative_efficiency = 0.18
+}
+AIadminsupportmodifier_7 = {
+	administrative_efficiency = 0.21
+}
+AIadminsupportmodifier_8 = {
+	administrative_efficiency = 0.24
+}
+AIadminsupportmodifier_9 = {
+	administrative_efficiency = 0.27
+}
+AIadminsupportmodifier_10 = {
+	administrative_efficiency = 0.30
+}

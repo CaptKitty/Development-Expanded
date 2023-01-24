@@ -92,7 +92,7 @@
  DVE_Events.20.e: "Mayor Dynamic Cultures"
 
  DVE_Events.21.t: "Active Settlements"
- DVE_Events.21.d: "Active Settlements determines how fast a province will accept your primary or accepted culture and convert to become patriotic supporters of your regime. This is a very slow progress that will take centuries in the base circumstances.\n\n§BNo Active Settlements§! There will not be any expansion of your primary or accepted cultures.\n§BMinor Active Settlements§! will cause provinces to accept your primary culture after an average of 1000 years, and convert to neighbouring accepted cultures after an average of 250 years.\n§BNormal Active Settlements§! will cause provinces to accept your primary culture after an average of 1000 years, and convert to neighbouring accepted cultures after an average of 250 years.\n§BMayor Active Settlements§! will cause provinces to accept your primary culture after an average of 250 years, and convert to neighbouring accepted cultures after an average of 65 years."
+ DVE_Events.21.d: "Active Settlements determines how fast a province will accept your primary or accepted culture and convert to become patriotic supporters of your regime. This is a very slow progress that will take centuries in the base circumstances.\n\n§BNo Active Settlements§! There will not be any expansion of your primary or accepted cultures.\n§BMinor Active Settlements§! will cause provinces to accept your primary culture after an average of 1000 years, and convert to neighbouring accepted cultures after an average of 250 years.\n§BNormal Active Settlements§! will cause provinces to accept your primary culture after an average of 500 years, and convert to neighbouring accepted cultures after an average of 100 years.\n§BMayor Active Settlements§! will cause provinces to accept your primary culture after an average of 250 years, and convert to neighbouring accepted cultures after an average of 50 years."
  DVE_Events.21.a: "No Active Settlements"
  DVE_Events.21.b: "Minor Active Settlements §G(Recommended)§!"
  DVE_Events.21.c: "Normal Active Settlements"
@@ -102,3 +102,8 @@
  DVE_Events.22.d: "Infrastructure allows you to spend money to increase the dynamic growth of your provinces by investing money in them, this is completely dependent on the Local Development Growth option you selected."
  DVE_Events.22.a: "Infrastructure §G(Recommended)§!"
  DVE_Events.22.b: "No Infrastructure"
+
+ DVE_Events.23.t: "AI War Score compensation"
+ DVE_Events.23.d: "To balance out the increased development and help the AI out, you can grant the AI bonus admin efficiency whenever you build infrastructure."
+ DVE_Events.23.a: "AI warscore Buff"
+ DVE_Events.23.b: "No AI warscore Buff §G(Recommended)§!"

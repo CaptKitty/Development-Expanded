@@ -1,0 +1,741 @@
+defined_text = {
+    name = DVE_target_localisation
+    text = {
+        localisation_key = DVE_infrastructure_target
+        trigger = { 
+            any_owned_province = {
+				NOT = { has_province_modifier = DVE_local_development_5 }
+				NOT = { has_province_flag = DVE_excluded_development_target_flag }
+				NOT = { has_province_flag = DVE_skipped_development_target_flag }
+				is_city = yes
+			}
+        }
+    }
+    text = {
+        localisation_key = DVE_none
+        trigger = { 
+            NOT = {
+                any_owned_province = {
+                    NOT = { has_province_modifier = DVE_local_development_5 }
+                    NOT = { has_province_flag = DVE_excluded_development_target_flag }
+                    NOT = { has_province_flag = DVE_skipped_development_target_flag }
+                    is_city = yes
+                }
+            }
+        }
+    }
+}
+defined_text = {
+    name = DVE_target_detail_localisation
+    text = {
+        localisation_key = DVE_infrastructure_events.1.d
+        trigger = { always = yes }
+    }
+}
+defined_text = {
+    name = DVE_state_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_state_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.2a
+        trigger = { has_country_flag = DVE_target_is_state_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.2b
+        trigger = { has_country_flag = DVE_target_is_territory_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.2c
+        trigger = { has_country_flag = DVE_target_is_trade_company_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_base_tax_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_base_tax_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_1_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_1_flag }
+    }
+    text = {
+        localisation_key = DVE_2_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_2_flag }
+    }
+    text = {
+        localisation_key = DVE_3_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_3_flag }
+    }
+    text = {
+        localisation_key = DVE_4_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_4_flag }
+    }
+    text = {
+        localisation_key = DVE_5_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_5_flag }
+    }
+    text = {
+        localisation_key = DVE_6_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_6_flag }
+    }
+    text = {
+        localisation_key = DVE_7_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_7_flag }
+    }
+    text = {
+        localisation_key = DVE_8_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_8_flag }
+    }
+    text = {
+        localisation_key = DVE_9_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_9_flag }
+    }
+    text = {
+        localisation_key = DVE_10_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_10_flag }
+    }
+    text = {
+        localisation_key = DVE_11_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_11_flag }
+    }
+    text = {
+        localisation_key = DVE_12_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_12_flag }
+    }
+    text = {
+        localisation_key = DVE_13_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_13_flag }
+    }
+    text = {
+        localisation_key = DVE_14_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_14_flag }
+    }
+    text = {
+        localisation_key = DVE_15_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_15_flag }
+    }
+    text = {
+        localisation_key = DVE_16_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_16_flag }
+    }
+    text = {
+        localisation_key = DVE_17_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_17_flag }
+    }
+    text = {
+        localisation_key = DVE_18_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_18_flag }
+    }
+    text = {
+        localisation_key = DVE_19_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_19_flag }
+    }
+    text = {
+        localisation_key = DVE_20_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_20_flag }
+    }
+    text = {
+        localisation_key = DVE_21_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_21_flag }
+    }
+    text = {
+        localisation_key = DVE_22_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_22_flag }
+    }
+    text = {
+        localisation_key = DVE_23_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_23_flag }
+    }
+    text = {
+        localisation_key = DVE_24_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_24_flag }
+    }
+    text = {
+        localisation_key = DVE_25_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_25_flag }
+    }
+    text = {
+        localisation_key = DVE_26_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_26_flag }
+    }
+    text = {
+        localisation_key = DVE_27_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_27_flag }
+    }
+    text = {
+        localisation_key = DVE_28_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_28_flag }
+    }
+    text = {
+        localisation_key = DVE_29_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_29_flag }
+    }
+    text = {
+        localisation_key = DVE_30_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_30_flag }
+    }
+    text = {
+        localisation_key = DVE_higher_than_30_localisation
+        trigger = { has_country_flag = DVE_target_base_tax_higher_than_30_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_base_production_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_base_production_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_1_localisation
+        trigger = { has_country_flag = DVE_target_base_production_1_flag }
+    }
+    text = {
+        localisation_key = DVE_2_localisation
+        trigger = { has_country_flag = DVE_target_base_production_2_flag }
+    }
+    text = {
+        localisation_key = DVE_3_localisation
+        trigger = { has_country_flag = DVE_target_base_production_3_flag }
+    }
+    text = {
+        localisation_key = DVE_4_localisation
+        trigger = { has_country_flag = DVE_target_base_production_4_flag }
+    }
+    text = {
+        localisation_key = DVE_5_localisation
+        trigger = { has_country_flag = DVE_target_base_production_5_flag }
+    }
+    text = {
+        localisation_key = DVE_6_localisation
+        trigger = { has_country_flag = DVE_target_base_production_6_flag }
+    }
+    text = {
+        localisation_key = DVE_7_localisation
+        trigger = { has_country_flag = DVE_target_base_production_7_flag }
+    }
+    text = {
+        localisation_key = DVE_8_localisation
+        trigger = { has_country_flag = DVE_target_base_production_8_flag }
+    }
+    text = {
+        localisation_key = DVE_9_localisation
+        trigger = { has_country_flag = DVE_target_base_production_9_flag }
+    }
+    text = {
+        localisation_key = DVE_10_localisation
+        trigger = { has_country_flag = DVE_target_base_production_10_flag }
+    }
+    text = {
+        localisation_key = DVE_11_localisation
+        trigger = { has_country_flag = DVE_target_base_production_11_flag }
+    }
+    text = {
+        localisation_key = DVE_12_localisation
+        trigger = { has_country_flag = DVE_target_base_production_12_flag }
+    }
+    text = {
+        localisation_key = DVE_13_localisation
+        trigger = { has_country_flag = DVE_target_base_production_13_flag }
+    }
+    text = {
+        localisation_key = DVE_14_localisation
+        trigger = { has_country_flag = DVE_target_base_production_14_flag }
+    }
+    text = {
+        localisation_key = DVE_15_localisation
+        trigger = { has_country_flag = DVE_target_base_production_15_flag }
+    }
+    text = {
+        localisation_key = DVE_16_localisation
+        trigger = { has_country_flag = DVE_target_base_production_16_flag }
+    }
+    text = {
+        localisation_key = DVE_17_localisation
+        trigger = { has_country_flag = DVE_target_base_production_17_flag }
+    }
+    text = {
+        localisation_key = DVE_18_localisation
+        trigger = { has_country_flag = DVE_target_base_production_18_flag }
+    }
+    text = {
+        localisation_key = DVE_19_localisation
+        trigger = { has_country_flag = DVE_target_base_production_19_flag }
+    }
+    text = {
+        localisation_key = DVE_20_localisation
+        trigger = { has_country_flag = DVE_target_base_production_20_flag }
+    }
+    text = {
+        localisation_key = DVE_21_localisation
+        trigger = { has_country_flag = DVE_target_base_production_21_flag }
+    }
+    text = {
+        localisation_key = DVE_22_localisation
+        trigger = { has_country_flag = DVE_target_base_production_22_flag }
+    }
+    text = {
+        localisation_key = DVE_23_localisation
+        trigger = { has_country_flag = DVE_target_base_production_23_flag }
+    }
+    text = {
+        localisation_key = DVE_24_localisation
+        trigger = { has_country_flag = DVE_target_base_production_24_flag }
+    }
+    text = {
+        localisation_key = DVE_25_localisation
+        trigger = { has_country_flag = DVE_target_base_production_25_flag }
+    }
+    text = {
+        localisation_key = DVE_26_localisation
+        trigger = { has_country_flag = DVE_target_base_production_26_flag }
+    }
+    text = {
+        localisation_key = DVE_27_localisation
+        trigger = { has_country_flag = DVE_target_base_production_27_flag }
+    }
+    text = {
+        localisation_key = DVE_28_localisation
+        trigger = { has_country_flag = DVE_target_base_production_28_flag }
+    }
+    text = {
+        localisation_key = DVE_29_localisation
+        trigger = { has_country_flag = DVE_target_base_production_29_flag }
+    }
+    text = {
+        localisation_key = DVE_30_localisation
+        trigger = { has_country_flag = DVE_target_base_production_30_flag }
+    }
+    text = {
+        localisation_key = DVE_higher_than_30_localisation
+        trigger = { has_country_flag = DVE_target_base_production_higher_than_30_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_base_manpower_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_base_manpower_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_1_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_1_flag }
+    }
+    text = {
+        localisation_key = DVE_2_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_2_flag }
+    }
+    text = {
+        localisation_key = DVE_3_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_3_flag }
+    }
+    text = {
+        localisation_key = DVE_4_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_4_flag }
+    }
+    text = {
+        localisation_key = DVE_5_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_5_flag }
+    }
+    text = {
+        localisation_key = DVE_6_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_6_flag }
+    }
+    text = {
+        localisation_key = DVE_7_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_7_flag }
+    }
+    text = {
+        localisation_key = DVE_8_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_8_flag }
+    }
+    text = {
+        localisation_key = DVE_9_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_9_flag }
+    }
+    text = {
+        localisation_key = DVE_10_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_10_flag }
+    }
+    text = {
+        localisation_key = DVE_11_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_11_flag }
+    }
+    text = {
+        localisation_key = DVE_12_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_12_flag }
+    }
+    text = {
+        localisation_key = DVE_13_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_13_flag }
+    }
+    text = {
+        localisation_key = DVE_14_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_14_flag }
+    }
+    text = {
+        localisation_key = DVE_15_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_15_flag }
+    }
+    text = {
+        localisation_key = DVE_16_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_16_flag }
+    }
+    text = {
+        localisation_key = DVE_17_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_17_flag }
+    }
+    text = {
+        localisation_key = DVE_18_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_18_flag }
+    }
+    text = {
+        localisation_key = DVE_19_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_19_flag }
+    }
+    text = {
+        localisation_key = DVE_20_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_20_flag }
+    }
+    text = {
+        localisation_key = DVE_21_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_21_flag }
+    }
+    text = {
+        localisation_key = DVE_22_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_22_flag }
+    }
+    text = {
+        localisation_key = DVE_23_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_23_flag }
+    }
+    text = {
+        localisation_key = DVE_24_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_24_flag }
+    }
+    text = {
+        localisation_key = DVE_25_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_25_flag }
+    }
+    text = {
+        localisation_key = DVE_26_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_26_flag }
+    }
+    text = {
+        localisation_key = DVE_27_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_27_flag }
+    }
+    text = {
+        localisation_key = DVE_28_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_28_flag }
+    }
+    text = {
+        localisation_key = DVE_29_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_29_flag }
+    }
+    text = {
+        localisation_key = DVE_30_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_30_flag }
+    }
+    text = {
+        localisation_key = DVE_higher_than_30_localisation
+        trigger = { has_country_flag = DVE_target_base_manpower_higher_than_30_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_development_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_development_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6a
+        trigger = { has_country_flag = DVE_target_development_1_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6b
+        trigger = { has_country_flag = DVE_target_development_6_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6c
+        trigger = { has_country_flag = DVE_target_development_11_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6d
+        trigger = { has_country_flag = DVE_target_development_16_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6e
+        trigger = { has_country_flag = DVE_target_development_21_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6f
+        trigger = { has_country_flag = DVE_target_development_26_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6g
+        trigger = { has_country_flag = DVE_target_development_31_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6h
+        trigger = { has_country_flag = DVE_target_development_36_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6i
+        trigger = { has_country_flag = DVE_target_development_41_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6j
+        trigger = { has_country_flag = DVE_target_development_46_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6k
+        trigger = { has_country_flag = DVE_target_development_51_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6l
+        trigger = { has_country_flag = DVE_target_development_56_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6m
+        trigger = { has_country_flag = DVE_target_development_61_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6n
+        trigger = { has_country_flag = DVE_target_development_66_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6o
+        trigger = { has_country_flag = DVE_target_development_71_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6p
+        trigger = { has_country_flag = DVE_target_development_76_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6q
+        trigger = { has_country_flag = DVE_target_development_81_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6r
+        trigger = { has_country_flag = DVE_target_development_86_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6s
+        trigger = { has_country_flag = DVE_target_development_91_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6t
+        trigger = { has_country_flag = DVE_target_development_96_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.6u
+        trigger = { has_country_flag = DVE_target_development_higher_than_100_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_terrain_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_terrain_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7a
+        trigger = { has_country_flag = DVE_target_is_grasslands_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7b
+        trigger = { has_country_flag = DVE_target_is_farmlands_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7c
+        trigger = { has_country_flag = DVE_target_is_drylands_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7d
+        trigger = { has_country_flag = DVE_target_is_woods_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7e
+        trigger = { has_country_flag = DVE_target_is_coastline_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7f
+        trigger = { has_country_flag = DVE_target_is_savannah_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7g
+        trigger = { has_country_flag = DVE_target_is_forest_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7h
+        trigger = { has_country_flag = DVE_target_is_highlands_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7i
+        trigger = { has_country_flag = DVE_target_is_steppes_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7j
+        trigger = { has_country_flag = DVE_target_is_hills_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7k
+        trigger = { has_country_flag = DVE_target_is_marsh_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7l
+        trigger = { has_country_flag = DVE_target_is_mountain_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7m
+        trigger = { has_country_flag = DVE_target_is_jungle_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7n
+        trigger = { has_country_flag = DVE_target_is_coastal_desert_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7o
+        trigger = { has_country_flag = DVE_target_is_glacier_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.7p
+        trigger = { has_country_flag = DVE_target_is_desert_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_center_of_trade_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_center_of_trade_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.8a
+        trigger = { has_country_flag = DVE_target_is_not_center_of_trade_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.8b
+        trigger = { has_country_flag = DVE_target_is_center_of_trade_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.8c
+        trigger = { has_country_flag = DVE_target_is_center_of_trade_1_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.8d
+        trigger = { has_country_flag = DVE_target_is_center_of_trade_2_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.8e
+        trigger = { has_country_flag = DVE_target_is_center_of_trade_3_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_infrastructure_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_infrastructure_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.9a
+        trigger = { has_country_flag = DVE_target_local_development_0_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.9b
+        trigger = { has_country_flag = DVE_target_local_development_1_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.9c
+        trigger = { has_country_flag = DVE_target_local_development_2_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.9d
+        trigger = { has_country_flag = DVE_target_local_development_3_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.9e
+        trigger = { has_country_flag = DVE_target_local_development_4_flag }
+    }
+}
+
+defined_text = {
+    name = DVE_superregion_filter_localisation
+    text = {
+        localisation_key = DVE_none
+        trigger = { NOT = { has_country_flag = DVE_target_superregion_filter_flag } }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10a
+        trigger = { has_country_flag = DVE_target_in_india_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10b
+        trigger = { has_country_flag = DVE_target_in_east_indies_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10c
+        trigger = { has_country_flag = DVE_target_in_oceania_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10d
+        trigger = { has_country_flag = DVE_target_in_china_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10e
+        trigger = { has_country_flag = DVE_target_in_europe_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10f
+        trigger = { has_country_flag = DVE_target_in_eastern_europe_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10g
+        trigger = { has_country_flag = DVE_target_in_tartary_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10h
+        trigger = { has_country_flag = DVE_target_in_far_east_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10i
+        trigger = { has_country_flag = DVE_target_in_africa_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10j
+        trigger = { has_country_flag = DVE_target_in_southern_africa_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10k
+        trigger = { has_country_flag = DVE_target_in_south_america_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10l
+        trigger = { has_country_flag = DVE_target_in_andes_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10m
+        trigger = { has_country_flag = DVE_target_in_north_america_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10n
+        trigger = { has_country_flag = DVE_target_in_central_america_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10o
+        trigger = { has_country_flag = DVE_target_in_near_east_superregion_flag }
+    }
+    text = {
+        localisation_key = DVE_infrastructure_events.10p
+        trigger = { has_country_flag = DVE_target_in_persia_superregion_flag }
+    }
+}

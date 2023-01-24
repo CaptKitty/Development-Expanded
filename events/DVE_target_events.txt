@@ -1,0 +1,2266 @@
+namespace = DVE_infrastructure_events
+country_event = {
+	id = DVE_infrastructure_events.0
+	title = DVE_infrastructure_events.0.t
+	desc = DVE_infrastructure_events.0.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	option = { #Develop Local Target
+		name = DVE_infrastructure_events.0a
+		highlight = yes
+		trigger = {
+			any_owned_province = {
+				NOT = { has_province_modifier = DVE_local_development_5 }
+				NOT = { has_province_flag = DVE_excluded_development_target_flag }
+				NOT = { has_province_flag = DVE_skipped_development_target_flag }
+				is_city = yes
+			}
+			if = {
+				limit = { NOT = { monthly_income = 16 }	}
+				treasury =30
+			}
+			else_if = {
+				limit = { NOT = { monthly_income = 80 } }
+				years_of_income = 0.16
+			}
+			else = { treasury = 150 }
+		}
+		ai_chance = { factor = 0 }
+		if = {
+			limit = { NOT = { monthly_income = 16 } }
+			add_treasury = -30
+		}
+		else_if = {
+			limit = {
+				monthly_income = 16
+				NOT = { monthly_income = 80 }
+			}
+			add_years_of_income = -0.16
+		}
+		else = { add_treasury = -150 }
+		event_target:DVE_infrastructure_target = {
+			limit = {
+				NOT = { has_province_modifier = DVE_local_development_5 }
+				NOT = { has_province_flag = DVE_excluded_development_target_flag }
+				NOT = { has_province_flag = DVE_skipped_development_target_flag }
+				is_city = yes
+			}
+			if = {
+				limit = { has_province_modifier = DVE_local_development_4 }
+				remove_province_modifier = DVE_local_development_4
+				add_province_modifier = {
+					name = DVE_local_development_5
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = { has_province_modifier = DVE_local_development_3 }
+				remove_province_modifier = DVE_local_development_3
+				add_province_modifier = {
+					name = DVE_local_development_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = { has_province_modifier = DVE_local_development_2 }
+				remove_province_modifier = DVE_local_development_2
+				add_province_modifier = {
+					name = DVE_local_development_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = { has_province_modifier = DVE_local_development_1 }
+				remove_province_modifier = DVE_local_development_1
+				add_province_modifier = {
+					name = DVE_local_development_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = DVE_local_development_1
+					duration = -1
+				}
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = DVE_local_dev_cost_reduction
+				value = 1
+			}
+			DVE_checkforglobalvariable = yes
+			DVE_exclude_development_target_effect = yes
+			country_event = {
+				id = DVE_infrastructure_events.99
+			}
+		}
+	}
+	option = { #Develop Local Target
+		name = DVE_infrastructure_events.0c
+		highlight = yes
+		trigger = {
+			any_owned_province = {
+				NOT = { has_province_modifier = DVE_local_development_5 }
+				NOT = { has_province_flag = DVE_excluded_development_target_flag }
+				NOT = { has_province_flag = DVE_skipped_development_target_flag }
+				is_city = yes
+			}
+			if = {
+				limit = { NOT = { monthly_income = 16 }	}
+				treasury = 150
+			}
+			else_if = {
+				limit = { NOT = { monthly_income = 80 } }
+				years_of_income = 0.80
+			}
+			else = { treasury = 750 }
+		}
+		ai_chance = { factor = 0 }
+		if = {
+			limit = { NOT = { monthly_income = 16 } }
+			add_treasury = -150
+		}
+		else_if = {
+			limit = {
+				monthly_income = 16
+				NOT = { monthly_income = 80 }
+			}
+			add_years_of_income = -0.80
+		}
+		else = { add_treasury = -750 }
+		event_target:DVE_infrastructure_target = {
+			remove_province_modifier = DVE_local_development_1
+			remove_province_modifier = DVE_local_development_2
+			remove_province_modifier = DVE_local_development_3
+			remove_province_modifier = DVE_local_development_4
+			add_province_modifier = {
+				name = DVE_local_development_5
+				duration = -1
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = DVE_local_dev_cost_reduction
+				value = 5
+			}
+			DVE_checkforglobalvariable = yes
+			DVE_exclude_development_target_effect = yes
+			country_event = {
+				id = DVE_infrastructure_events.99
+			}
+		}
+	}
+	option = { #Choose target criteria
+		name = DVE_infrastructure_events.0b
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			country_event = {
+				id = DVE_infrastructure_events.1
+			}
+		}
+	}
+	option = { #Skip target
+		name = DVE_infrastructure_events.skip
+		ai_chance = { factor = 0 }
+		IF = {
+			limit = {
+				any_owned_province = {
+					NOT = { has_province_modifier = DVE_local_development_5 }
+					NOT = { has_province_flag = DVE_excluded_development_target_flag }
+					NOT = { has_province_flag = DVE_skipped_development_target_flag }
+					is_city = yes
+				}
+			}
+			random_owned_province = {
+				limit = { 
+					NOT = { has_province_modifier = DVE_local_development_5 }
+					NOT = { has_province_flag = DVE_excluded_development_target_flag }
+					NOT = { has_province_flag = DVE_skipped_development_target_flag }
+					is_city = yes
+				}
+				set_province_flag = DVE_skipped_development_target_flag
+			}
+		}
+		else = {
+			every_owned_province = {
+				clr_province_flag = DVE_skipped_development_target_flag
+			}
+		}
+		hidden_effect = {
+			DVE_skipped_development_target_effect = yes
+			DVE_exclude_development_target_effect = yes
+			country_event = {
+				id = DVE_infrastructure_events.99
+			}
+		}
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clearskipped
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			every_owned_province = { clr_province_flag = DVE_skipped_development_target_flag }
+			set_variable = {
+				which = DVE_num_of_skipped_development_target_var
+				value = 0
+			}
+			DVE_exclude_development_target_effect = yes
+			country_event = {
+				id = DVE_infrastructure_events.99
+			}
+		}
+	}
+	option = { #Confirm
+		name = DVE_infrastructure_events.confirm
+		highlight = yes
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			clr_country_flag = DVE_open_infrastructure_development_flag
+		}
+	}
+}
+country_event = {
+	id = DVE_infrastructure_events.1
+	title = DVE_infrastructure_events.1.t
+	desc = DVE_infrastructure_events.1.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	option = { #State, Territory, or Trade Company
+		name = DVE_infrastructure_events.1a
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.2
+		}
+	}
+	option = { #Base Tax
+		name = DVE_infrastructure_events.1b
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.3
+		}
+	}
+	option = { #Base Production
+		name = DVE_infrastructure_events.1c
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.4
+		}
+	}
+	option = { #Base Manpower
+		name = DVE_infrastructure_events.1d
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.5
+		}
+	}
+	option = { #Province Development
+		name = DVE_infrastructure_events.1e
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.6
+		}
+	}
+	option = { #Terrain Type
+		name = DVE_infrastructure_events.1f
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.7
+		}
+	}
+	option = { #Center of Trade
+		name = DVE_infrastructure_events.1g
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.8
+		}
+	}
+	option = { #Infrastructure level
+		name = DVE_infrastructure_events.1h
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.9
+		}
+	}
+	option = { #Subcontinents
+		name = DVE_infrastructure_events.1i
+		ai_chance = { factor = 0 }
+		country_event = {
+			id = DVE_infrastructure_events.10
+		}
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		highlight = yes
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			DVE_clear_development_target_filter_effect = yes
+			DVE_exclude_development_target_effect = yes
+			country_event = {
+				id = DVE_infrastructure_events.100
+			}
+		}
+	}
+	option = { #Confirm
+		name = DVE_infrastructure_events.confirm
+		highlight = yes
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			DVE_exclude_development_target_effect = yes
+			country_event = {
+				id = DVE_infrastructure_events.0
+			}
+		}
+	}
+}
+
+country_event = {
+	#State, Territory, or Trade Company
+	id = DVE_infrastructure_events.2
+	title = DVE_infrastructure_events.2.t
+	desc = DVE_infrastructure_events.2.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_state_filter_flag
+		clr_country_flag = DVE_target_is_state_flag
+		clr_country_flag = DVE_target_is_territory_flag
+		clr_country_flag = DVE_target_is_trade_company_flag
+	}
+	option = { #State
+		name = DVE_infrastructure_events.2a
+		trigger = { any_owned_province = { is_state = yes } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_state_flag
+	}
+	option = { #Territory
+		name = DVE_infrastructure_events.2b
+		trigger = {
+			any_owned_province = {
+				is_owned_by_trade_company = no
+				is_state = no
+			}
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_territory_flag
+	}
+	option = { #Trade Company
+		name = DVE_infrastructure_events.2c
+		trigger = { any_owned_province = { is_owned_by_trade_company = yes } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_trade_company_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_state_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Base Tax
+	id = DVE_infrastructure_events.3
+	title = DVE_infrastructure_events.3.t
+	desc = DVE_infrastructure_events.3.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_base_tax_filter_flag
+		clr_country_flag = DVE_target_base_tax_1_flag
+		clr_country_flag = DVE_target_base_tax_2_flag
+		clr_country_flag = DVE_target_base_tax_3_flag
+		clr_country_flag = DVE_target_base_tax_4_flag
+		clr_country_flag = DVE_target_base_tax_5_flag
+		clr_country_flag = DVE_target_base_tax_6_flag
+		clr_country_flag = DVE_target_base_tax_7_flag
+		clr_country_flag = DVE_target_base_tax_8_flag
+		clr_country_flag = DVE_target_base_tax_9_flag
+		clr_country_flag = DVE_target_base_tax_10_flag
+		clr_country_flag = DVE_target_base_tax_11_flag
+		clr_country_flag = DVE_target_base_tax_12_flag
+		clr_country_flag = DVE_target_base_tax_13_flag
+		clr_country_flag = DVE_target_base_tax_14_flag
+		clr_country_flag = DVE_target_base_tax_15_flag
+		clr_country_flag = DVE_target_base_tax_16_flag
+		clr_country_flag = DVE_target_base_tax_17_flag
+		clr_country_flag = DVE_target_base_tax_18_flag
+		clr_country_flag = DVE_target_base_tax_19_flag
+		clr_country_flag = DVE_target_base_tax_20_flag
+		clr_country_flag = DVE_target_base_tax_21_flag
+		clr_country_flag = DVE_target_base_tax_22_flag
+		clr_country_flag = DVE_target_base_tax_23_flag
+		clr_country_flag = DVE_target_base_tax_24_flag
+		clr_country_flag = DVE_target_base_tax_25_flag
+		clr_country_flag = DVE_target_base_tax_26_flag
+		clr_country_flag = DVE_target_base_tax_27_flag
+		clr_country_flag = DVE_target_base_tax_28_flag
+		clr_country_flag = DVE_target_base_tax_29_flag
+		clr_country_flag = DVE_target_base_tax_30_flag
+		clr_country_flag = DVE_target_base_tax_higher_than_30_flag
+	}
+	option = { #Base Tax 1
+		name = DVE_infrastructure_events.3a
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 1
+				NOT = { base_tax = 2 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_1_flag
+	}
+	option = { #Base Tax 2
+		name = DVE_infrastructure_events.3b
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 2
+				NOT = { base_tax = 3 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_2_flag
+	}
+	option = { #Base Tax 3
+		name = DVE_infrastructure_events.3c
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 3
+				NOT = { base_tax = 4 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_3_flag
+	}
+	option = { #Base Tax 4
+		name = DVE_infrastructure_events.3d
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 4
+				NOT = { base_tax = 5 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_4_flag
+	}
+	option = { #Base Tax 5
+		name = DVE_infrastructure_events.3e
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 5
+				NOT = { base_tax = 6 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_5_flag
+	}
+	option = { #Base Tax 6
+		name = DVE_infrastructure_events.3f
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 6
+				NOT = { base_tax = 7 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_6_flag
+	}
+	option = { #Base Tax 7
+		name = DVE_infrastructure_events.3g
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 7
+				NOT = { base_tax = 8 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_7_flag
+	}
+	option = { #Base Tax 8
+		name = DVE_infrastructure_events.3h
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 8
+				NOT = { base_tax = 9 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_8_flag
+	}
+	option = { #Base Tax 9
+		name = DVE_infrastructure_events.3i
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 9
+				NOT = { base_tax = 10 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_9_flag
+	}
+	option = { #Base Tax 10
+		name = DVE_infrastructure_events.3j
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 10
+				NOT = { base_tax = 11 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_10_flag
+	}
+	option = { #Base Tax 11
+		name = DVE_infrastructure_events.3k
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 11
+				NOT = { base_tax = 12 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_11_flag
+	}
+	option = { #Base Tax 12
+		name = DVE_infrastructure_events.3l
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 12
+				NOT = { base_tax = 13 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_12_flag
+	}
+	option = { #Base Tax 13
+		name = DVE_infrastructure_events.3m
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 13
+				NOT = { base_tax = 14 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_13_flag
+	}
+	option = { #Base Tax 14
+		name = DVE_infrastructure_events.3n
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 14
+				NOT = { base_tax = 15 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_14_flag
+	}
+	option = { #Base Tax 15
+		name = DVE_infrastructure_events.3o
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 15
+				NOT = { base_tax = 16 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_15_flag
+	}
+	option = { #Base Tax 16
+		name = DVE_infrastructure_events.3p
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 16
+				NOT = { base_tax = 17 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_16_flag
+	}
+	option = { #Base Tax 17
+		name = DVE_infrastructure_events.3q
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 17
+				NOT = { base_tax = 18 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_17_flag
+	}
+	option = { #Base Tax 18
+		name = DVE_infrastructure_events.3r
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 18
+				NOT = { base_tax = 19 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_18_flag
+	}
+	option = { #Base Tax 19
+		name = DVE_infrastructure_events.3s
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 19
+				NOT = { base_tax = 20 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_19_flag
+	}
+	option = { #Base Tax 20
+		name = DVE_infrastructure_events.3t
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 20
+				NOT = { base_tax = 21 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_20_flag
+	}
+	option = { #Base Tax 21
+		name = DVE_infrastructure_events.3u
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 21
+				NOT = { base_tax = 22 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_21_flag
+	}
+	option = { #Base Tax 22
+		name = DVE_infrastructure_events.3v
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 22
+				NOT = { base_tax = 23 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_22_flag
+	}
+	option = { #Base Tax 23
+		name = DVE_infrastructure_events.3w
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 23
+				NOT = { base_tax = 24 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_23_flag
+	}
+	option = { #Base Tax 24
+		name = DVE_infrastructure_events.3x
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 24
+				NOT = { base_tax = 25 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_24_flag
+	}
+	option = { #Base Tax 25
+		name = DVE_infrastructure_events.3y
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 25
+				NOT = { base_tax = 26 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_25_flag
+	}
+	option = { #Base Tax 26
+		name = DVE_infrastructure_events.3z
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 26
+				NOT = { base_tax = 27 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_26_flag
+	}
+	option = { #Base Tax 27
+		name = DVE_infrastructure_events.3aa
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 27
+				NOT = { base_tax = 28 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_27_flag
+	}
+	option = { #Base Tax 28
+		name = DVE_infrastructure_events.3ab
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 28
+				NOT = { base_tax = 29 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_28_flag
+	}
+	option = { #Base Tax 29
+		name = DVE_infrastructure_events.3ac
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 29
+				NOT = { base_tax = 30 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_29_flag
+	}
+	option = { #Base Tax 30
+		name = DVE_infrastructure_events.3ad
+		trigger = { 
+			any_owned_province = { 
+				base_tax = 30
+				NOT = { base_tax = 31 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_30_flag
+	}
+	option = { #Base Tax More than 30
+		name = DVE_infrastructure_events.3ae
+		trigger = { 
+			any_owned_province = { base_tax = 31 } 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_tax_higher_than_30_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_base_tax_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Base Production
+	id = DVE_infrastructure_events.4
+	title = DVE_infrastructure_events.4.t
+	desc = DVE_infrastructure_events.4.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_base_production_filter_flag
+		clr_country_flag = DVE_target_base_production_1_flag
+		clr_country_flag = DVE_target_base_production_2_flag
+		clr_country_flag = DVE_target_base_production_3_flag
+		clr_country_flag = DVE_target_base_production_4_flag
+		clr_country_flag = DVE_target_base_production_5_flag
+		clr_country_flag = DVE_target_base_production_6_flag
+		clr_country_flag = DVE_target_base_production_7_flag
+		clr_country_flag = DVE_target_base_production_8_flag
+		clr_country_flag = DVE_target_base_production_9_flag
+		clr_country_flag = DVE_target_base_production_10_flag
+		clr_country_flag = DVE_target_base_production_11_flag
+		clr_country_flag = DVE_target_base_production_12_flag
+		clr_country_flag = DVE_target_base_production_13_flag
+		clr_country_flag = DVE_target_base_production_14_flag
+		clr_country_flag = DVE_target_base_production_15_flag
+		clr_country_flag = DVE_target_base_production_16_flag
+		clr_country_flag = DVE_target_base_production_17_flag
+		clr_country_flag = DVE_target_base_production_18_flag
+		clr_country_flag = DVE_target_base_production_19_flag
+		clr_country_flag = DVE_target_base_production_20_flag
+		clr_country_flag = DVE_target_base_production_21_flag
+		clr_country_flag = DVE_target_base_production_22_flag
+		clr_country_flag = DVE_target_base_production_23_flag
+		clr_country_flag = DVE_target_base_production_24_flag
+		clr_country_flag = DVE_target_base_production_25_flag
+		clr_country_flag = DVE_target_base_production_26_flag
+		clr_country_flag = DVE_target_base_production_27_flag
+		clr_country_flag = DVE_target_base_production_28_flag
+		clr_country_flag = DVE_target_base_production_29_flag
+		clr_country_flag = DVE_target_base_production_30_flag
+		clr_country_flag = DVE_target_base_production_higher_than_30_flag
+	}
+	option = { #Base Production 1
+		name = DVE_infrastructure_events.4a
+		trigger = { 
+			any_owned_province = { 
+				base_production = 1
+				NOT = { base_production = 2 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_1_flag
+	}
+	option = { #Base Production 2
+		name = DVE_infrastructure_events.4b
+		trigger = { 
+			any_owned_province = { 
+				base_production = 2
+				NOT = { base_production = 3 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_2_flag
+	}
+	option = { #Base Production 3
+		name = DVE_infrastructure_events.4c
+		trigger = { 
+			any_owned_province = { 
+				base_production = 3
+				NOT = { base_production = 4 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_3_flag
+	}
+	option = { #Base Production 4
+		name = DVE_infrastructure_events.4d
+		trigger = { 
+			any_owned_province = { 
+				base_production = 4
+				NOT = { base_production = 5 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_4_flag
+	}
+	option = { #Base Production 5
+		name = DVE_infrastructure_events.4e
+		trigger = { 
+			any_owned_province = { 
+				base_production = 5
+				NOT = { base_production = 6 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_5_flag
+	}
+	option = { #Base Production 6
+		name = DVE_infrastructure_events.4f
+		trigger = { 
+			any_owned_province = { 
+				base_production = 6
+				NOT = { base_production = 7 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_6_flag
+	}
+	option = { #Base Production 7
+		name = DVE_infrastructure_events.4g
+		trigger = { 
+			any_owned_province = { 
+				base_production = 7
+				NOT = { base_production = 8 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_7_flag
+	}
+	option = { #Base Production 8
+		name = DVE_infrastructure_events.4h
+		trigger = { 
+			any_owned_province = { 
+				base_production = 8
+				NOT = { base_production = 9 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_8_flag
+	}
+	option = { #Base Production 9
+		name = DVE_infrastructure_events.4i
+		trigger = { 
+			any_owned_province = { 
+				base_production = 9
+				NOT = { base_production = 10 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_9_flag
+	}
+	option = { #Base Production 10
+		name = DVE_infrastructure_events.4j
+		trigger = { 
+			any_owned_province = { 
+				base_production = 10
+				NOT = { base_production = 11 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_10_flag
+	}
+	option = { #Base Production 11
+		name = DVE_infrastructure_events.4k
+		trigger = { 
+			any_owned_province = { 
+				base_production = 11
+				NOT = { base_production = 12 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_11_flag
+	}
+	option = { #Base Production 12
+		name = DVE_infrastructure_events.4l
+		trigger = { 
+			any_owned_province = { 
+				base_production = 12
+				NOT = { base_production = 13 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_12_flag
+	}
+	option = { #Base Production 13
+		name = DVE_infrastructure_events.4m
+		trigger = { 
+			any_owned_province = { 
+				base_production = 13
+				NOT = { base_production = 14 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_13_flag
+	}
+	option = { #Base Production 14
+		name = DVE_infrastructure_events.4n
+		trigger = { 
+			any_owned_province = { 
+				base_production = 14
+				NOT = { base_production = 15 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_14_flag
+	}
+	option = { #Base Production 15
+		name = DVE_infrastructure_events.4o
+		trigger = { 
+			any_owned_province = { 
+				base_production = 15
+				NOT = { base_production = 16 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_15_flag
+	}
+	option = { #Base Production 16
+		name = DVE_infrastructure_events.4p
+		trigger = { 
+			any_owned_province = { 
+				base_production = 16
+				NOT = { base_production = 17 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_16_flag
+	}
+	option = { #Base Production 17
+		name = DVE_infrastructure_events.4q
+		trigger = { 
+			any_owned_province = { 
+				base_production = 17
+				NOT = { base_production = 18 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_17_flag
+	}
+	option = { #Base Production 18
+		name = DVE_infrastructure_events.4r
+		trigger = { 
+			any_owned_province = { 
+				base_production = 18
+				NOT = { base_production = 19 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_18_flag
+	}
+	option = { #Base Production 19
+		name = DVE_infrastructure_events.4s
+		trigger = { 
+			any_owned_province = { 
+				base_production = 19
+				NOT = { base_production = 20 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_19_flag
+	}
+	option = { #Base Production 20
+		name = DVE_infrastructure_events.4t
+		trigger = { 
+			any_owned_province = { 
+				base_production = 20
+				NOT = { base_production = 21 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_20_flag
+	}
+	option = { #Base Production 21
+		name = DVE_infrastructure_events.4u
+		trigger = { 
+			any_owned_province = { 
+				base_production = 21
+				NOT = { base_production = 22 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_21_flag
+	}
+	option = { #Base Production 22
+		name = DVE_infrastructure_events.4v
+		trigger = { 
+			any_owned_province = { 
+				base_production = 22
+				NOT = { base_production = 23 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_22_flag
+	}
+	option = { #Base Production 23
+		name = DVE_infrastructure_events.4w
+		trigger = { 
+			any_owned_province = { 
+				base_production = 23
+				NOT = { base_production = 24 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_23_flag
+	}
+	option = { #Base Production 24
+		name = DVE_infrastructure_events.4x
+		trigger = { 
+			any_owned_province = { 
+				base_production = 24
+				NOT = { base_production = 25 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_24_flag
+	}
+	option = { #Base Production 25
+		name = DVE_infrastructure_events.4y
+		trigger = { 
+			any_owned_province = { 
+				base_production = 25
+				NOT = { base_production = 26 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_25_flag
+	}
+	option = { #Base Production 26
+		name = DVE_infrastructure_events.4z
+		trigger = { 
+			any_owned_province = { 
+				base_production = 26
+				NOT = { base_production = 27 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_26_flag
+	}
+	option = { #Base Production 27
+		name = DVE_infrastructure_events.4aa
+		trigger = { 
+			any_owned_province = { 
+				base_production = 27
+				NOT = { base_production = 28 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_27_flag
+	}
+	option = { #Base Production 28
+		name = DVE_infrastructure_events.4ab
+		trigger = { 
+			any_owned_province = { 
+				base_production = 28
+				NOT = { base_production = 29 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_28_flag
+	}
+	option = { #Base Production 29
+		name = DVE_infrastructure_events.4ac
+		trigger = { 
+			any_owned_province = { 
+				base_production = 29
+				NOT = { base_production = 30 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_29_flag
+	}
+	option = { #Base Production 30
+		name = DVE_infrastructure_events.4ad
+		trigger = { 
+			any_owned_province = { 
+				base_production = 30
+				NOT = { base_production = 31 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_30_flag
+	}
+	option = { #Base Production More than 30
+		name = DVE_infrastructure_events.4ae
+		trigger = { 
+			any_owned_province = { base_production = 31	} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_production_higher_than_30_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_base_production_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Base Manpower
+	id = DVE_infrastructure_events.5
+	title = DVE_infrastructure_events.5.t
+	desc = DVE_infrastructure_events.5.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_base_manpower_filter_flag
+		clr_country_flag = DVE_target_base_manpower_1_flag
+		clr_country_flag = DVE_target_base_manpower_2_flag
+		clr_country_flag = DVE_target_base_manpower_3_flag
+		clr_country_flag = DVE_target_base_manpower_4_flag
+		clr_country_flag = DVE_target_base_manpower_5_flag
+		clr_country_flag = DVE_target_base_manpower_6_flag
+		clr_country_flag = DVE_target_base_manpower_7_flag
+		clr_country_flag = DVE_target_base_manpower_8_flag
+		clr_country_flag = DVE_target_base_manpower_9_flag
+		clr_country_flag = DVE_target_base_manpower_10_flag
+		clr_country_flag = DVE_target_base_manpower_11_flag
+		clr_country_flag = DVE_target_base_manpower_12_flag
+		clr_country_flag = DVE_target_base_manpower_13_flag
+		clr_country_flag = DVE_target_base_manpower_14_flag
+		clr_country_flag = DVE_target_base_manpower_15_flag
+		clr_country_flag = DVE_target_base_manpower_16_flag
+		clr_country_flag = DVE_target_base_manpower_17_flag
+		clr_country_flag = DVE_target_base_manpower_18_flag
+		clr_country_flag = DVE_target_base_manpower_19_flag
+		clr_country_flag = DVE_target_base_manpower_20_flag
+		clr_country_flag = DVE_target_base_manpower_21_flag
+		clr_country_flag = DVE_target_base_manpower_22_flag
+		clr_country_flag = DVE_target_base_manpower_23_flag
+		clr_country_flag = DVE_target_base_manpower_24_flag
+		clr_country_flag = DVE_target_base_manpower_25_flag
+		clr_country_flag = DVE_target_base_manpower_26_flag
+		clr_country_flag = DVE_target_base_manpower_27_flag
+		clr_country_flag = DVE_target_base_manpower_28_flag
+		clr_country_flag = DVE_target_base_manpower_29_flag
+		clr_country_flag = DVE_target_base_manpower_30_flag
+		clr_country_flag = DVE_target_base_manpower_higher_than_30_flag
+	}
+	option = { #Base Manpower 1
+		name = DVE_infrastructure_events.5a
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 1
+				NOT = { base_manpower = 2 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_1_flag
+	}
+	option = { #Base Manpower 2
+		name = DVE_infrastructure_events.5b
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 2
+				NOT = { base_manpower = 3 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_2_flag
+	}
+	option = { #Base Manpower 3
+		name = DVE_infrastructure_events.5c
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 3
+				NOT = { base_manpower = 4 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_3_flag
+	}
+	option = { #Base Manpower 4
+		name = DVE_infrastructure_events.5d
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 4
+				NOT = { base_manpower = 5 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_4_flag
+	}
+	option = { #Base Manpower 5
+		name = DVE_infrastructure_events.5e
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 5
+				NOT = { base_manpower = 6 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_5_flag
+	}
+	option = { #Base Manpower 6
+		name = DVE_infrastructure_events.5f
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 6
+				NOT = { base_manpower = 7 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_6_flag
+	}
+	option = { #Base Manpower 7
+		name = DVE_infrastructure_events.5g
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 7
+				NOT = { base_manpower = 8 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_7_flag
+	}
+	option = { #Base Manpower 8
+		name = DVE_infrastructure_events.5h
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 8
+				NOT = { base_manpower = 9 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_8_flag
+	}
+	option = { #Base Manpower 9
+		name = DVE_infrastructure_events.5i
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 9
+				NOT = { base_manpower = 10 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_9_flag
+	}
+	option = { #Base Manpower 10
+		name = DVE_infrastructure_events.5j
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 10
+				NOT = { base_manpower = 11 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_10_flag
+	}
+	option = { #Base Manpower 11
+		name = DVE_infrastructure_events.5k
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 11
+				NOT = { base_manpower = 12 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_11_flag
+	}
+	option = { #Base Manpower 12
+		name = DVE_infrastructure_events.5l
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 12
+				NOT = { base_manpower = 13 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_12_flag
+	}
+	option = { #Base Manpower 13
+		name = DVE_infrastructure_events.5m
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 13
+				NOT = { base_manpower = 14 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_13_flag
+	}
+	option = { #Base Manpower 14
+		name = DVE_infrastructure_events.5n
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 14
+				NOT = { base_manpower = 15 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_14_flag
+	}
+	option = { #Base Manpower 15
+		name = DVE_infrastructure_events.5o
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 15
+				NOT = { base_manpower = 16 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_15_flag
+	}
+	option = { #Base Manpower 16
+		name = DVE_infrastructure_events.5p
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 16
+				NOT = { base_manpower = 17 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_16_flag
+	}
+	option = { #Base Manpower 17
+		name = DVE_infrastructure_events.5q
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 17
+				NOT = { base_manpower = 18 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_17_flag
+	}
+	option = { #Base Manpower 18
+		name = DVE_infrastructure_events.5r
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 18
+				NOT = { base_manpower = 19 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_18_flag
+	}
+	option = { #Base Manpower 19
+		name = DVE_infrastructure_events.5s
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 19
+				NOT = { base_manpower = 20 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_19_flag
+	}
+	option = { #Base Manpower 20
+		name = DVE_infrastructure_events.5t
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 20
+				NOT = { base_manpower = 21 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_20_flag
+	}
+	option = { #Base Manpower 21
+		name = DVE_infrastructure_events.5u
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 21
+				NOT = { base_manpower = 22 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_21_flag
+	}
+	option = { #Base Manpower 22
+		name = DVE_infrastructure_events.5v
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 22
+				NOT = { base_manpower = 23 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_22_flag
+	}
+	option = { #Base Manpower 23
+		name = DVE_infrastructure_events.5w
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 23
+				NOT = { base_manpower = 24 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_23_flag
+	}
+	option = { #Base Manpower 24
+		name = DVE_infrastructure_events.5x
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 24
+				NOT = { base_manpower = 25 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_24_flag
+	}
+	option = { #Base Manpower 25
+		name = DVE_infrastructure_events.5y
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 25
+				NOT = { base_manpower = 26 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_25_flag
+	}
+	option = { #Base Manpower 26
+		name = DVE_infrastructure_events.5z
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 26
+				NOT = { base_manpower = 27 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_26_flag
+	}
+	option = { #Base Manpower 27
+		name = DVE_infrastructure_events.5aa
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 27
+				NOT = { base_manpower = 28 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_27_flag
+	}
+	option = { #Base Manpower 28
+		name = DVE_infrastructure_events.5ab
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 28
+				NOT = { base_manpower = 29 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_28_flag
+	}
+	option = { #Base Manpower 29
+		name = DVE_infrastructure_events.5ac
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 29
+				NOT = { base_manpower = 30 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_29_flag
+	}
+	option = { #Base Manpower 30
+		name = DVE_infrastructure_events.5ad
+		trigger = { 
+			any_owned_province = { 
+				base_manpower = 30
+				NOT = { base_manpower = 31 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_30_flag
+	}
+	option = { #Base Manpower More than 30
+		name = DVE_infrastructure_events.5ae
+		trigger = { 
+			any_owned_province = { base_manpower = 31 } 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_base_manpower_higher_than_30_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_base_manpower_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Development
+	id = DVE_infrastructure_events.6
+	title = DVE_infrastructure_events.6.t
+	desc = DVE_infrastructure_events.6.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_development_filter_flag
+		clr_country_flag = DVE_target_development_1_flag
+		clr_country_flag = DVE_target_development_6_flag
+		clr_country_flag = DVE_target_development_11_flag
+		clr_country_flag = DVE_target_development_16_flag
+		clr_country_flag = DVE_target_development_21_flag
+		clr_country_flag = DVE_target_development_26_flag
+		clr_country_flag = DVE_target_development_31_flag
+		clr_country_flag = DVE_target_development_36_flag
+		clr_country_flag = DVE_target_development_41_flag
+		clr_country_flag = DVE_target_development_46_flag
+		clr_country_flag = DVE_target_development_51_flag
+		clr_country_flag = DVE_target_development_56_flag
+		clr_country_flag = DVE_target_development_61_flag
+		clr_country_flag = DVE_target_development_66_flag
+		clr_country_flag = DVE_target_development_71_flag
+		clr_country_flag = DVE_target_development_76_flag
+		clr_country_flag = DVE_target_development_81_flag
+		clr_country_flag = DVE_target_development_86_flag
+		clr_country_flag = DVE_target_development_91_flag
+		clr_country_flag = DVE_target_development_96_flag
+		clr_country_flag = DVE_target_development_higher_than_100_flag
+	}
+	option = { #Development 1 - 5
+		name = DVE_infrastructure_events.6a
+		trigger = { 
+			any_owned_province = { 
+				development = 1
+				NOT = { development = 6 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_1_flag
+	}
+	option = { #Development 6 - 10
+		name = DVE_infrastructure_events.6b
+		trigger = { 
+			any_owned_province = { 
+				development = 6
+				NOT = { development = 11 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_6_flag
+	}
+	option = { #Development 11 - 15
+		name = DVE_infrastructure_events.6c
+		trigger = { 
+			any_owned_province = { 
+				development = 11
+				NOT = { development = 16 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_11_flag
+	}
+	option = { #Development 16 - 20
+		name = DVE_infrastructure_events.6d
+		trigger = { 
+			any_owned_province = { 
+				development = 16
+				NOT = { development = 21 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_16_flag
+	}
+	option = { #Development 21 - 25
+		name = DVE_infrastructure_events.6e
+		trigger = { 
+			any_owned_province = { 
+				development = 21
+				NOT = { development = 26 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_21_flag
+	}
+	option = { #Development 26 - 30
+		name = DVE_infrastructure_events.6f
+		trigger = { 
+			any_owned_province = { 
+				development = 26
+				NOT = { development = 31 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_26_flag
+	}
+	option = { #Development 31 - 35
+		name = DVE_infrastructure_events.6g
+		trigger = { 
+			any_owned_province = { 
+				development = 31
+				NOT = { development = 36 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_31_flag
+	}
+	option = { #Development 36 - 40
+		name = DVE_infrastructure_events.6h
+		trigger = { 
+			any_owned_province = { 
+				development = 36
+				NOT = { development = 41 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_36_flag
+	}
+	option = { #Development 41 - 45
+		name = DVE_infrastructure_events.6i
+		trigger = { 
+			any_owned_province = { 
+				development = 41
+				NOT = { development = 46 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_41_flag
+	}
+	option = { #Development 46 - 50
+		name = DVE_infrastructure_events.6j
+		trigger = { 
+			any_owned_province = { 
+				development = 46
+				NOT = { development = 51 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_46_flag
+	}
+	option = { #Development 51 - 55
+		name = DVE_infrastructure_events.6k
+		trigger = { 
+			any_owned_province = { 
+				development = 51
+				NOT = { development = 56 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_51_flag
+	}
+	option = { #Development 56 - 60
+		name = DVE_infrastructure_events.6l
+		trigger = { 
+			any_owned_province = { 
+				development = 56
+				NOT = { development = 61 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_56_flag
+	}
+	option = { #Development 61 - 65
+		name = DVE_infrastructure_events.6m
+		trigger = { 
+			any_owned_province = { 
+				development = 61
+				NOT = { development = 66 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_61_flag
+	}
+	option = { #Development 66 - 70
+		name = DVE_infrastructure_events.6n
+		trigger = { 
+			any_owned_province = { 
+				development = 61
+				NOT = { development = 71 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_66_flag
+	}
+	option = { #Development 71 - 75
+		name = DVE_infrastructure_events.6o
+		trigger = { 
+			any_owned_province = { 
+				development = 75
+				NOT = { development = 76 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_71_flag
+	}
+	option = { #Development 76 - 80
+		name = DVE_infrastructure_events.6p
+		trigger = { 
+			any_owned_province = { 
+				development = 76
+				NOT = { development = 81 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_76_flag
+	}
+	option = { #Development 81 - 85
+		name = DVE_infrastructure_events.6q
+		trigger = { 
+			any_owned_province = { 
+				development = 81
+				NOT = { development = 86 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_81_flag
+	}
+	option = { #Development 86 - 90
+		name = DVE_infrastructure_events.6r
+		trigger = { 
+			any_owned_province = { 
+				development = 86
+				NOT = { development = 90 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_86_flag
+	}
+	option = { #Development 91 - 95
+		name = DVE_infrastructure_events.6s
+		trigger = { 
+			any_owned_province = { 
+				development = 91
+				NOT = { development = 96 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_91_flag
+	}
+	option = { #Development 96 - 100
+		name = DVE_infrastructure_events.6t
+		trigger = { 
+			any_owned_province = { 
+				development = 96
+				NOT = { development = 101 }
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_96_flag
+	}
+	option = { #Development Higher than 100
+		name = DVE_infrastructure_events.6u
+		trigger = { 
+			any_owned_province = { 
+				development = 101
+			} 
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_development_higher_than_100_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_development_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Terrain Type
+	id = DVE_infrastructure_events.7
+	title = DVE_infrastructure_events.7.t
+	desc = DVE_infrastructure_events.7.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = DVE_target_terrain_filter_flag
+		clr_country_flag = DVE_target_is_grasslands_flag
+		clr_country_flag = DVE_target_is_farmlands_flag
+		clr_country_flag = DVE_target_is_drylands_flag
+		clr_country_flag = DVE_target_is_woods_flag
+		clr_country_flag = DVE_target_is_coastline_flag
+		clr_country_flag = DVE_target_is_savannah_flag
+		clr_country_flag = DVE_target_is_forest_flag
+		clr_country_flag = DVE_target_is_highlands_flag
+		clr_country_flag = DVE_target_is_steppes_flag
+		clr_country_flag = DVE_target_is_hills_flag
+		clr_country_flag = DVE_target_is_marsh_flag
+		clr_country_flag = DVE_target_is_mountain_flag
+		clr_country_flag = DVE_target_is_jungle_flag
+		clr_country_flag = DVE_target_is_coastal_desert_flag
+		clr_country_flag = DVE_target_is_glacier_flag
+		clr_country_flag = DVE_target_is_desert_flag
+	}
+	option = { #Grasslands
+		name = DVE_infrastructure_events.7a
+		trigger = { any_owned_province = { has_terrain = grasslands } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_grasslands_flag
+	}
+	option = { #Farmlands
+		name = DVE_infrastructure_events.7b
+		trigger = { any_owned_province = { has_terrain = farmlands } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_farmlands_flag
+	}
+	option = { #Drylands
+		name = DVE_infrastructure_events.7c
+		trigger = { any_owned_province = { has_terrain = drylands } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_drylands_flag
+	}
+	option = { #Woods
+		name = DVE_infrastructure_events.7d
+		trigger = { any_owned_province = { has_terrain = woods } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_woods_flag
+	}
+	option = { #Coastline
+		name = DVE_infrastructure_events.7e
+		trigger = { any_owned_province = { has_terrain = coastline } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_coastline_flag
+	}
+	option = { #Savannah
+		name = DVE_infrastructure_events.7f
+		trigger = { any_owned_province = { has_terrain = savannah } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_savannah_flag
+	}
+	option = { #Forest
+		name = DVE_infrastructure_events.7g
+		trigger = { any_owned_province = { has_terrain = forest } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_forest_flag
+	}
+	option = { #Highlands
+		name = DVE_infrastructure_events.7h
+		trigger = { any_owned_province = { has_terrain = highlands } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_highlands_flag
+	}
+	option = { #Steppes
+		name = DVE_infrastructure_events.7i
+		trigger = { any_owned_province = { has_terrain = steppes } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_steppes_flag
+	}
+	option = { #Hills
+		name = DVE_infrastructure_events.7j
+		trigger = { any_owned_province = { has_terrain = hills } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_hills_flag
+	}
+	option = { #Marsh
+		name = DVE_infrastructure_events.7k
+		trigger = { any_owned_province = { has_terrain = marsh } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_marsh_flag
+	}
+	option = { #Mountain
+		name = DVE_infrastructure_events.7l
+		trigger = { any_owned_province = { has_terrain = mountain } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_mountain_flag
+	}
+	option = { #Jungle
+		name = DVE_infrastructure_events.7m
+		trigger = { any_owned_province = { has_terrain = jungle } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_jungle_flag
+	}
+	option = { #Coastal Desert
+		name = DVE_infrastructure_events.7n
+		trigger = { any_owned_province = { has_terrain = desert } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_coastal_desert_flag
+	}
+	option = { #glacier
+		name = DVE_infrastructure_events.7o
+		trigger = { any_owned_province = { has_terrain = glacier } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_glacier_flag
+	}
+	option = { #Desert
+		name = DVE_infrastructure_events.7p
+		trigger = { any_owned_province = { has_terrain = desert } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_desert_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_terrain_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Center of Trade
+	id = DVE_infrastructure_events.8
+	title = DVE_infrastructure_events.8.t
+	desc = DVE_infrastructure_events.8.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_center_of_trade_filter_flag
+		clr_country_flag = DVE_target_is_not_center_of_trade_flag
+		clr_country_flag = DVE_target_is_center_of_trade_flag
+		clr_country_flag = DVE_target_is_center_of_trade_1_flag
+		clr_country_flag = DVE_target_is_center_of_trade_2_flag
+		clr_country_flag = DVE_target_is_center_of_trade_3_flag
+	}
+	option = { #Not Center of Trade
+		name = DVE_infrastructure_events.8a
+		trigger = { any_owned_province = { NOT = { province_has_center_of_trade_of_level = 1 } } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_not_center_of_trade_flag
+	}
+	option = { #Has Any Center of Trade
+		name = DVE_infrastructure_events.8b
+		trigger = { any_owned_province = { province_has_center_of_trade_of_level = 1 } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_center_of_trade_flag
+	}
+	option = { #Has Center of Trade Lvl 1
+		name = DVE_infrastructure_events.8c
+		trigger = {
+			any_owned_province = { 
+				province_has_center_of_trade_of_level = 1
+				NOT = { province_has_center_of_trade_of_level = 2 }
+			}
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_center_of_trade_1_flag
+	}
+	option = { #Has Center of Trade Lvl 2
+		name = DVE_infrastructure_events.8d
+		trigger = {
+			any_owned_province = { 
+				province_has_center_of_trade_of_level = 2
+				NOT = { province_has_center_of_trade_of_level = 3 }
+			}
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_center_of_trade_2_flag
+	}
+	option = { #Has Center of Trade Lvl 3
+		name = DVE_infrastructure_events.8e
+		trigger = {
+			any_owned_province = { 
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_is_center_of_trade_3_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_center_of_trade_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Infrastructure Level
+	id = DVE_infrastructure_events.9
+	title = DVE_infrastructure_events.9.t
+	desc = DVE_infrastructure_events.9.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_infrastructure_filter_flag
+		clr_country_flag = DVE_target_local_development_0_flag
+		clr_country_flag = DVE_target_local_development_1_flag
+		clr_country_flag = DVE_target_local_development_2_flag
+		clr_country_flag = DVE_target_local_development_3_flag
+		clr_country_flag = DVE_target_local_development_4_flag
+	}
+	option = { #Insufficient Infrastructure
+		name = DVE_infrastructure_events.9a
+		trigger = {
+			any_owned_province = {
+				NOT = { has_province_modifier = DVE_local_development_1 }
+				NOT = { has_province_modifier = DVE_local_development_2 }
+				NOT = { has_province_modifier = DVE_local_development_3 }
+				NOT = { has_province_modifier = DVE_local_development_4 }
+				NOT = { has_province_modifier = DVE_local_development_5 }
+			}
+		}
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_local_development_0_flag
+	}
+	option = { #Initial Infrastructure
+		name = DVE_infrastructure_events.9b
+		trigger = { any_owned_province = { has_province_modifier = DVE_local_development_1 } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_local_development_1_flag
+	}
+	option = { #Basic Infrastructure
+		name = DVE_infrastructure_events.9c
+		trigger = { any_owned_province = { has_province_modifier = DVE_local_development_2 } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_local_development_2_flag
+	}
+	option = { #Advanced Infrastructure
+		name = DVE_infrastructure_events.9c
+		trigger = { any_owned_province = { has_province_modifier = DVE_local_development_3 } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_local_development_3_flag
+	}
+	option = { #Superb Infrastructure
+		name = DVE_infrastructure_events.9d
+		trigger = { any_owned_province = { has_province_modifier = DVE_local_development_4 } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_local_development_4_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_infrastructure_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+country_event = {
+	#Subcontinents
+	id = DVE_infrastructure_events.10
+	title = DVE_infrastructure_events.10.t
+	desc = DVE_infrastructure_events.10.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	immediate = { 
+		set_country_flag = DVE_target_superregion_filter_flag
+		clr_country_flag = DVE_target_in_india_superregion_flag
+		clr_country_flag = DVE_target_in_east_indies_superregion_flag
+		clr_country_flag = DVE_target_in_oceania_superregion_flag
+		clr_country_flag = DVE_target_in_china_superregion_flag
+		clr_country_flag = DVE_target_in_europe_superregion_flag
+		clr_country_flag = DVE_target_in_eastern_europe_superregion_flag
+		clr_country_flag = DVE_target_in_tartary_superregion_flag
+		clr_country_flag = DVE_target_in_far_east_superregion_flag
+		clr_country_flag = DVE_target_in_africa_superregion_flag
+		clr_country_flag = DVE_target_in_southern_africa_superregion_flag
+		clr_country_flag = DVE_target_in_south_america_superregion_flag
+		clr_country_flag = DVE_target_in_andes_superregion_flag
+		clr_country_flag = DVE_target_in_north_america_superregion_flag
+		clr_country_flag = DVE_target_in_central_america_superregion_flag
+		clr_country_flag = DVE_target_in_near_east_superregion_flag
+		clr_country_flag = DVE_target_in_persia_superregion_flag
+	}
+	option = { #India
+		name = DVE_infrastructure_events.10a
+		trigger = { any_owned_province = { superregion = india_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_india_superregion_flag
+	}
+	option = { #East Indies,lkjn+h9jn+h+9+jn+9
+		name = DVE_infrastructure_events.10b
+		trigger = { any_owned_province = { superregion = east_indies_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_east_indies_superregion_flag
+	}
+	option = { #Oceania
+		name = DVE_infrastructure_events.10c
+		trigger = { any_owned_province = { superregion = oceania_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_oceania_superregion_flag
+	}
+	option = { #China
+		name = DVE_infrastructure_events.10d
+		trigger = { any_owned_province = { superregion = china_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_china_superregion_flag
+	}
+	option = { #Western Europe
+		name = DVE_infrastructure_events.10e
+		trigger = { any_owned_province = { superregion = europe_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_europe_superregion_flag
+	}
+	option = { #Eastern Europe
+		name = DVE_infrastructure_events.10f
+		trigger = { any_owned_province = { superregion = eastern_europe_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_eastern_europe_superregion_flag
+	}
+	option = { #Tartary
+		name = DVE_infrastructure_events.10g
+		trigger = { any_owned_province = { superregion = tartary_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_tartary_superregion_flag
+	}
+	option = { #Far East
+		name = DVE_infrastructure_events.10h
+		trigger = { any_owned_province = { superregion = far_east_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_far_east_superregion_flag
+	}
+	option = { #Northern Africa
+		name = DVE_infrastructure_events.10i
+		trigger = { any_owned_province = { superregion = africa_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_africa_superregion_flag
+	}
+	option = { #Southern Africa
+		name = DVE_infrastructure_events.10j
+		trigger = { any_owned_province = { superregion = southern_africa_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_southern_africa_superregion_flag
+	}
+	option = { #South America
+		name = DVE_infrastructure_events.10k
+		trigger = { any_owned_province = { superregion = south_america_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_south_america_superregion_flag
+	}
+	option = { #Andes
+		name = DVE_infrastructure_events.10l
+		trigger = { any_owned_province = { superregion = andes_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_andes_superregion_flag
+	}
+	option = { #North America
+		name = DVE_infrastructure_events.10m
+		trigger = { any_owned_province = { superregion = north_america_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_north_america_superregion_flag
+	}
+	option = { #Central America
+		name = DVE_infrastructure_events.10n
+		trigger = { any_owned_province = { superregion = central_america_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_central_america_superregion_flag
+	}
+	option = { #Levant
+		name = DVE_infrastructure_events.10o
+		trigger = { any_owned_province = { superregion = near_east_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_near_east_superregion_flag
+	}
+	option = { #Persia
+		name = DVE_infrastructure_events.10p
+		trigger = { any_owned_province = { superregion = persia_superregion } }
+		ai_chance = { factor = 0 }
+		set_country_flag = DVE_target_in_persia_superregion_flag
+	}
+	option = { #Clear
+		name = DVE_infrastructure_events.clear
+		ai_chance = { factor = 0 }
+		clr_country_flag = DVE_target_superregion_filter_flag
+	}
+	after = {
+		DVE_exclude_development_target_effect = yes
+		country_event = {
+			id = DVE_infrastructure_events.1
+		}
+	}
+}
+
+
+
+country_event = {
+	id = DVE_infrastructure_events.99
+	title = DVE_infrastructure_events.0.t
+	desc = DVE_infrastructure_events.1.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = { #Confirm
+		name = DVE_infrastructure_events.confirm
+		highlight = yes
+		ai_chance = { factor = 0 }
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = DVE_infrastructure_events.0
+			}
+		}
+	}
+}
+country_event = {
+	id = DVE_infrastructure_events.100
+	title = DVE_infrastructure_events.0.t
+	desc = DVE_infrastructure_events.1.d
+	picture = INVENTION_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	option = { #Confirm
+		name = DVE_infrastructure_events.confirm
+		highlight = yes
+		ai_chance = { factor = 0 }
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = DVE_infrastructure_events.1
+			}
+		}
+	}
+}
