@@ -1,0 +1,31 @@
+namespace = development_expanded_events
+
+country_event = {
+    id = development_expanded_events.1
+    title = development_expanded_events.EVTNAME1
+    desc = development_expanded_events.EVTDESC1
+    picture = DIPLOMACY_eventPicture
+
+    hidden = yes
+    fire_only_once = yes
+
+    trigger = {
+        always = yes
+    }
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    immediate = {
+        hidden_effect = {
+            set_global_flag = development_expanded_mod_active
+        }
+    }
+
+    option = {
+        name = development_expanded_events1.EVTOPT1
+
+        ai_chance = { factor = 100 }
+    }
+}
